@@ -1,0 +1,123 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container">
+
+
+    <h3 class="text-center paymentTitle">Paiement</h3>
+    <div>
+    {% if total is defined %}
+        <h5 class="text-center col-md-12 mt-5">{{total}} Fcfa</h5>
+        {% else %}
+        <h5 class="text-center col-md-12 mt-5">0 €</h5>
+            
+    {% endif %}
+        <form action="" method="post" class="form-group d-flex flex-column align-items-center">
+            <div id="errors"></div>
+            <input type="text" name="cardholder-name" placeholder="Titulaire de la carte" class="form-control col-md-4">
+            <div id="card-elements" class="col-md-4"></div>
+
+            <input type="hidden" name="date" id="date" value="{{date}}">
+            <input type="hidden" name="email" id="email" value="{{email}}">
+            <div id="card-errors" role="alert" class=""></div>
+                {% if clientSecret is defined %}
+            <button id="card-button" type="button" data-secret="{{clientSecret}}" class="btn btn-primary text-center col-md-4 mt-2">Payer</button>
+                {% else %}
+            <button id="card-button" type="button" class="btn btn-primary text-center col-md-4 mt-2">Payer</button>
+                {% endif %}
+        </form>
+    </div>
+</div>
+
+    {% block javascript %}
+        <script>
+        
+            window.onload = () => {
+
+                $(document).ready(function(){
+
+
+                    //Variables dont on va se servir
+                    let stripe = Stripe('pk_test_51GzVsLFZQOL2CP5OarG5moRDFcBrfCM5Um40yXOvvMgD1KEFmSe7IVJeYhitl3fQFYV9aOSBgQ3LPhVMTZz3iXcC00TcVio8YX');
+                    //Tout ce qui est numéros de cartes, dates d'expirations, digicodes, etc... C'EST UNE METHODE
+                    let elements = stripe.elements();
+                    //Redirection
+                    let redirect = '{{path('home')}}';
+
+                    //Objets de la page
+                    let cardHolderName = $('#cardholder-name');
+                    let cardButton = $('#card-button');
+                    let clientSecret = $('#card-button').data('secret');
+
+                    //Crée les éléments du formulaire de la carte 
+                    let card = elements.create('card');
+                    card.mount('#card-elements');
+
+                    //Revenir après pour trouver la solution en jQuery (addEventListener)
+                    card.addEventListener("change", (event) => {
+                        let displayError = $('#card-errors');
+                        if (event.error){
+                                displayError.html(event.error.message);
+                        } else{
+                                displayError.html('');
+
+                        }
+                    });//fermeture on change
+
+
+                    //Gérer le paiement
+                    $('#card-button').on("click", (event) => {
+                        stripe.confirmCardPayment(clientSecret, {
+                            payment_method: {
+                            card: card,
+                            billing_details: {
+                                name: cardHolderName.value,
+                            },
+                            },
+                        }).then(function(result) {
+                            if(result.error){
+                                $('#errors').html(result.error.message);
+                            }else{
+                                Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Paiement accepté !',
+                                text: 'Vous allez recevrez bientôt un mail de confirmation de paiement',
+                                showConfirmButton: false,
+                                timer: 4000
+                                })
+
+                                let data = $('#date').val() + $('#email').val();
+
+                                let path = '{{path('security_addCart', {'info': date ~ email})}}';
+                            
+                                $.ajax({
+                                    method: 'POST',
+                                    url: path,
+                                    dataType: 'html',
+                                    success:function(){	
+                                    
+                                    },
+                                    error:function(error){
+                                    alert(error.message);
+                                }
+                                });//Fermeture Ajax
+
+                                let delay = 6000;
+                                setTimeout(function(){
+                                document.location.href = redirect;
+                                },delay);
+                                 
+                            }
+                        })
+
+
+                    });//listener cardButton
+
+                })//Fermeture document ready
+
+            }//Fermeture onLoad
+        
+        </script>
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,152 @@
+<?php //%255BApp%255CEntity%255CArticles%2524CLASSMETADATA%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\ClassMetadata'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\ClassMetadata')),
+        clone ($p['Doctrine\\ORM\\Id\\IdentityGenerator'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Id\\IdentityGenerator')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'name' => [
+                'App\\Entity\\Articles',
+            ],
+            'namespace' => [
+                'App\\Entity',
+            ],
+            'rootEntityName' => [
+                'App\\Entity\\Articles',
+            ],
+            'customRepositoryClassName' => [
+                'App\\Repository\\ArticlesRepository',
+            ],
+            'identifier' => [
+                [
+                    'id',
+                ],
+            ],
+            'generatorType' => [
+                4,
+            ],
+            'fieldMappings' => [
+                [
+                    'id' => [
+                        'fieldName' => 'id',
+                        'type' => 'integer',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'id' => true,
+                        'columnName' => 'id',
+                    ],
+                    'title' => [
+                        'fieldName' => 'title',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'title',
+                    ],
+                    'content1' => [
+                        'fieldName' => 'content1',
+                        'type' => 'text',
+                        'scale' => 0,
+                        'length' => null,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'content1',
+                    ],
+                    'img1' => [
+                        'fieldName' => 'img1',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'img1',
+                    ],
+                    'img2' => [
+                        'fieldName' => 'img2',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'img2',
+                    ],
+                    'img3' => [
+                        'fieldName' => 'img3',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => true,
+                        'precision' => 0,
+                        'columnName' => 'img3',
+                    ],
+                    'created_at' => [
+                        'fieldName' => 'created_at',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'created_at',
+                    ],
+                    'category' => [
+                        'fieldName' => 'category',
+                        'type' => 'string',
+                        'scale' => 0,
+                        'length' => 255,
+                        'unique' => false,
+                        'nullable' => false,
+                        'precision' => 0,
+                        'columnName' => 'category',
+                    ],
+                ],
+            ],
+            'fieldNames' => [
+                [
+                    'id' => 'id',
+                    'title' => 'title',
+                    'content1' => 'content1',
+                    'img1' => 'img1',
+                    'img2' => 'img2',
+                    'img3' => 'img3',
+                    'created_at' => 'created_at',
+                    'category' => 'category',
+                ],
+            ],
+            'columnNames' => [
+                [
+                    'id' => 'id',
+                    'title' => 'title',
+                    'content1' => 'content1',
+                    'img1' => 'img1',
+                    'img2' => 'img2',
+                    'img3' => 'img3',
+                    'created_at' => 'created_at',
+                    'category' => 'category',
+                ],
+            ],
+            'table' => [
+                [
+                    'name' => 'articles',
+                ],
+            ],
+            'idGenerator' => [
+                $o[1],
+            ],
+        ],
+    ],
+    $o[0],
+    []
+); }];

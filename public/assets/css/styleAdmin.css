@@ -1,0 +1,142 @@
+.navA{
+    margin-top: 50px;
+}
+.row{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+
+
+.institutionnels{
+    height: 150px;
+    width: 300px;
+}
+
+.category{
+    text-transform: capitalize;
+}
+
+.allMessages{
+    background-color:#c9cfd5e0;
+    -webkit-box-shadow: 10px 15px 42px 21px rgba(207,207,207,1) !important;
+    -moz-box-shadow: 10px 15px 42px 21px rgba(207,207,207,1) !important;
+    box-shadow: 10px 15px 42px 21px rgba(207,207,207,1) !important;
+}
+
+.bg-light{
+    background-color:#b1b2b3a1 !important
+}
+
+.allMessagesItems{
+    text-align: justify;
+    
+}
+
+.form-group input, #category{
+    border-top: none !important;
+    border-right: none !important;
+    border-left: none !important;
+    background: #ececec !important;
+  }
+
+  .eventBackground{
+    height: 400px !important;
+    width: 400px !important;
+    background: no-repeat;
+    background-position: center;
+}
+
+.eventTitle{
+    font-size: 1.5em !important;
+    background: #FC9D3C9C; /**#dfdadab8;*/
+    padding: 23px;
+    color: white;
+}
+
+.missionLink:hover, .eventLink:hover, .projectLink:hover{
+    text-decoration: none;
+}
+
+.eventLinkContainer, .projectLinkContainer{
+    color:white;
+    transition: all 1s ease-in-out;
+}
+.eventLinkContainer:hover, .projectLinkContainer:hover{
+    transition: 1s ease-in-out;
+    transform: scale(1.05); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.titleAdmin{
+    font-size:2em !important;
+}
+
+.btn-warning{
+    background:#ffe38f !important;
+    border: none !important;
+}
+
+.btn-danger{
+    background:#f5959e !important;
+    border: none !important;
+}
+
+.fa-pen, .fa-trash-alt{
+    color:#253a48 !important;
+}
+
+.file-field{
+    background-color: #253a48 !important;
+}
+
+
+.rad-info-box{	
+	margin-bottom:16px;
+	box-shadow:1px 1px 2px 0 #CCCCCC;
+	padding:20px;
+	box-shadow:0 2px 5px 0 rgba(0,0,0,.26);
+}
+
+.rad-info-box i{
+	display:block;
+	background-clip:padding-box;
+	margin-right:15px;
+	height:60px;
+	width:60px;
+	border-radius:100%;
+	line-height:60px;
+	text-align:center;
+	font-size:4.4em;
+	position:absolute;	
+}
+
+.rad-info-box .value,
+.rad-info-box .heading{
+	display:block;	
+	position:relative;
+	text-align:right;
+	z-index:10;
+}
+
+.rad-info-box .heading{
+	font-size:1.2em;
+	font-weight:300;
+	text-transform:uppercase;
+}
+
+.rad-info-box .value{
+	font-size:3.1em;
+	font-weight:600;
+	margin-top:5px;
+}
+
+.fixed-bottom{
+    height: 81px;
+    padding: 30px;
+    background-color: #fff0 !important;
+}
+
+#chartdiv, #chartdiv2, #chartdiv3 {
+    width: 100%;
+    height: 450px;
+}

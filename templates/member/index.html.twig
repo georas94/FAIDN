@@ -1,0 +1,144 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Adhésion{% endblock %}
+
+{% block body %}
+<div class="h3 text-center mt-5 titleSecondary col-12">Adhérer</div>
+    <div class="col-sm-12 col-md-12 col-lg-12 mt-5 d-flex justify-content-center">
+        <a href="#donateTitle" class="btn btn-secondary btn-block w-50">Effectuer un don</a>
+    </div>
+    <div class="container">
+
+        <div class="row row1 mb-5">
+            {% for item in products %}
+                <div class="col-md-4 col-sm-12 col-lg-4">
+                    <div class="card text-center">
+                        <div class="d-flex justify-content-center">
+                            <img src="{{asset('assets/' ~ item.path )}}" class="card-img-top img-fluid" alt="{{item.title}}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.title}}</h5>
+                            <p class="card-category text-center">{{item.category}}</p>
+                            <h6 class="card-text">{{item.price|number_format(2, ', ', ' ')}} €</h6>
+                            <input type="hidden" name="productId" id="productId" class="productId" value="{{item.id}}">
+                            <a class="btn add" id="add" productId="{{item.id}}" name="add">Ajouter au panier</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="container mt-5" id="donateTitle">
+                <h3 class="h3 text-secondary col-12 text-center mt-5">Effectuer un don pour le fond de la solidarité</h3>
+                {% if formValid is not null  and formValid == false %}
+                    <div class="d-flex justify-content-center">
+                        <div class="alert alert-danger text-center mb-5 w-50">
+                        {{ errors|join('<br>')|raw }}
+                        </div>
+                    </div>
+                {% endif %}
+                <form action="" method="post" class="col-12 mt-5" id="checkoutForm">
+                    {{form_start(form)}}
+                    <div class="checkoutForm p-3" style="background-color: #ccd3d92b;border-radius: 7px;">
+                        <label for="name" class=""><i class="far fa-address-card"></i></i> NOM et Prénom / Raison sociale</label>
+                        <input required type="text" style="border-radius: 10px;" class="form-control" id="fname" name="name" placeholder="...">
+                        <div class="d-flex justify-content-center">
+                            <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+                                <label for="">Particulier</label>
+                                <input class="" type="checkbox" name="particulierCheckbox" value="particulier" checked/>
+                            </div>
+                            <div class="col-sm-6 col-md-6 col-lg-6 text-center">
+                                <label for="">Entreprise</label>
+                                <input class="" type="checkbox" name="entrepriseCheckbox" value="entreprise"/>
+                            </div>
+                        </div>
+                        <label for="email" class="mt-3"><i class="far fa-paper-plane"></i> Email</label>
+                        <input required type="text" style="border-radius: 10px;" class="form-control" id="email" name="email" placeholder="...">
+                        <label for="adr" class="mt-3"><i class="fas fa-shipping-fast"></i> Addresse</label>
+                        <input required type="text" style="border-radius: 10px;" class="form-control" id="adr" name="address" placeholder="...">
+                        <label for="city" class="mt-3"><i class="far fa-building"></i> Ville</label>
+                        <input required type="text" style="border-radius: 10px;" class="form-control" id="city" name="city" placeholder="...">
+                        {{form_row(form.country, {'label': 'Votre pays', 'attr': {'class':'custom-select', 'placeholder': 'Votre pays', 'style': 'border-radius: 10px;'}})}}
+                        <label for="zip" class="mt-3"><i class="fas fa-map-pin"></i> Code Postal</label>
+                        <input required type="text" style="border-radius: 10px;" class="form-control" id="zip" name="zip" placeholder="0000 pour l'étranger..">
+
+                        
+                        <label for="phone" class="mt-3"><i class="fas fa-map-pin"></i> Numéro de téléphone</label>
+                        <input required type="text" style="border-radius: 10px;" class="form-control" id="phone" name="phone" placeholder="...">
+                        <label for="total" class="text-center display-3 col-12 mt-5">Montant de votre don</label>
+                        <input required type="text" name="total" value="" style="border-radius: 10px;" class="form-control" id="total" placeholder=" €...">
+                        <button type="submit" class="btn btn-primary mt-5 btn-block rounded-pill d-flex justify-content-center align-items-center" id="checkout" name="checkout">Accéder au paiement <i style="" class="fab fa-stripe ml-2"></i><br></button>
+                    </div>
+                {{form_end(form)}}
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    {% block javascripts %}
+        <script> 
+            $(document).ready(function() {
+
+
+                $('.add').each(function(){
+                    $(this).click(function(event){
+                        event.preventDefault();
+                        let id = $(this).attr('productId');     
+                        let addBasket = $(this).text();                   
+                        let url = window.location.href + '/add/' + id;
+                        $.ajax({
+                            method: 'POST',
+                            url: url,
+                            dataType: 'html',
+                            success:function(){	
+                            Swal.fire({
+                                position: 'top-end',
+                                icon: 'success',
+                                title: 'Article ajouté au panier !',
+                                showConfirmButton: false,
+                                timer: 1000
+                                })
+                            },
+                            error:function(){
+                            alert('non');
+                                Swal.fire({
+                                    icon: 'warning',
+                                    title: 'Oups...',
+                                    text: 'Pas bon',
+                                    confirmButtonColor: '#34465f',
+                                })
+                            }
+                        });//Fermeture Ajax
+                    });//Fermeture click
+                });//each
+
+                $('.card').each(function(){
+                    $(this).mouseenter(function(){
+                        $(this).css({'-webkit-box-shadow': '-2px 6px 36px -15px rgba(46,44,46,1)', '-moz-box-shadow': '-2px 6px 36px -15px rgba(46,44,46,1)', 'box-shadow': '-2px 6px 36px -15px rgba(46,44,46,1)','transition':'2s'});
+                    }).mouseleave(function(){
+                        $(this).css({'box-shadow':'none'});
+                    });
+                });
+
+                $('.features1').mouseenter(function(){
+                    $('.features').each(function(){
+                        $(this).css({'background-color':'#ebebeb3d', 'transition':'1s', 'color':'#1e1e1e'});
+                    }).mouseleave(function(){
+                        $(this).css({'background-color':'#ebebeb', 'transition':'1s', 'color':'#48433c'});
+                    });
+                });//mouse enter
+
+                $(document).on('click', 'a[href^="#"]', function (event) {
+                    event.preventDefault();
+
+                    $('html, body').animate({
+                        scrollTop: $($.attr(this, 'href')).offset().top
+                    }, 500);
+                });
+
+            }); //fermeture document.ready
+
+            
+        </script>
+    {% endblock %}
+{% endblock %}

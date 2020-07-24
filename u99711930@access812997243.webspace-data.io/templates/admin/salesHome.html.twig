@@ -1,0 +1,97 @@
+{% extends "baseAdmin.html.twig" %}
+
+
+
+{% block title %}Commandes{% endblock %}
+
+{% block body %}
+
+        <h2 class="h2 text-center titleAdmin text-secondary">Gestion des commandes</h2>
+        <h3 class="h3 col-md-12 col-sm-12 col-lg-12 text-center mt-5 text-secondary">Les paniers</h3>
+        <div class="col-12 d-flex justify-content-end">
+        <a href="#payment" class="btn btn-secondary">Voir les status des paiements</a>
+        </div>
+        <div class="row">
+        {% for item in cart %}
+            <h6 class="col-md-12 col-sm-12 col-lg-12">Panier de <strong class="" style="font-size:1.2em;">{{item.username}}</strong></h6>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <table class="table table-striped mb-5">
+                    <thead>
+                        <tr>
+                        <th scope="col" class="text-center">Id utilisateur</th>
+                        <th scope="col" class="text-center">Email</th>
+                        <th scope="col" class="text-center">Téléphone</th>
+                        <th scope="col" class="text-center">Adresse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <th scope="row" class="text-center">{{item.id}}</th>
+                            <td class="text-center">{{item.email}}</td>
+                            <td class="text-center">{{item.phone}}</td>
+                            <td class="text-center">{{item.address}}&nbsp;{{item.postalCode}} <br>{{item.ville}}</td>
+                        </tr>
+                        <tr class="">
+                        <th scope="row" class="text-center">Contenu panier</th>
+                                <td colspan="5" class="text-break">
+                                {{item.content|replace({'Etat': 'Etat, ', 'Entreprise':'Entreprise, ', 'Fédération':'Fédération, ', 'Association':'Association, ', 'Particulier':'Particulier, ', 'ONG':'ONG, '})}}
+                                </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class=" col-12 mb-4"><hr class="text-danger font-weight-bold"></div>
+        {% endfor %}
+        </div>
+
+        <h3 class="text-center mt-5 col-12 mb-3 text-secondary titleAdmin" id="payment">Statut des paiements</h3>
+        <div class="row">
+            <table class="table container table-striped">
+            
+                <thead>
+                    <tr>
+                    <th scope="col" colspan="3" class="text-center">Email</th>
+                    <th scope="col"  colspan="3" class="text-center">Statut</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+            {% for pay in payment %}
+                    <tr>
+                    <td scope="col"  colspan="3" class="text-center">{{pay.email}}</th>
+                    <td scope="col"  colspan="4" class="text-center status">{{pay.status}}</td>
+
+                    </tr>
+        {% endfor %}
+
+                </tbody>
+            </table>
+
+    {% block javascripts %}
+    <script>
+        $(document).ready(function(){
+
+            $('.status').each(function(){
+                if($(this).text() == 1){
+                    $(this).text("Paiement validé !");
+                    $(this).css({"color":"green", "font-weight":"10px solid black"});
+                }else{
+                    $(this).text("Non validé !");
+                    $(this).css({"color":"red", "font-weight":"10px solid black"});
+
+
+                }
+            })
+            $(document).on('click', 'a[href^="#"]', function (event) {
+                event.preventDefault();
+
+                $('html, body').animate({
+                    scrollTop: $($.attr(this, 'href')).offset().top
+                }, 500);
+            });
+
+        });
+    </script>
+
+    {% endblock %}
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter{% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style2.css')}}">
+{% endblock %}
+
+{% block body %}
+
+	<div class="col-sm-12 col-md-12 col-lg-12 mb-5 contactBox">
+		<div class="row justify-content-center mb-5">
+		
+		
+			<form action="" method="post" class="form contactBoxform p-4">
+				<h3 class="h3 text-center text-secondary titleSecondary">Nous contacter</h3>
+				<p class="text-center contactTitle text-secondary ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+			{% if formValid is not null and formValid == true %}
+				<div class="alert alert-success text-center mb-5">
+				Message envoyé ! <br> Nous revenons au plus tôt vers vous
+				</div>
+			{% elseif formValid is not null and formValid == false %}
+				<div class="alert alert-danger text-center mb-5">
+				{{ errors|join('<br>')|raw }}
+				</div>
+			{% endif %}
+				<div class="form-group">
+					<label for="name" class="text-secondary">Votre Nom</label>
+					<input type="text" class="form-control"  name="name" required>
+				</div>
+				<div class="form-group">
+					<label for="email" class="text-secondary">Votre Email</label>
+					<input type="text" class="form-control" name="email" required>
+				</div>
+				<div class="form-group" >
+					<label for="content" class="text-secondary">Votre Message</label>
+					<textarea id="content" class="form-control" name="content" required rows="4"></textarea>
+					
+				</div>
+				<div class="text-center col-12">
+					<button class="btn btn-secondary" type="submit">Envoyer</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+{% endblock %}

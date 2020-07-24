@@ -1,0 +1,52 @@
+{% extends "baseAdmin.html.twig" %}
+{% block title %}Mettre à jour partenaire{% endblock %}
+
+
+{% block body %}
+
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+    {% for item in partnerId %}
+        
+        <h3 class="h3 text-center text-secondary">Mise à jour du partenaire numéro {{item.id}}</h3>
+        
+        <div class="container mt-4">
+            <div class="col-12 text-center">
+                <img src="{{asset('assets/img/' ~ item.img1 )}}" alt="" class="img-fluid">
+            </div>
+            
+            <div class="col-12 text-center">
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div class="file-field btn btn-secondary btn-sm mt-2">
+                            <span>Sélectionnez une photo</span>
+                        <input type="file" class="" id="imageUpdate" name="imageUpdate" placeholder="Sélectionnez une photo pour le remplacement" >
+                    </div>                    
+
+                    <div class="form-group mt-4">
+                        <label for="imgNumber" class="">Position dans le slider</label>
+                        <select name="imgNumber" id="imgNumber" class="imgNumber custom-select text-center">
+                            <option selected disabled>Sélectionnez une position..</option>
+                            <option value="img1">1</option>
+                            <option value="img2">2</option>
+                            <option value="img3">3</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-secondary btn-block mt-2 btn">Valider la modification</button>
+                </form>
+            </div>
+
+
+
+
+        </div>
+
+
+        
+    {% endfor %}
+    </div>
+
+
+</div>
+
+
+{% endblock %}

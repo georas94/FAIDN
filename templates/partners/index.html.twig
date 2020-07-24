@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Partenaires{% endblock %}
+
+{% block body %}
+
+    <div class="row row1 mt-5 mb-2">
+        <div class="col-md-12 col-sm-12 col-lg-12 mt-2 mb-2">
+            <div class="container">
+                <h6 class="h6 text-center partnerTitle">Institutionnels</h6>
+            </div>
+            <div class="container mt-3 d-flex justify-content-center">
+             <div id="carouselExampleSlidesOnly" class="carousel slide text-center partnerSlide" data-ride="carousel" data-interval="3000" style=" height: 33vh !important;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                {% for item in institutionnelsImages %}
+            
+                      <img src="{{asset('assets/img/' ~ item.img1)}}" alt="" class="institutionnels">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{asset('assets/img/' ~ item.img2)}}" alt="" class="institutionnels">                    
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="{{asset('assets/img/' ~ item.img3)}}" alt="" class="institutionnels">                      
+                    </div>
+                {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div> 
+        
+        
+        <div class="col-md-12 col-sm-12 col-lg-12 mt-5 mb-2">
+            <div class="container">
+                <h6 class="h6 text-center partnerTitle ">Privés</h6>
+            </div>
+            <div class="container mt-3 d-flex justify-content-center">
+             <div id="carouselExampleSlidesOnly" class="carousel slide text-center" data-ride="carousel" data-interval="3000" style=" height: 33vh !important;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                {% for item in privesImages %}
+            
+                      <img src="{{asset('assets/img/' ~ item.img1)}}" alt="" class="institutionnels">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{asset('assets/img/' ~ item.img2)}}" alt="" class="institutionnels">                    
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="{{asset('assets/img/' ~ item.img3)}}" alt="" class="institutionnels">                      
+                    </div>
+                {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="col-md-12 col-sm-12 col-lg-12 mt-5 mb-2">
+            <div class="container">
+                <h6 class="h6 text-center partnerTitle ">Médias</h6>
+            </div>
+            <div class="container mt-3 d-flex justify-content-center">
+             <div id="carouselExampleSlidesOnly" class="carousel slide text-center" data-ride="carousel" data-interval="3000" style=" height: 33vh !important;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                {% for item in mediasImages %}
+            
+                      <img src="{{asset('assets/img/' ~ item.img1)}}" alt="" class="institutionnels">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{asset('assets/img/' ~ item.img2)}}" alt="" class="institutionnels">                    
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="{{asset('assets/img/' ~ item.img3)}}" alt="" class="institutionnels">                      
+                    </div>
+                {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-12 col-sm-12 col-lg-12 mt-5 mb-2">
+            <div class="container">
+                <h6 class="h6 text-center partnerTitle ">Associatif</h6>
+            </div>
+            <div class="container mt-3 d-flex justify-content-center">
+             <div id="carouselExampleSlidesOnly" class="carousel slide text-center" data-ride="carousel" data-interval="3000" style=" height: 33vh !important;">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                {% for item in associatifImages %}
+            
+                      <img src="{{asset('assets/img/' ~ item.img1)}}" alt="" class="institutionnels">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{asset('assets/img/' ~ item.img2)}}" alt="" class="institutionnels">                    
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="{{asset('assets/img/' ~ item.img3)}}" alt="" class="institutionnels">                      
+                    </div>
+                {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

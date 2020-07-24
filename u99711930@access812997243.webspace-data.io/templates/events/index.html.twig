@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Évènements{% endblock %}
+
+{% block body %}
+
+    <div class="row mt-5 mb-2">
+        <div class="col-md-12 col-sm-12 col-lg-12">
+            <div class="h3 titleSecondary text-center"> Nos derniers évènements</div>
+        </div>
+        
+        <div class="container lastEvents mt-3 mb-3">
+            {% for item in last2Events %}
+            <div class="row mt-3">
+                
+                <div class="col-sm-12 col-md-12 col-lg-12 lastEventsItems">
+                    <h5 class="h5">{{item.title}}</h5>
+                    <div class="row align-items-center lead">
+                        <div class="col-sm-2 col-md-2 col-lg-2">
+                            <img src="{{asset('assets/img/' ~ item.img1)}}" alt="" class="img-fluid">
+                        </div>
+                        <p class="col-sm-8 col-md-8 col-lg-8 lastEventsContent text-truncate">{{item.content1|slice(100,200)|raw}}</p>
+                        <a href="{{path('events_articles', {'article':item.title})}}" class="btn btn-primary col-sm-2 col-md-2 col-lg-2" >Lire l'article</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+        
+        <div class="col-sm-12 col-md-12 col-lg-12 mt-3">
+            <div class="h3 titleSecondary text-center">Tous nos évènements</div>
+            <div class="row mt-3 mb-5 justify-content-center">
+
+                {% for article in allArticles %}
+                    <div class="col-sm-12 col-md-12 col-lg-4 mt-2 eventLinkContainer d-flex justify-content-center">
+                    <a href="{{path('events_articles', {'article':article.title})}}" class="eventLink">
+                        <div class="h6 eventBackground d-flex align-items-center justify-content-center " style="background-image:url({{asset('assets/img/' ~ article.img1)}}">
+                            <div class="eventTitle"> {{article.title}}</div>
+                        </div>
+                    </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "baseAdmin.html.twig" %}
+
+
+{% block title %}Modification produit{% endblock %}
+{% block body %}
+<div class="row mt-5">
+    <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+        <h3 class="h3 text-secondary">Modifier produit</h3>
+    </div>
+
+    <div class="container">
+        
+        <h3 class="text-secondary titleAdmin text-center mt-5">Catégorie {{productCategory}}</h3>
+            <form action="" method="post" enctype="multipart/form-data" class="mt-2">
+                <div class="form-group">
+                <label for="productTitle">Nom du produit</label>
+                    <input style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;" type="text" id="productTitle" name="productTitle" required  autofocus class="form-control" value="{{productTitle}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Prix</label>
+                    <input type="text" style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;" id="productPrice" name="productPrice" required class="form-control" value="{{productPrice}}"></input>
+                </div>
+                
+
+                <div class="form-group text-center mt-3">
+                    <button type="submit" class="btn " style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;">Modifier !</button>
+                </div>
+            </form>
+
+        </div>
+
+
+</div>
+
+
+
+{% endblock %}

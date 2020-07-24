@@ -1,0 +1,161 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block body %}
+
+        {% if formValid is defined %}
+            {% if formValid == true %}
+                <div class="alert alert-success text-center mb-5">
+                Partenaire mis à jour !
+                </div>
+            {% endif %}
+        {% endif %}
+
+
+<div class="row mt-5">
+    <div class="col-sm-12 col-md-12 col-lg-12 text-center">
+        <h3 class="h3 text-secondary">Tous vos partenaires</h3>
+
+        <table class="table table-striped table-light">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in institutionnelsImages %}
+                    <tr>
+                        <th scope="row" class="category align-middle">{{item.category}}</th>
+                        <td scope="col">
+                                <img src="{{asset('assets/img/' ~ item.img1)}}" alt="" class="institutionnels img-fluid">
+                            
+                            <div class="mt-1">
+                                <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-success">Modifier</a>
+                            </div>
+                        </td>                        
+                        
+                        <td >
+                                <img src="{{asset('assets/img/' ~ item.img2)}}" alt="" class="institutionnels img-fluid">
+                        
+                            <div class="mt-1">
+                                <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-success">Modifier</a>
+                            </div>
+                        </td>                        
+                        
+                        <td >
+                            <img src="{{asset('assets/img/' ~ item.img3)}}" alt="" class="institutionnels img-fluid">
+                        
+                            <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-success">Modifier</a>
+                        </td>                        
+                    </tr>
+                    
+                {% endfor %}
+                
+               
+                {% for item in privesImages %}
+                    <tr>
+                        <th scope="row" class="category align-middle">{{item.category}}</th>
+                        
+                        <td >
+                        
+                                <img src="{{asset('assets/img/' ~ item.img1)}}" alt="" class="institutionnels img-fluid">
+                            
+                            <div class="mt-1">
+                                <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-danger">Modifier</a>
+                            </div>
+                        </td>                        
+                        
+                        <td >
+                                <img src="{{asset('assets/img/' ~ item.img2)}}" alt="" class="institutionnels img-fluid">
+                        
+                            <div class="mt-1">
+                                <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-danger ">Modifier</a>
+                            </div>
+                        </td>                        
+                        
+                        <td >
+                            <img src="{{asset('assets/img/' ~ item.img3)}}" alt="" class="institutionnels img-fluid">
+                        
+                        <div class="mt-1">
+                            <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-danger">Modifier</a>
+                        </div>
+                        </td>                        
+                    </tr>
+                {% endfor %}
+                
+                {% for item in mediasImages %}
+                    <tr>
+                        <th scope="row" class="category align-middle">{{item.category}}</th>
+                        
+                        <td >
+                        
+                                <img src="{{asset('assets/img/' ~ item.img1)}}" alt="" class="institutionnels img-fluid">
+                            
+                            <div class="mt-1">
+                                <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-warning">Modifier</a>
+                            </div>
+                        </td>                        
+                        
+                        <td >
+                                <img src="{{asset('assets/img/' ~ item.img2)}}" alt="" class="institutionnels img-fluid">
+                        
+                            <div class="mt-1">
+                                <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-warning ">Modifier</a>
+                            </div>
+                        </td>                        
+                        
+                        <td>
+                            <img src="{{asset('assets/img/' ~ item.img3)}}" alt="" class="institutionnels img-fluid">
+                        
+                        <div class="mt-1">
+                            <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-warning">Modifier</a>
+                        </div>
+                        </td>                        
+                    </tr>
+                {% endfor %}
+                
+                {% for item in associatifImages %}
+                    <tr>
+                        <th scope="row" class="category align-middle">{{item.category}}</th>
+                        
+                        <td >
+                        
+                                <img src="{{asset('assets/img/' ~ item.img1)}}" alt="" class="institutionnels img-fluid">
+                            
+                            <div class="mt-1">
+                                <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-dark text-white">Modifier</a>
+                            </div>
+                        </td>                        
+                        
+                        <td >
+                                <img src="{{asset('assets/img/' ~ item.img2)}}" alt="" class="institutionnels img-fluid">
+                        
+                            <div class="mt-1">
+                                <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-dark text-white ">Modifier</a>
+                            </div>
+                        </td>                        
+                        
+                        <td >
+                            <img src="{{asset('assets/img/' ~ item.img3)}}" alt="" class="institutionnels img-fluid">
+                        
+                        <div class="mt-1">
+                            <a href="{{path('partners_update_admin', {'id': item.id} )}}" class="btn btn-dark text-white">Modifier</a>
+                        </div>
+                        </td>                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
