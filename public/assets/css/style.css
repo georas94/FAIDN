@@ -431,9 +431,10 @@ a:hover{
 
 .hamburger {
   top: 10px;
-  left: 0;
+  right: 15px;
   display: block;
 }
+
 
 .hamburger,
 .hamburger::before,
@@ -723,6 +724,10 @@ a:hover{
 
   .homeNav{
     display: none;
+  }
+
+  .navLogo {
+    margin-left: -50px;
   }
 
 }

@@ -198,7 +198,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
-        echo "\" alt=\"\" class=\"img-fluid\"></a>
+        echo "\" alt=\"\" class=\"img-fluid navLogo\"></a>
             </div>
 
             <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
@@ -430,7 +430,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         </nav>
         <div class=\"d-flex align-items-center\" style=\"width:100%;\">
             <div class=\"home-toggle\">
-                <a class=\"nav-link homeNavToggle {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><img src=\"{{asset('assets/img/logo.png')}}\" alt=\"\" class=\"img-fluid\"></a>
+                <a class=\"nav-link homeNavToggle {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><img src=\"{{asset('assets/img/logo.png')}}\" alt=\"\" class=\"img-fluid navLogo\"></a>
             </div>
 
             <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
