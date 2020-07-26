@@ -114,9 +114,9 @@ class __TwigTemplate_0673d02f1b43696014f99ee0b12057f1f52ab3d5f36503832045fc692a7
 \t\t<div class=\"row justify-content-center mb-5\">
 \t\t
 \t\t
-\t\t\t<form action=\"\" method=\"post\" class=\"form contactBoxform p-4\">
+\t\t\t<form action=\"\" method=\"post\" class=\"form contactBoxform p-4 mb-5\">
 \t\t\t\t<h3 class=\"h3 text-center text-secondary titleSecondary\">Nous contacter</h3>
-\t\t\t\t<p class=\"text-center contactTitle text-secondary \">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+\t\t\t\t<p class=\"text-center contactTitle text-secondary \">Pour tous types de demandes.</p>
 \t\t\t";
         // line 17
         if (( !(null === (isset($context["formValid"]) || array_key_exists("formValid", $context) ? $context["formValid"] : (function () { throw new RuntimeError('Variable "formValid" does not exist.', 17, $this->source); })())) && 0 === twig_compare((isset($context["formValid"]) || array_key_exists("formValid", $context) ? $context["formValid"] : (function () { throw new RuntimeError('Variable "formValid" does not exist.', 17, $this->source); })()), true))) {
@@ -196,9 +196,9 @@ class __TwigTemplate_0673d02f1b43696014f99ee0b12057f1f52ab3d5f36503832045fc692a7
 \t\t<div class=\"row justify-content-center mb-5\">
 \t\t
 \t\t
-\t\t\t<form action=\"\" method=\"post\" class=\"form contactBoxform p-4\">
+\t\t\t<form action=\"\" method=\"post\" class=\"form contactBoxform p-4 mb-5\">
 \t\t\t\t<h3 class=\"h3 text-center text-secondary titleSecondary\">Nous contacter</h3>
-\t\t\t\t<p class=\"text-center contactTitle text-secondary \">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+\t\t\t\t<p class=\"text-center contactTitle text-secondary \">Pour tous types de demandes.</p>
 \t\t\t{% if formValid is not null and formValid == true %}
 \t\t\t\t<div class=\"alert alert-success text-center mb-5\">
 \t\t\t\tMessage envoyé ! <br> Nous revenons au plus tôt vers vous
@@ -229,6 +229,6 @@ class __TwigTemplate_0673d02f1b43696014f99ee0b12057f1f52ab3d5f36503832045fc692a7
 \t</div>
 
 {% endblock %}
-", "contact/index.html.twig", "/Applications/MAMP/htdocs/FDAIN/templates/contact/index.html.twig");
+", "contact/index.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/contact/index.html.twig");
     }
 }

@@ -285,6 +285,10 @@ p{
     color: #4a4949;
 }
 
+.refPref{
+  word-break: break-all;
+}
+
 
 .lastEventsContent{
     font-size: 0.9em !important;
@@ -356,6 +360,7 @@ p{
   box-shadow: -9px 2px 134px -30px rgba(0,0,0,0.87);
   border-radius: 10px;
   background: #f5f3f3;
+  width: 70%;
 }
 
 .paymentForm{
@@ -528,7 +533,7 @@ a:hover{
 .nav.is-open .nav-link {
   margin-top: 1rem;
   margin-left: 1rem;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
 }
 
 .nav-link {
@@ -536,8 +541,11 @@ a:hover{
   padding: 0.5rem 1.2rem;
   margin-top: 1rem;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   text-align: center !important;
+}
+.homeNav, .homeNavToggle{
+  width: 193px !important;
 }
 
 .nav-link-cta,
@@ -549,7 +557,7 @@ a:hover{
 
 
 @media (min-width: 72.5em) {
-  .nav-toggle {
+  .nav-toggle, .home-toggle {
     display: none;
     pointer-events: none;
   }
@@ -711,6 +719,10 @@ a:hover{
 
   #carouselHome img.w-100.img-fluid {
     height: 120px !important;
+  }
+
+  .homeNav{
+    display: none;
   }
 
 }

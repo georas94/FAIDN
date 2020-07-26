@@ -76,14 +76,16 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         <nav id=\"nav-bar\" class=\"nav\" class=\"p-3\" style=\"\">
             <ul class=\"nav-list\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link cartNav ";
+                    <a class=\"nav-link homeNav ";
         // line 21
         if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "request", [], "any", false, false, false, 21), "pathInfo", [], "any", false, false, false, 21), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home"))) {
             echo " text-info";
         }
         echo "\" href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\"><i class=\"fas fa-home ml-2 fa-2x\"></i></a>
+        echo "\"><img src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
+        echo "\" alt=\"\" class=\"img-fluid\"></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link ";
@@ -185,17 +187,32 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
                 </li>
             </ul>
         </nav>
-        <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
-            <span class=\"visuallyhidden\"></span>
-            <span class=\"hamburger\" style=\"background-color:#509496;height: 9px;\"></span>
-        </button>
+        <div class=\"d-flex align-items-center\" style=\"width:100%;\">
+            <div class=\"home-toggle\">
+                <a class=\"nav-link homeNavToggle ";
+        // line 59
+        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 59, $this->source); })()), "request", [], "any", false, false, false, 59), "pathInfo", [], "any", false, false, false, 59), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home"))) {
+            echo " text-info";
+        }
+        echo "\" href=\"";
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\"><img src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
+        echo "\" alt=\"\" class=\"img-fluid\"></a>
+            </div>
+
+            <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
+                <span class=\"visuallyhidden\"></span>
+                <span class=\"hamburger\" style=\"background-color:#509496;height: 9px;\"></span>
+            </button>
+        </div>
     </header>
 
     <main class=\"row mt-5\">
         ";
-        // line 64
+        // line 70
         $this->displayBlock('body', $context, $blocks);
-        // line 65
+        // line 71
         echo "    </main>
 
     <!-- Début footer -->
@@ -212,7 +229,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
                     </ul>
 
                 <div class=\"text-center mt-2\"><a href=\"";
-        // line 80
+        // line 86
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_home");
         echo "\"><i class=\"far fa-envelope fa-2x\"></i>&nbsp;Nous écrire</a></div>
                 </div>
@@ -230,7 +247,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
                         <a href=\"tel:00242064503131\">(+242) 06 450 31 31</a><br> 
                         <a href=\"tel:00242066652555\">(+242) 06 665 25 55</a><br>
                         </p>
-                        <p class=\"col-6 text-uppercase text-break\">Réf. Préfecture :<br><br><strong>048/18/MID/DBZV/SG/DDSP/SR</strong> Du 19/01/2018</p>
+                        <p class=\"col-6 text-uppercase refPref\">Réf. Préfecture :<br><br><small><strong>048/18/MID/DBZV/SG/DDSP/SR</strong> Du 19/01/2018</small></p>
                     </div>
                 </div>
             </div>
@@ -246,13 +263,13 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         </script>
         <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@9\"></script>
         <script src=\"";
-        // line 111
+        // line 117
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/script.js"), "html", null, true);
         echo "\"></script>
         ";
-        // line 112
+        // line 118
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 113
+        // line 119
         echo "</body>
 
 </html>
@@ -302,7 +319,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
     }
 
-    // line 64
+    // line 70
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -320,7 +337,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
     }
 
-    // line 112
+    // line 118
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -350,7 +367,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
     public function getDebugInfo()
     {
-        return array (  324 => 112,  306 => 64,  288 => 13,  269 => 7,  256 => 113,  254 => 112,  250 => 111,  216 => 80,  199 => 65,  197 => 64,  179 => 53,  175 => 51,  165 => 48,  162 => 47,  156 => 44,  153 => 43,  151 => 42,  141 => 39,  131 => 36,  121 => 33,  111 => 30,  101 => 27,  91 => 24,  81 => 21,  74 => 17,  69 => 14,  67 => 13,  61 => 10,  55 => 7,  47 => 1,);
+        return array (  341 => 118,  323 => 70,  305 => 13,  286 => 7,  273 => 119,  271 => 118,  267 => 117,  233 => 86,  216 => 71,  214 => 70,  194 => 59,  181 => 53,  177 => 51,  167 => 48,  164 => 47,  158 => 44,  155 => 43,  153 => 42,  143 => 39,  133 => 36,  123 => 33,  113 => 30,  103 => 27,  93 => 24,  81 => 21,  74 => 17,  69 => 14,  67 => 13,  61 => 10,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -375,7 +392,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         <nav id=\"nav-bar\" class=\"nav\" class=\"p-3\" style=\"\">
             <ul class=\"nav-list\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link cartNav {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><i class=\"fas fa-home ml-2 fa-2x\"></i></a>
+                    <a class=\"nav-link homeNav {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><img src=\"{{asset('assets/img/logo.png')}}\" alt=\"\" class=\"img-fluid\"></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link {% if (app.request.pathInfo == path('events_home')) %} text-info{% endif %}\" href=\"{{path('events_home')}}\">Évènements</a>
@@ -411,10 +428,16 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
                 </li>
             </ul>
         </nav>
-        <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
-            <span class=\"visuallyhidden\"></span>
-            <span class=\"hamburger\" style=\"background-color:#509496;height: 9px;\"></span>
-        </button>
+        <div class=\"d-flex align-items-center\" style=\"width:100%;\">
+            <div class=\"home-toggle\">
+                <a class=\"nav-link homeNavToggle {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><img src=\"{{asset('assets/img/logo.png')}}\" alt=\"\" class=\"img-fluid\"></a>
+            </div>
+
+            <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
+                <span class=\"visuallyhidden\"></span>
+                <span class=\"hamburger\" style=\"background-color:#509496;height: 9px;\"></span>
+            </button>
+        </div>
     </header>
 
     <main class=\"row mt-5\">
@@ -450,7 +473,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
                         <a href=\"tel:00242064503131\">(+242) 06 450 31 31</a><br> 
                         <a href=\"tel:00242066652555\">(+242) 06 665 25 55</a><br>
                         </p>
-                        <p class=\"col-6 text-uppercase text-break\">Réf. Préfecture :<br><br><strong>048/18/MID/DBZV/SG/DDSP/SR</strong> Du 19/01/2018</p>
+                        <p class=\"col-6 text-uppercase refPref\">Réf. Préfecture :<br><br><small><strong>048/18/MID/DBZV/SG/DDSP/SR</strong> Du 19/01/2018</small></p>
                     </div>
                 </div>
             </div>
@@ -470,6 +493,6 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 </body>
 
 </html>
-", "base.html.twig", "/Applications/MAMP/htdocs/fdain/templates/base.html.twig");
+", "base.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/base.html.twig");
     }
 }

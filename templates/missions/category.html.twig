@@ -3,7 +3,9 @@
 
 {% block body %}
     <div class="col-sm-12 col-md-12 col-lg-12 categoriesBox">
-            <h3 class="h3 container mt-5 text-center mb-5 titleSecondary"> Toutes nos missions</h3>
+
+        <div class="row">
+            <h3 class="h3 container mt-5 text-center mb-5 titleSecondary col-12"> Toutes nos missions</h3>
             {% for article in allArticles %}
                 <div class="col-sm-12 col-md-12 col-lg-4 mt-2 projectLinkContainer d-flex justify-content-center">
                     <a href="{{path('projects_articles', {'article':article.title})}}" class="projectLink">
@@ -13,6 +15,8 @@
                     </a>
                 </div>
             {% endfor %}
+        </div>
+        
     </div>
 
 {% endblock %}
