@@ -1,3 +1,3 @@
-# FDAIN
+# FAIDN
 
-Creation et mise en place du site de la FDAIN. Réalisé en Symfony, PHP, JavaScript et jQuery
+Creation et mise en place du site de la FAIDN. Réalisé en Symfony, PHP, JavaScript et jQuery
