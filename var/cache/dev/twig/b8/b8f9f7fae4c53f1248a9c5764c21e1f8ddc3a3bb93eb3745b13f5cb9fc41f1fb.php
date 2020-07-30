@@ -110,13 +110,13 @@ class __TwigTemplate_0673d02f1b43696014f99ee0b12057f1f52ab3d5f36503832045fc692a7
 
         // line 9
         echo "
-\t<div class=\"col-sm-12 col-md-12 col-lg-12 mb-5 contactBox\">
+\t<div class=\"col-sm-12 col-md-12 col-lg-12 mb-5 contactBox mt-5\">
 \t\t<div class=\"row justify-content-center mb-5\">
 \t\t
 \t\t
-\t\t\t<form action=\"\" method=\"post\" class=\"form contactBoxform p-4 mb-5\">
+\t\t\t<form action=\"\" method=\"post\" class=\"form contactBoxform p-4\">
 \t\t\t\t<h3 class=\"h3 text-center text-secondary titleSecondary\">Nous contacter</h3>
-\t\t\t\t<p class=\"text-center contactTitle text-secondary \">Pour tous types de demandes.</p>
+\t\t\t\t<p class=\"text-center contactTitle text-secondary \">Pour tous types de demandes/réclamations.</p>
 \t\t\t";
         // line 17
         if (( !(null === (isset($context["formValid"]) || array_key_exists("formValid", $context) ? $context["formValid"] : (function () { throw new RuntimeError('Variable "formValid" does not exist.', 17, $this->source); })())) && 0 === twig_compare((isset($context["formValid"]) || array_key_exists("formValid", $context) ? $context["formValid"] : (function () { throw new RuntimeError('Variable "formValid" does not exist.', 17, $this->source); })()), true))) {
@@ -192,13 +192,13 @@ class __TwigTemplate_0673d02f1b43696014f99ee0b12057f1f52ab3d5f36503832045fc692a7
 
 {% block body %}
 
-\t<div class=\"col-sm-12 col-md-12 col-lg-12 mb-5 contactBox\">
+\t<div class=\"col-sm-12 col-md-12 col-lg-12 mb-5 contactBox mt-5\">
 \t\t<div class=\"row justify-content-center mb-5\">
 \t\t
 \t\t
-\t\t\t<form action=\"\" method=\"post\" class=\"form contactBoxform p-4 mb-5\">
+\t\t\t<form action=\"\" method=\"post\" class=\"form contactBoxform p-4\">
 \t\t\t\t<h3 class=\"h3 text-center text-secondary titleSecondary\">Nous contacter</h3>
-\t\t\t\t<p class=\"text-center contactTitle text-secondary \">Pour tous types de demandes.</p>
+\t\t\t\t<p class=\"text-center contactTitle text-secondary \">Pour tous types de demandes/réclamations.</p>
 \t\t\t{% if formValid is not null and formValid == true %}
 \t\t\t\t<div class=\"alert alert-success text-center mb-5\">
 \t\t\t\tMessage envoyé ! <br> Nous revenons au plus tôt vers vous

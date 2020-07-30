@@ -92,7 +92,7 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
     ";
         } else {
             // line 9
-            echo "    <div class=\"col-sm-12 col-md-12 col-lg-12 connexionBox mb-5\">
+            echo "    <div class=\"col-sm-12 col-md-12 col-lg-12 connexionBox mb-5 d-flex justify-content-center\">
         <div class=\"row justify-content-center\">
             <h1 class=\"text-center mt-5 mb-5 titleSecondary col-12\">Connexion</h1>
 
@@ -159,7 +159,7 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
     {% if app.user %}
         <div class=\"text-center h3 connected titleSecondary mt-5\">Vous êtes déjà connecté !</div>
     {% else %}
-    <div class=\"col-sm-12 col-md-12 col-lg-12 connexionBox mb-5\">
+    <div class=\"col-sm-12 col-md-12 col-lg-12 connexionBox mb-5 d-flex justify-content-center\">
         <div class=\"row justify-content-center\">
             <h1 class=\"text-center mt-5 mb-5 titleSecondary col-12\">Connexion</h1>
 
@@ -186,6 +186,6 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
     </div>
 
     {% endif %}
-{% endblock %}", "security/login.html.twig", "/Applications/MAMP/htdocs/fdain/templates/security/login.html.twig");
+{% endblock %}", "security/login.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/security/login.html.twig");
     }
 }

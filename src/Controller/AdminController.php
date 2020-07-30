@@ -9,8 +9,9 @@ use App\Entity\Archives;
 use App\Entity\Articles;
 use App\Entity\Messages;
 use App\Entity\Partners;
-use App\Form\AdminArticleType;
+use App\Entity\CitationSlider;
 
+use App\Form\AdminArticleType;
 use App\Repository\CartRepository;
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
@@ -23,6 +24,7 @@ use App\Repository\MessagesRepository;
 use App\Repository\PartnersRepository;
 use Respect\Validation\Validator as v;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\CitationSliderRepository;
 use Behat\Transliterator\Transliterator as tr;
 use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Routing\Annotation\Route;
@@ -1148,6 +1150,53 @@ class AdminController extends AbstractController
 
 
       return $this->json($data);
+    }
+    
+    /**
+     * @Route("/admin/toutes-les-citation", name="citation_admin")
+     */
+    public function citation_admin(CitationSliderRepository $citationSliderRepository, PostRepository $postRepository, \Swift_Mailer $mailer, EntityManagerInterface $manager)
+    {
+
+        $allCitations = $citationSliderRepository->findAllByOrder();
+
+
+      return $this->render('admin/citation.html.twig', [
+        'allCitations' => $allCitations
+      ]);
+    }
+    
+    /**
+     * @Route("/admin/edition-citation/{id}", name="citation_update_admin")
+     */
+    public function citation_update_admin($id, CitationSliderRepository $citationSliderRepository, PostRepository $postRepository, \Swift_Mailer $mailer, EntityManagerInterface $manager)
+    {
+
+        $citation = $citationSliderRepository->findById($id);
+
+        foreach ($citation as $value) {
+            $citationText = $value->getCitation();
+            $author = $value->getAuthor();
+        }
+
+
+        if (!empty($_POST)) {
+            
+            $entityManager = $this->getDoctrine()->getManager();
+            $citation = $entityManager->getRepository(CitationSlider::class)->find($id);
+            $citation->setCitation($_POST['citation']);
+            $citation->setAuthor($_POST['author']);
+            $manager->persist($citation);
+            $manager->flush();
+
+            return $this->redirectToRoute('citation_admin');
+        }
+        
+
+      return $this->render('admin/citationUpdate.html.twig', [
+        'citation' => $citationText,
+        'author' => $author
+      ]);
     }
 
     

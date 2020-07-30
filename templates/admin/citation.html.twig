@@ -1,0 +1,39 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block title %}Édition des citations{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="card shadow mb-4 mt-5">
+                <div class="card-header py-3">
+                    <h4 class="text-secondary text-center mb-5 mt-3">Éditer une citation</h4>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th class="text-center">Citation</th>
+                            <th class="text-center">Autheur</th>
+                            <th class=""></th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        </tfoot>
+                        <tbody>
+                        {% for item in allCitations %}
+                        <tr>
+                            <td class="text-center">{{item.citation}}</td>
+                            <td class="text-break">{{item.author}}</td>
+                            <td class="text-center"><a class="text-center" href="{{path('citation_update_admin', {'id':item.id})}}"><i class="fas fa-pen fa-2x"></i></a></td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -72,6 +72,7 @@ table img{
     font-weight: 700;
 }
 
+
 ul{
     list-style: none;
 }
@@ -556,6 +557,9 @@ a:hover{
     transition: .5s ease-in;
 }
 
+.citationCarousel{
+  height: 85px !important;
+}
 
 @media (min-width: 72.5em) {
   .nav-toggle, .home-toggle {
@@ -718,7 +722,7 @@ a:hover{
     background-position: bottom !important;
   }
 
-  #carouselHome img.w-100.img-fluid {
+  #carouselHome img.img-fluid {
     height: 120px !important;
   }
 

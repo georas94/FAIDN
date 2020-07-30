@@ -70,7 +70,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
   <div class=\"row align-items-center\">
     <div class=\"col-md-12 col-sm-12 col-lg-12\">
-      <h3 class=\"titleSecondary text-center faidn\">Bienvenue sur le site de la <br>  F.A.I.D.N <br><small>(Fédération des Association Internationales de la Diaspora et des Nationaux)</small></h3>
+      <h3 class=\"titleSecondary text-center  display-4\">Bienvenue sur le site de la <br>  F.A.I.D.N <br><small>(Fédération des Association Internationales de la Diaspora et des Nationaux)</small></h3>
       <p class=\"mt-4 aboutUs lead\">Les inégalités socio-économiques font obstacle au développement africain, cependant le contexte actuel révéle que la diaspora est le 1er bailleur de fonds de l'afrique (65 milliards de dollars en 2017 soit 2,5 fois l'aide publique au développement et 2 fois les investissements étrangers) un atout du développement économique soutenu par la dynamique d'une migration entrepreneuriale et dont la capacité se voit même diminuer par les coûts de transfert de fonds (estimés à 1,6 milliards d'euros chaque année).
       <br><br>
       Grâce à un partenariat privilégié nord/sud et au rôle des membres expérimentés sur le terrain, le statut de membre du F.A.I.D.N Permet de participer activement à la dimension territoriale et de capitaliser un potentiel majeur d'amélioration des conditions de création de richesse.</p>
@@ -78,7 +78,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
 
     <div class=\"col-md-12 col-sm-12 col-lg-12 mt-4 lead someActions\">
-      <h3 class=\"titleSecondary text-center\">Nos 5 principales actions</h3>
+      <h3 class=\"titleSecondary text-center\">Nos 5 principaux objectifs</h3>
       <ul class=\"row mt-5 axes align-items-center text-center\">
         <div class=\"col-sm-4 col-md-4 col-lg-4\">
           <li class=\"actionLi\">Promouvoir et faciliter les échanges socio-culturels, sportifs, artistiques, et entrepreneuriaux, économiques, sanitaires</li>
@@ -150,7 +150,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
     </div>
 
-    <div class=\"col-md-6 col-lg-6 col-sm-12 someActions\">
+    <div class=\"col-md-6 col-lg-6 col-sm-12 someActions mb-4\">
       <h3 class=\"h3 mt-3 titleSecondary text-center\">Nos actions</h3>
       <div class=\" mt-4 actions lead\">
         <h5 class=\"h5\"><strong>S'organiser</strong></h5>
@@ -166,8 +166,8 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
       
       <div class=\" mt-4 actions lead\">
         <h5 class=\"h5\"><strong>Appuyer conseiller informer</strong></h5>
-        <p class=\"\">- les initiatives locales, régionales et nationales <br> 
-        - les appels d'offres , collecte de fonds<br>
+        <p class=\"\">- les initiatives locales, régionales, nationales  et internationales<br> 
+        - les appels d'offres à projets, collecte de fonds<br>
         - En terme de valeur ajoutée, le développement d'investissement financier, de formation et d' accompagnement</p>
       </div>
     </div>
@@ -176,34 +176,70 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
   <div class=\"row mt-5 mb-5\">
     <div id=\"carouselHome\" class=\"carousel slide col-md-12\" data-ride=\"carousel\" data-interval=\"3000\">
-      <div class=\"carousel-inner\">
+      <div class=\"carousel-inner text-center\">
         <div class=\"carousel-item active\">
           <img src=\"";
         // line 117
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/any.png"), "html", null, true);
-        echo "\" class=\"w-100 img-fluid\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/slider1.jpg"), "html", null, true);
+        echo "\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
         </div>
         <div class=\"carousel-item\">
           <img src=\"";
         // line 120
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/any2.png"), "html", null, true);
-        echo "\" class=\"w-100 img-fluid\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/slider2.jpg"), "html", null, true);
+        echo "\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
         </div>
         <div class=\"carousel-item\">
           <img src=\"";
         // line 123
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/any3.png"), "html", null, true);
-        echo "\" class=\"w-100 img-fluid\">
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/slider3.jpg"), "html", null, true);
+        echo "\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
+        </div>
+        <div class=\"carousel-item\">
+          <img src=\"";
+        // line 126
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/slider4.jpg"), "html", null, true);
+        echo "\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
         </div>
       </div>
+    </div>
+  </div>
+  
+  <div class=\"row pt-5 justify-content-center\">
+    <div id=\"citationCarousel\" class=\"carousel slide citationCarousel\" data-ride=\"carousel\" data-interval=\"7000\">
+      <div class=\"carousel-inner\">  
+        <div class=\"carousel-item active\">
+            <p class=\"text-center w-100 lead\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem hic ipsam. Amet tempora<br> <small class=\"text-center w-100 font-italic\">Autheur atheur</small></p>
+        </div>
+      ";
+        // line 138
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["allCitations"]) || array_key_exists("allCitations", $context) ? $context["allCitations"] : (function () { throw new RuntimeError('Variable "allCitations" does not exist.', 138, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 139
+            echo "        <div class=\"carousel-item\">
+            <p class=\"text-center w-100 lead\">";
+            // line 140
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "citation", [], "any", false, false, false, 140), "html", null, true);
+            echo "<br> <small class=\"text-center w-100 font-italic\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "author", [], "any", false, false, false, 140), "html", null, true);
+            echo "</small></p>
+        </div>
+      ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 143
+        echo "      </div>
     </div>
   </div>
 
 
   ";
-        // line 130
+        // line 148
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 171
+        // line 189
         echo "</div>
 ";
         
@@ -214,7 +250,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
     }
 
-    // line 130
+    // line 148
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -224,7 +260,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 131
+        // line 149
         echo "  <script>
     \$(document).ready(function () {
 
@@ -285,7 +321,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
     public function getDebugInfo()
     {
-        return array (  228 => 131,  218 => 130,  207 => 171,  205 => 130,  195 => 123,  189 => 120,  183 => 117,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  264 => 149,  254 => 148,  243 => 189,  241 => 148,  234 => 143,  223 => 140,  220 => 139,  216 => 138,  201 => 126,  195 => 123,  189 => 120,  183 => 117,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -298,7 +334,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
   <div class=\"row align-items-center\">
     <div class=\"col-md-12 col-sm-12 col-lg-12\">
-      <h3 class=\"titleSecondary text-center faidn\">Bienvenue sur le site de la <br>  F.A.I.D.N <br><small>(Fédération des Association Internationales de la Diaspora et des Nationaux)</small></h3>
+      <h3 class=\"titleSecondary text-center  display-4\">Bienvenue sur le site de la <br>  F.A.I.D.N <br><small>(Fédération des Association Internationales de la Diaspora et des Nationaux)</small></h3>
       <p class=\"mt-4 aboutUs lead\">Les inégalités socio-économiques font obstacle au développement africain, cependant le contexte actuel révéle que la diaspora est le 1er bailleur de fonds de l'afrique (65 milliards de dollars en 2017 soit 2,5 fois l'aide publique au développement et 2 fois les investissements étrangers) un atout du développement économique soutenu par la dynamique d'une migration entrepreneuriale et dont la capacité se voit même diminuer par les coûts de transfert de fonds (estimés à 1,6 milliards d'euros chaque année).
       <br><br>
       Grâce à un partenariat privilégié nord/sud et au rôle des membres expérimentés sur le terrain, le statut de membre du F.A.I.D.N Permet de participer activement à la dimension territoriale et de capitaliser un potentiel majeur d'amélioration des conditions de création de richesse.</p>
@@ -306,7 +342,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
 
     <div class=\"col-md-12 col-sm-12 col-lg-12 mt-4 lead someActions\">
-      <h3 class=\"titleSecondary text-center\">Nos 5 principales actions</h3>
+      <h3 class=\"titleSecondary text-center\">Nos 5 principaux objectifs</h3>
       <ul class=\"row mt-5 axes align-items-center text-center\">
         <div class=\"col-sm-4 col-md-4 col-lg-4\">
           <li class=\"actionLi\">Promouvoir et faciliter les échanges socio-culturels, sportifs, artistiques, et entrepreneuriaux, économiques, sanitaires</li>
@@ -378,7 +414,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
     </div>
 
-    <div class=\"col-md-6 col-lg-6 col-sm-12 someActions\">
+    <div class=\"col-md-6 col-lg-6 col-sm-12 someActions mb-4\">
       <h3 class=\"h3 mt-3 titleSecondary text-center\">Nos actions</h3>
       <div class=\" mt-4 actions lead\">
         <h5 class=\"h5\"><strong>S'organiser</strong></h5>
@@ -394,8 +430,8 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
       
       <div class=\" mt-4 actions lead\">
         <h5 class=\"h5\"><strong>Appuyer conseiller informer</strong></h5>
-        <p class=\"\">- les initiatives locales, régionales et nationales <br> 
-        - les appels d'offres , collecte de fonds<br>
+        <p class=\"\">- les initiatives locales, régionales, nationales  et internationales<br> 
+        - les appels d'offres à projets, collecte de fonds<br>
         - En terme de valeur ajoutée, le développement d'investissement financier, de formation et d' accompagnement</p>
       </div>
     </div>
@@ -404,16 +440,34 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
   <div class=\"row mt-5 mb-5\">
     <div id=\"carouselHome\" class=\"carousel slide col-md-12\" data-ride=\"carousel\" data-interval=\"3000\">
-      <div class=\"carousel-inner\">
+      <div class=\"carousel-inner text-center\">
         <div class=\"carousel-item active\">
-          <img src=\"{{asset('assets/img/any.png')}}\" class=\"w-100 img-fluid\">
+          <img src=\"{{asset('assets/img/slider1.jpg')}}\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
         </div>
         <div class=\"carousel-item\">
-          <img src=\"{{asset('assets/img/any2.png')}}\" class=\"w-100 img-fluid\">
+          <img src=\"{{asset('assets/img/slider2.jpg')}}\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
         </div>
         <div class=\"carousel-item\">
-          <img src=\"{{asset('assets/img/any3.png')}}\" class=\"w-100 img-fluid\">
+          <img src=\"{{asset('assets/img/slider3.jpg')}}\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
         </div>
+        <div class=\"carousel-item\">
+          <img src=\"{{asset('assets/img/slider4.jpg')}}\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class=\"row pt-5 justify-content-center\">
+    <div id=\"citationCarousel\" class=\"carousel slide citationCarousel\" data-ride=\"carousel\" data-interval=\"7000\">
+      <div class=\"carousel-inner\">  
+        <div class=\"carousel-item active\">
+            <p class=\"text-center w-100 lead\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem hic ipsam. Amet tempora<br> <small class=\"text-center w-100 font-italic\">Autheur atheur</small></p>
+        </div>
+      {% for item in allCitations %}
+        <div class=\"carousel-item\">
+            <p class=\"text-center w-100 lead\">{{item.citation}}<br> <small class=\"text-center w-100 font-italic\">{{item.author}}</small></p>
+        </div>
+      {% endfor %}
       </div>
     </div>
   </div>
@@ -462,6 +516,6 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
   {% endblock %}
 </div>
 {% endblock %}
-", "home/index.html.twig", "/Applications/MAMP/htdocs/fdain/templates/home/index.html.twig");
+", "home/index.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/home/index.html.twig");
     }
 }

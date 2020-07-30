@@ -593,6 +593,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\CitationSliderRepository" class="App\Repository\CitationSliderRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\DonatePaymentRepository" class="App\Repository\DonatePaymentRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -3138,7 +3142,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator..QuMnAm"/>
+      <argument type="service" id=".service_locator.mx5hwCz"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5056,6 +5060,8 @@
     <service id=".abstract.instanceof.App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CartRepository" class="App\Repository\CartRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CartRepository" class="App\Repository\CartRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CitationSliderRepository" class="App\Repository\CitationSliderRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\CitationSliderRepository" class="App\Repository\CitationSliderRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DonatePaymentRepository" class="App\Repository\DonatePaymentRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\DonatePaymentRepository" class="App\Repository\DonatePaymentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DonateRepository" class="App\Repository\DonateRepository" autowire="true" abstract="true"/>
@@ -5374,6 +5380,15 @@
         <argument key="productRepository" type="service" id="App\Repository\ProductRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.5Pqn3K7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="citationSliderRepository" type="service" id="App\Repository\CitationSliderRepository"/>
+        <argument key="mailer" type="service" id="swiftmailer.mailer.default"/>
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+        <argument key="postRepository" type="service" id="App\Repository\PostRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.so3lSHN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -5398,6 +5413,12 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="articles" type="service" id="App\Repository\ArticlesRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.YSuebgG" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="citationSliderRepository" type="service" id="App\Repository\CitationSliderRepository"/>
       </argument>
     </service>
     <service id=".service_locator.c6Nzfx4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5443,13 +5464,15 @@
         <argument key="session" type="service" id="session"/>
       </argument>
     </service>
-    <service id=".service_locator.X.cYScw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.ZdLrNuo" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::all_users_admin" type="service" id=".service_locator.1UuH9tO"/>
         <argument key="App\Controller\AdminController::archives_admin" type="service" id=".service_locator.mhJC2wf"/>
         <argument key="App\Controller\AdminController::article_add_admin" type="service" id=".service_locator.zf69Pl8"/>
         <argument key="App\Controller\AdminController::article_update_admin" type="service" id=".service_locator.zf69Pl8"/>
+        <argument key="App\Controller\AdminController::citation_admin" type="service" id=".service_locator.5Pqn3K7"/>
+        <argument key="App\Controller\AdminController::citation_update_admin" type="service" id=".service_locator.5Pqn3K7"/>
         <argument key="App\Controller\AdminController::delete_article_admin" type="service" id=".service_locator.7rC0Raz"/>
         <argument key="App\Controller\AdminController::ho" type="service" id=".service_locator.znJ5KIM"/>
         <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.Sfi6IrS"/>
@@ -5468,6 +5491,7 @@
         <argument key="App\Controller\ContactController::index" type="service" id=".service_locator.RhZUdb7"/>
         <argument key="App\Controller\EventsController::articles" type="service" id=".service_locator.25mwYPX"/>
         <argument key="App\Controller\EventsController::index" type="service" id=".service_locator.25mwYPX"/>
+        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.YSuebgG"/>
         <argument key="App\Controller\MemberController::index" type="service" id=".service_locator.c6Nzfx4"/>
         <argument key="App\Controller\MissionsController::index" type="service" id=".service_locator.25mwYPX"/>
         <argument key="App\Controller\MissionsController::missionArticles" type="service" id=".service_locator.25mwYPX"/>
@@ -5482,6 +5506,8 @@
         <argument key="App\Controller\AdminController:archives_admin" type="service" id=".service_locator.mhJC2wf"/>
         <argument key="App\Controller\AdminController:article_add_admin" type="service" id=".service_locator.zf69Pl8"/>
         <argument key="App\Controller\AdminController:article_update_admin" type="service" id=".service_locator.zf69Pl8"/>
+        <argument key="App\Controller\AdminController:citation_admin" type="service" id=".service_locator.5Pqn3K7"/>
+        <argument key="App\Controller\AdminController:citation_update_admin" type="service" id=".service_locator.5Pqn3K7"/>
         <argument key="App\Controller\AdminController:delete_article_admin" type="service" id=".service_locator.7rC0Raz"/>
         <argument key="App\Controller\AdminController:ho" type="service" id=".service_locator.znJ5KIM"/>
         <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.Sfi6IrS"/>
@@ -5500,6 +5526,7 @@
         <argument key="App\Controller\ContactController:index" type="service" id=".service_locator.RhZUdb7"/>
         <argument key="App\Controller\EventsController:articles" type="service" id=".service_locator.25mwYPX"/>
         <argument key="App\Controller\EventsController:index" type="service" id=".service_locator.25mwYPX"/>
+        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.YSuebgG"/>
         <argument key="App\Controller\MemberController:index" type="service" id=".service_locator.c6Nzfx4"/>
         <argument key="App\Controller\MissionsController:index" type="service" id=".service_locator.25mwYPX"/>
         <argument key="App\Controller\MissionsController:missionArticles" type="service" id=".service_locator.25mwYPX"/>
@@ -5592,12 +5619,13 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator..QuMnAm" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.mx5hwCz" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\ArchivesRepository" type="service" id="App\Repository\ArchivesRepository"/>
         <argument key="App\Repository\ArticlesRepository" type="service" id="App\Repository\ArticlesRepository"/>
         <argument key="App\Repository\CartRepository" type="service" id="App\Repository\CartRepository"/>
+        <argument key="App\Repository\CitationSliderRepository" type="service" id="App\Repository\CitationSliderRepository"/>
         <argument key="App\Repository\DonatePaymentRepository" type="service" id="App\Repository\DonatePaymentRepository"/>
         <argument key="App\Repository\DonateRepository" type="service" id="App\Repository\DonateRepository"/>
         <argument key="App\Repository\MessagesRepository" type="service" id="App\Repository\MessagesRepository"/>
@@ -5844,12 +5872,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.X.cYScw"/>
+      <argument type="service" id=".service_locator.ZdLrNuo"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.X.cYScw"/>
+      <argument type="service" id=".service_locator.ZdLrNuo"/>
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.HLXg33_"/>
@@ -6234,7 +6262,7 @@
     <service id="fm_elfinder.loader" alias="fm_elfinder.loader.default" public="true"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.X.cYScw"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.ZdLrNuo"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger" public="false"/>
     <service id=".service_locator.tHpW6v3" alias=".service_locator.Y7gDuDN" public="false"/>

@@ -32,6 +32,8 @@ return [
     'archives_admin' => [[], ['_controller' => 'App\\Controller\\AdminController::archives_admin'], [], [['text', '/admin/archives']], [], []],
     'organic_searches_admin' => [[], ['_controller' => 'App\\Controller\\AdminController::organic_searches_admin'], [], [['text', '/admin/organic-searches']], [], []],
     'ho' => [[], ['_controller' => 'App\\Controller\\AdminController::ho'], [], [['text', '/admin/ho']], [], []],
+    'citation_admin' => [[], ['_controller' => 'App\\Controller\\AdminController::citation_admin'], [], [['text', '/admin/toutes-les-citation']], [], []],
+    'citation_update_admin' => [['id'], ['_controller' => 'App\\Controller\\AdminController::citation_update_admin'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/admin/edition-citation']], [], []],
     'cart_home' => [[], ['_controller' => 'App\\Controller\\CartController::index'], [], [['text', '/panier']], [], []],
     'cart_add' => [['id'], ['_controller' => 'App\\Controller\\CartController::add'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/adhesion/add']], [], []],
     'cart_remove' => [['id'], ['_controller' => 'App\\Controller\\CartController::remove'], [], [['variable', '/', '[^/]++', 'id'], ['text', '/panier/remove']], [], []],
