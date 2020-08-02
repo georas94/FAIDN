@@ -361,7 +361,7 @@ p{
   box-shadow: -9px 2px 134px -30px rgba(0,0,0,0.87);
   border-radius: 10px;
   background: #f5f3f3;
-  width: 70%;
+  width: 100%;
 }
 
 .paymentForm{
@@ -561,6 +561,27 @@ a:hover{
   height: 85px !important;
 }
 
+.contactItem{
+  word-break: break-all;
+  font-size: 1.3em;
+}
+.fa-map-marker-alt, .fa-phone-alt{
+  color:#73c2fbab;
+}
+
+#mapid{
+  height:200px;
+  z-index: 1;
+}
+
+
+
+
+/**********************
+      Responsive
+***********************/
+
+
 @media (min-width: 72.5em) {
   .nav-toggle, .home-toggle {
     display: none;
@@ -599,6 +620,10 @@ a:hover{
   background-color: #f5f5f5;
 }
 
+.footerAddress{
+  word-break: break-all;
+}
+
 /*FIN FOOTER*/
 
 
@@ -609,7 +634,7 @@ a:hover{
     margin-bottom: 18px;
   }
   #carouselHome{
-    height:360px !important;
+    height:100% !important;
   }
   .eventLinkContainer{
     width: 75vw !important;  
@@ -659,9 +684,6 @@ a:hover{
   .contactTitle{
     font-size: 1.5em;
   }
-
-
-  /*Nouveau !! **/
   
   .titleSmall, .lead{
     font-size: 1.3em !important;
@@ -688,8 +710,11 @@ a:hover{
   .faidn{
     padding-bottom: 25px;
   }
-  #carouselHome{
-    margin-bottom: 89px;
+  #citationCarousel{
+    margin-bottom: 339px;
+  }
+  #citationCarousel .lead {
+    font-size: 1em !important;
   }
 
   .missionAll{
@@ -732,6 +757,27 @@ a:hover{
 
   .navLogo {
     margin-left: -50px;
+  }
+
+
+  .contactBoxform{
+
+    width:90vw;
+    margin-bottom: 100px;
+    margin-left: -9px !important;
+  }
+  
+  .contactItem{
+    font-size: 1em !important;
+  }
+  .fa-4x{
+    font-size: 2.8em !important;
+  }
+  .contactSocial{
+    display: none;
+  }
+  #mapid{
+    margin-bottom: 80px;
   }
 
 }

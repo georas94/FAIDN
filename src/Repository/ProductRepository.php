@@ -42,6 +42,20 @@ class ProductRepository extends ServiceEntityRepository
         ;
     }
     
+    public function findPrices()
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p.price
+            FROM App\Entity\Product p
+            ORDER BY p.price DESC'
+        );
+
+        // returns an array of Product objects
+        return $query->getResult();
+    }
+    
 
     /*
     public function findOneBySomeField($value): ?Product

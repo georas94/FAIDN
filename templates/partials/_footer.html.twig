@@ -1,0 +1,36 @@
+    <!-- Début footer -->
+    <footer class="footer">
+        <div class="container-fluid pt-3">
+            <div class="row">
+                <div class="col-sm-6 col-md-3 item">
+                    <h3>Suivez-nous !</h3>
+                    <ul class="d-flex justify-content-around mt-4">
+                        <li><a href="{{messenger}}"><i class="fab fa-facebook-messenger fa-2x" style="color:#0078ff;"></i></a></li>
+                        <li><a href="{{instagram}}"><i class="fab fa-instagram fa-2x" style="color:#c13584;"></i></a></li>
+                        <li><a href="{{linkedIn}}"><i class="fab fa-linkedin fa-2x" style="color:#2867b2;"></i></a></li>
+                    </ul>
+
+                <div class="text-center mt-2"><a href="{{path('contact_home')}}"><i class="far fa-envelope fa-2x"></i>&nbsp;Nous écrire</a></div>
+                </div>
+                <div class="col-sm-6 col-md-3 item">
+                    <h3 class="">Nous trouver</h3>
+                    <ul class="mt-4">
+                        <li class="text-justify item footerAddress">{{findUs}}</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 item text">
+                    <h3>Contact direct</h3>
+                        <div class="row">
+                        <p class="mt-4 text-center col-6">
+                        <a href="tel:00242066494849">{{tel1}}</a><br> 
+                        <a href="tel:00242064503131">{{tel2}}</a><br> 
+                        <a href="tel:00242066652555">{{tel3}}</a><br>
+                        </p>
+                        <p class="col-6 text-uppercase refPref">Réf. Préfecture :<br><br><small><strong>{{refPref}}</strong></small></p>
+                    </div>
+                </div>
+            </div>
+            <p class="copyright text-center">F.A.I.D.N&nbsp;&nbsp;©{{ "now"|date("Y") }}&nbsp; réalisé par &nbsp;&nbsp;<a href="https://rashidtamboura.fr">Rashid Tamboura </a></p>
+        </div>
+    </footer>
+    <!-- Fin footer -->

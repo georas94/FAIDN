@@ -110,12 +110,14 @@ class MemberController extends AbstractController
             }
 
         }
+
+   
             
         return $this->render('member/index.html.twig', [
             'products'  => $productRepository->findAll(),
             'form' => $form->createView(),
             'errors' => $errors ??null,
-            'formValid' => $formValid ??null
+            'formValid' => $formValid ??null,
         ]);
 
     }

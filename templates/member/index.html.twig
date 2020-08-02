@@ -20,6 +20,7 @@
                             <h5 class="card-title">{{item.title}}</h5>
                             <p class="card-category text-center">{{item.category}}</p>
                             <h6 class="card-text">{{item.price|number_format(2, ', ', ' ')}} €</h6>
+                            <h6 class="card-text">{{(item.price * 657.32)|number_format(2, ', ', ' ')}} Xof</h6>
                             <input type="hidden" name="productId" id="productId" class="productId" value="{{item.id}}">
                             <a class="btn add" id="add" productId="{{item.id}}" name="add">Ajouter au panier</a>
                         </div>

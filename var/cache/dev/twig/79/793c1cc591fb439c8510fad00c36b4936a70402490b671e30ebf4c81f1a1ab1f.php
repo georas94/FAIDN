@@ -89,12 +89,12 @@ class __TwigTemplate_8f7b0edd94fafb6de103f424da9091da85aeac2d4a091eadddc341bbbba
                 <div class=\"form-group mt-5\">
                 <h4 class=\"mb-3 col-12 text-center text-secondary\">Images slider</h4>
                     <label for=\"img1\">Votre première image</label>
-                    <input type=\"file\" id=\"img1\" name=\"img1\" required placeholder=\"Votre première image...\" class=\"form-control\">
+                    <input type=\"file\" id=\"img1\" name=\"img1\" placeholder=\"Votre première image...\" class=\"form-control\">
                 </div>
 
                 <div class=\"form-group\">
                     <label for=\"img2\">Votre deuxième image</label>
-                    <input type=\"file\" id=\"img2\" name=\"img2\" required placeholder=\"Votre deuxième image...\" class=\"form-control\">
+                    <input type=\"file\" id=\"img2\" name=\"img2\" placeholder=\"Votre deuxième image...\" class=\"form-control\">
                 </div>
 
                 <div class=\"form-group\">
@@ -181,12 +181,12 @@ class __TwigTemplate_8f7b0edd94fafb6de103f424da9091da85aeac2d4a091eadddc341bbbba
                 <div class=\"form-group mt-5\">
                 <h4 class=\"mb-3 col-12 text-center text-secondary\">Images slider</h4>
                     <label for=\"img1\">Votre première image</label>
-                    <input type=\"file\" id=\"img1\" name=\"img1\" required placeholder=\"Votre première image...\" class=\"form-control\">
+                    <input type=\"file\" id=\"img1\" name=\"img1\" placeholder=\"Votre première image...\" class=\"form-control\">
                 </div>
 
                 <div class=\"form-group\">
                     <label for=\"img2\">Votre deuxième image</label>
-                    <input type=\"file\" id=\"img2\" name=\"img2\" required placeholder=\"Votre deuxième image...\" class=\"form-control\">
+                    <input type=\"file\" id=\"img2\" name=\"img2\" placeholder=\"Votre deuxième image...\" class=\"form-control\">
                 </div>
 
                 <div class=\"form-group\">
@@ -226,6 +226,6 @@ class __TwigTemplate_8f7b0edd94fafb6de103f424da9091da85aeac2d4a091eadddc341bbbba
 </div>
 
 
-{% endblock %}", "admin/articleAdd.html.twig", "/Applications/MAMP/htdocs/FDAIN/templates/admin/articleAdd.html.twig");
+{% endblock %}", "admin/articleAdd.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/admin/articleAdd.html.twig");
     }
 }

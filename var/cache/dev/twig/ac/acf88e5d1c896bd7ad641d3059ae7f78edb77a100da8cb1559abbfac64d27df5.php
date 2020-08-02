@@ -174,7 +174,9 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
                     <td colspan=\"4\" class=\"p-3 d-flex align-items-baseline\">Total du panier : &nbsp; &nbsp; <strong style=\"font-size:1.1em;\">";
             // line 51
             echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 51, $this->source); })()), 2, ",", " "), "html", null, true);
-            echo "</strong> &nbsp;€</td>
+            echo "</strong> &nbsp;€&nbsp;&nbsp;&nbsp;&nbsp;";
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, ((isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 51, $this->source); })()) * 657.32), 2, ",", " "), "html", null, true);
+            echo " Xof</td>
                     <td class=\"\" colspan=\"4\"><a href=\"";
             // line 52
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("member_home");
@@ -312,7 +314,7 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
 
     public function getDebugInfo()
     {
-        return array (  286 => 118,  267 => 117,  259 => 111,  251 => 106,  242 => 99,  231 => 91,  225 => 88,  213 => 79,  190 => 59,  180 => 52,  176 => 51,  171 => 48,  162 => 45,  156 => 44,  152 => 43,  148 => 42,  143 => 41,  139 => 40,  122 => 25,  116 => 22,  113 => 21,  111 => 20,  104 => 15,  102 => 14,  96 => 10,  94 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  288 => 118,  269 => 117,  261 => 111,  253 => 106,  244 => 99,  233 => 91,  227 => 88,  215 => 79,  192 => 59,  182 => 52,  176 => 51,  171 => 48,  162 => 45,  156 => 44,  152 => 43,  148 => 42,  143 => 41,  139 => 40,  122 => 25,  116 => 22,  113 => 21,  111 => 20,  104 => 15,  102 => 14,  96 => 10,  94 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -367,7 +369,7 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan=\"4\" class=\"p-3 d-flex align-items-baseline\">Total du panier : &nbsp; &nbsp; <strong style=\"font-size:1.1em;\">{{total|number_format(2, ',', ' ')}}</strong> &nbsp;€</td>
+                    <td colspan=\"4\" class=\"p-3 d-flex align-items-baseline\">Total du panier : &nbsp; &nbsp; <strong style=\"font-size:1.1em;\">{{total|number_format(2, ',', ' ')}}</strong> &nbsp;€&nbsp;&nbsp;&nbsp;&nbsp;{{(total * 657.32)|number_format(2, ',', ' ')}} Xof</td>
                     <td class=\"\" colspan=\"4\"><a href=\"{{path('member_home')}}\" class=\"btn btn-secondary btn-block d-flex align-items-center justify-content-center\">Retour à la page produits</a></td>
                 </td>
                 </tr>
@@ -444,6 +446,6 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
 
     {% endblock %}
 {% endblock %}
-", "cart/index.html.twig", "/Applications/MAMP/htdocs/fdain/templates/cart/index.html.twig");
+", "cart/index.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/cart/index.html.twig");
     }
 }

@@ -1,0 +1,67 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block title %}Édition du bas de page{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+        {% if formValid is not null and formValid == true %}
+            <div class="container">
+                <div class="alert alert-success text-center mb-5">
+                Bas de page modifié !
+                </div>
+            </div>
+        {% endif %}
+            <h4 class="text-secondary text-center mb-5 mt-3">Éditer le bas de page</h4>
+
+            <form action="" method="post" class="mt-2">
+                <div class="form-group">
+                <label for="instagram">Instagram</label>
+                    <input style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;" type="text" id="instagram" name="instagram" required  autofocus class="form-control" value="{{instagram}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="messenger">Messenger</label>
+                    <input type="text" style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;" id="messenger" name="messenger" required class="form-control" value="{{messenger}}"></input>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn</label>
+                    <input type="text" style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;" id="linkedin" name="linkedin" required class="form-control" value="{{linkedIn}}"></input>
+                </div>
+
+                <div class="form-group">
+                    <label for="findus">Nous trouver</label>
+                    <input type="text" style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;" id="findus" name="findus" required class="form-control" value="{{findUs}}"></input>
+                </div>
+                                
+                <div class="form-group">
+                    <label for="tel1">Téléphone 1</label>
+                    <input type="text" style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;" id="tel1" name="tel1" required class="form-control" value="{{tel1}}"></input>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tel2">Téléphone 2</label>
+                    <input type="text" style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;" id="tel2" name="tel2" required class="form-control" value="{{tel2}}"></input>
+                </div>
+
+                <div class="form-group">
+                    <label for="tel3">Téléphone 3</label>
+                    <input type="text" style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;" id="tel3" name="tel3" required class="form-control" value="{{tel3}}"></input>
+                </div>
+
+                <div class="form-group">
+                    <label for="refPref">Référence préfecture</label>
+                    <input type="text" style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;" id="refPref" name="refPref" required class="form-control" value="{{refPref}}"></input>
+                </div>
+                
+
+                <div class="form-group text-center mt-3">
+                    <button type="submit" class="btn " style="border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;">Valider !</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

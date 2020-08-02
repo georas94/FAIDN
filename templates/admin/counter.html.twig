@@ -1,0 +1,40 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block title %}Accueil compteur{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+            <h3 class="text-secondary text-center mb-5 mt-3 h3">Votre compteur</h3>
+        <div>
+        {% if formValid is not null and formValid == true %}
+            <div class="container">
+                <div class="alert alert-success text-center mb-5">
+                Compteur modifié !
+                </div>
+            </div>
+        {% endif %}
+        </div class="col-sm-12 col-md-12 col-lg-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="text-center">Valeur compteur</th>
+                        <th class="text-center">Contenu</th>
+                        <th class="text-center">Modifier</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for item in counterData %}
+                <tr>
+                    
+                    <td class="text-center">{{item.value}}</td>
+                    <td class="text-center">{{item.content}}</td>
+                    <td class="text-center"><a href="{{path('counter_update_admin', {'id':item.id})}}" class="btn btn-warning">Modifier</a></td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock %}

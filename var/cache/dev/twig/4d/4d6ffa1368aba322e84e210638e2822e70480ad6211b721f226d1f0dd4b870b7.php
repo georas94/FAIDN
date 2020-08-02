@@ -175,6 +175,14 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
         // line 83
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("citation_admin");
         echo "\">Éditer les citations</a>
+            <a class=\"collapse-item\" href=\"";
+        // line 84
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("footer_admin");
+        echo "\">Éditer le bas de page</a>
+            <a class=\"collapse-item\" href=\"";
+        // line 85
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("counter_admin");
+        echo "\">Éditer le compteur de <br> la page d'accueil</a>
           </div>
         </div>
       </li>
@@ -182,7 +190,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"";
-        // line 90
+        // line 92
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("messages_view");
         echo "\">
           <i class=\"fas fa-fw fa-envelope\"></i>
@@ -240,7 +248,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
             <!-- Nav Item - Alerts -->
             <li class=\"nav-item no-arrow mx-1\">
               <a class=\"nav-link\" href=\"";
-        // line 145
+        // line 147
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
         echo "\" id=\"\" role=\"button\"  aria-haspopup=\"true\" aria-expanded=\"false\">
                 <i class=\"fas fa-bell fa-sign-out-alt\"></i>
@@ -256,8 +264,8 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
             <li class=\"nav-item dropdown no-arrow\">
               <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                 <span class=\"mr-2 d-none d-lg-inline text-gray-600 small text-capitalize\">Hello&nbsp;";
-        // line 158
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 158, $this->source); })()), "user", [], "any", false, false, false, 158), "username", [], "any", false, false, false, 158), "html", null, true);
+        // line 160
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 160, $this->source); })()), "user", [], "any", false, false, false, 160), "username", [], "any", false, false, false, 160), "html", null, true);
         echo "&nbsp;!</span>
               </a>
             </li>
@@ -271,9 +279,9 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
         <div class=\"container-fluid mb-5 mt-5\">
 
         ";
-        // line 170
+        // line 172
         $this->displayBlock('body', $context, $blocks);
-        // line 171
+        // line 173
         echo "
 
       </div>
@@ -283,7 +291,10 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
       <footer class=\"sticky-footer bg-white\">
         <div class=\"container my-auto\">
           <div class=\"copyright text-center my-auto\">
-            <span>Copyright &copy; <a href=\"https://rashidtamboura.fr\">Rashid Tamboura</a> 2020</span>
+            <span>F.A.I.D.N &nbsp; &copy;";
+        // line 182
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
+        echo "  &nbsp;réalisé par &nbsp;<a href=\"https://rashidtamboura.fr\">Rashid Tamboura</a></span>
           </div>
         </div>
       </footer>
@@ -302,23 +313,23 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
 
   <!-- Bootstrap core JavaScript-->
   <script src=\" ";
-        // line 198
+        // line 200
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendoro/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\" ";
-        // line 199
+        // line 201
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendoro/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 
   <!-- Core plugin JavaScript-->
   <script src=\"";
-        // line 202
+        // line 204
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendoro/jquery-easing/jquery.easing.min.js"), "html", null, true);
         echo " \"></script>
 
   <!-- Custom scripts for all pages-->
   <script src=\"";
-        // line 205
+        // line 207
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/sb-admin-2.min.js"), "html", null, true);
         echo "\"></script>
 
@@ -333,13 +344,13 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
     </script>
     <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@9\"></script>
     <script src=\"";
-        // line 217
+        // line 219
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/scriptAdmin.js"), "html", null, true);
         echo "\"></script>
     ";
-        // line 218
+        // line 220
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 219
+        // line 221
         echo "
 </body>
 
@@ -391,7 +402,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
 
     }
 
-    // line 170
+    // line 172
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -409,7 +420,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
 
     }
 
-    // line 218
+    // line 220
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -439,7 +450,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
 
     public function getDebugInfo()
     {
-        return array (  413 => 218,  395 => 170,  377 => 23,  358 => 18,  343 => 219,  341 => 218,  337 => 217,  322 => 205,  316 => 202,  310 => 199,  306 => 198,  277 => 171,  275 => 170,  260 => 158,  244 => 145,  186 => 90,  176 => 83,  161 => 71,  157 => 70,  153 => 69,  149 => 68,  145 => 67,  141 => 66,  137 => 65,  133 => 64,  105 => 39,  99 => 36,  85 => 24,  83 => 23,  78 => 21,  72 => 18,  68 => 17,  61 => 13,  47 => 1,);
+        return array (  424 => 220,  406 => 172,  388 => 23,  369 => 18,  354 => 221,  352 => 220,  348 => 219,  333 => 207,  327 => 204,  321 => 201,  317 => 200,  296 => 182,  285 => 173,  283 => 172,  268 => 160,  252 => 147,  194 => 92,  184 => 85,  180 => 84,  176 => 83,  161 => 71,  157 => 70,  153 => 69,  149 => 68,  145 => 67,  141 => 66,  137 => 65,  133 => 64,  105 => 39,  99 => 36,  85 => 24,  83 => 23,  78 => 21,  72 => 18,  68 => 17,  61 => 13,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -527,6 +538,8 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
         <div id=\"collapseThree\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
           <div class=\"bg-white py-2 collapse-inner rounded\">
             <a class=\"collapse-item\" href=\"{{path('citation_admin')}}\">Éditer les citations</a>
+            <a class=\"collapse-item\" href=\"{{path('footer_admin')}}\">Éditer le bas de page</a>
+            <a class=\"collapse-item\" href=\"{{path('counter_admin')}}\">Éditer le compteur de <br> la page d'accueil</a>
           </div>
         </div>
       </li>
@@ -623,7 +636,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
       <footer class=\"sticky-footer bg-white\">
         <div class=\"container my-auto\">
           <div class=\"copyright text-center my-auto\">
-            <span>Copyright &copy; <a href=\"https://rashidtamboura.fr\">Rashid Tamboura</a> 2020</span>
+            <span>F.A.I.D.N &nbsp; &copy;{{ \"now\"|date(\"Y\") }}  &nbsp;réalisé par &nbsp;<a href=\"https://rashidtamboura.fr\">Rashid Tamboura</a></span>
           </div>
         </div>
       </footer>

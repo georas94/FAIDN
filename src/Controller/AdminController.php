@@ -4,17 +4,20 @@ namespace App\Controller;
 
 use App\Entity\Cart;
 use App\Entity\Post;
+use App\Entity\Counter;
 use App\Entity\Product;
 use App\Entity\Archives;
 use App\Entity\Articles;
 use App\Entity\Messages;
 use App\Entity\Partners;
-use App\Entity\CitationSlider;
+use App\Entity\FooterData;
 
+use App\Entity\CitationSlider;
 use App\Form\AdminArticleType;
 use App\Repository\CartRepository;
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
+use App\Repository\CounterRepository;
 use App\Repository\PaymentRepository;
 use App\Repository\ProductRepository;
 use Intervention\Image\ImageManager; 
@@ -23,6 +26,7 @@ use App\Repository\ArticlesRepository;
 use App\Repository\MessagesRepository;
 use App\Repository\PartnersRepository;
 use Respect\Validation\Validator as v;
+use App\Repository\FooterDataRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\CitationSliderRepository;
 use Behat\Transliterator\Transliterator as tr;
@@ -423,8 +427,11 @@ class AdminController extends AbstractController
         $maxSize = 10 * 1000 * 1000;
 
         if(!empty($_POST)){
+            $articles = new Articles();
             
-            if(!empty($_FILES) && !empty($_FILES['img1']) && !empty($_FILES['img2']) && !empty($_FILES['img3']) ){
+            if($_FILES['img1']['size'] && $_FILES['img2']['size'] && $_FILES['img3']['size'] > 0 ){
+
+                dd($_FILES);
                 
                 $rootFolder = $_SERVER['DOCUMENT_ROOT'];
                 $uploadDir = 'assets/img/';
@@ -464,6 +471,9 @@ class AdminController extends AbstractController
                         $image->make($destination)->fit(700, 460)->save();
                         $image->make($destination2)->fit(700, 460)->save();
                         $image->make($destination3)->fit(700, 460)->save();
+                        $articles->setImg1($finalFileName);
+                        $articles->setImg2($finalFileName2);
+                        $articles->setImg3($finalFileName3);
                         
                         
                         //$img1 = Image::make($_FILES['img1']);
@@ -475,17 +485,11 @@ class AdminController extends AbstractController
                 else {
                     $errors[] = 'Ce type de fichier n\'est pas autorisé';
                 }
-
-
-                $articles = new Articles();
+               
+                }//Fermeture not empty FILES
 
                 $articles->setTitle($_POST['admin_article']['title']);
                 $articles->setContent1($_POST['admin_article']['content1']);
-
-                $articles->setImg1($finalFileName);
-                $articles->setImg2($finalFileName2);
-                $articles->setImg3($finalFileName3);
-
                 $articles->setCategory($_POST['category']);
 
                 $date = new \DateTime('now', new \DateTimeZone('Europe/Paris'));
@@ -501,7 +505,11 @@ class AdminController extends AbstractController
                     'formValid' => $formValid ??null,
                     'articles' => $articlesRepository->findAllOrder(),
                     ]);
-                }//Fermeture not empty FILES
+
+
+
+
+
                 
             }//Fermeture not empty POST
                 
@@ -1196,6 +1204,199 @@ class AdminController extends AbstractController
       return $this->render('admin/citationUpdate.html.twig', [
         'citation' => $citationText,
         'author' => $author
+      ]);
+    }
+    
+    /**
+     * @Route("/admin/edition-bas-de-page", name="footer_admin")
+     */
+    public function footer_admin(FooterDataRepository $footerDataRepository, CitationSliderRepository $citationSliderRepository, PostRepository $postRepository, \Swift_Mailer $mailer, EntityManagerInterface $manager)
+    {
+
+        $footerData = $footerDataRepository->findAll();
+
+        $errors = [];
+
+        foreach ($footerData as $value) {
+            $instagram = $value->getInstagram();
+            $messenger = $value->getMessenger();
+            $linkedIn = $value->getLinkedIn();
+            $findUs = $value->getFindUs();
+            $tel1 = $value->getTel1();
+            $tel2 = $value->getTel2();
+            $tel3 = $value->getTel3();
+            $refPref = $value->getRefPrefecture();
+        }
+
+
+        if (!empty($_POST)) {
+            foreach($_POST as $key => $value){
+                $post[$key] = trim(strip_tags($value));
+            }
+
+            if(!v::notEmpty()->length(3, null)->validate($post['messenger'])){
+                $errors[] = 'Votre lien messenger doit contenir au moins 3 caractères';
+            }
+            if(!v::notEmpty()->length(3, null)->validate($post['instagram'])){
+                $errors[] = 'Votre lien instagram doit contenir au moins 3 caractères';
+            }
+            if(!v::notEmpty()->length(3, null)->validate($post['linkedin'])){
+                $errors[] = 'Votre lien linkedIn doit contenir au moins 3 caractères';
+            }
+            if(!v::notEmpty()->length(7, null)->validate($post['findus'])){
+                $errors[] = 'Le siège social doit contenir au moins 7 caractères';
+            }
+            if(!v::notEmpty()->length(3, null)->validate($post['tel1'])){
+                $errors[] = 'Votre 1er téléphone doit contenir au moins 8 caractères';
+            }
+            if(!v::notEmpty()->length(3, null)->validate($post['tel2'])){
+                $errors[] = 'Votre 2ème téléphone doit contenir au moins 8 caractères';
+            }
+            if(!v::notEmpty()->length(8, null)->validate($post['tel3'])){
+                $errors[] = 'Votre 3ème téléphone doit contenir au moins 8 caractères';
+            }
+            if(!v::notEmpty()->length(15, null)->validate($post['refPref'])){
+                $errors[] = 'Votre référence préfecture doit contenir au moins 15 caractères';
+            }
+
+
+            if(count($errors) === 0){
+
+                
+                $footerData = $manager->getRepository(FooterData::class)->findAll();
+                $footerData[0]->setMessenger($_POST['messenger']);
+                $footerData[0]->setInstagram($_POST['instagram']);
+                $footerData[0]->setLinkedIn($_POST['linkedin']);
+                $footerData[0]->setFindUs($_POST['findus']);
+                $footerData[0]->getTel1($_POST['tel1']);
+                $footerData[0]->getTel2($_POST['tel2']);
+                $footerData[0]->getTel3($_POST['tel3']);
+                $footerData[0]->getRefPrefecture($_POST['refPref']);
+                
+                $manager->persist($footerData[0]);
+                $manager->flush();
+                $formValid = true;
+
+                return $this->redirectToRoute('footer_admin');
+            }else {
+                $formValid = false;
+            }
+        }
+        
+
+
+        
+      return $this->render('admin/footerUpdate.html.twig', [
+      'instagram' => $instagram,
+      'messenger' => $messenger,
+      'linkedIn' => $linkedIn,
+      'findUs' => $findUs,
+      'tel1' => $tel1,
+      'tel2' => $tel2,
+      'tel3' => $tel3,
+      'refPref' => $refPref,
+      'errors' => $errors ??null,
+      'formValid' => $formValid ??null
+
+      ]);
+    }
+
+     /**
+     * @Route("/admin/compteur", name="counter_admin")
+     */
+    public function counter_admin(CounterRepository $counterRepository, CitationSliderRepository $citationSliderRepository, PostRepository $postRepository, \Swift_Mailer $mailer, EntityManagerInterface $manager)
+    {
+
+        $counterData = $counterRepository->findAll();
+            
+        
+      return $this->render('admin/counter.html.twig', [
+            'counterData' => $counterData,
+            'formValid' => $formValid ??null
+      ]);
+    }
+    
+    /**
+     * @Route("/admin/edition-du-compteur/{id}", name="counter_update_admin")
+     */
+    public function counter_update_admin($id,CounterRepository $counterRepository, CitationSliderRepository $citationSliderRepository, PostRepository $postRepository, \Swift_Mailer $mailer, EntityManagerInterface $manager)
+    {
+
+        $counterData = $counterRepository->findById($id);
+        
+        foreach ($counterData as $value) {
+            $counterValue = $value->getValue();
+            $counterContent = $value->getContent();
+        }
+        $errors = [];
+
+        if (!empty($_POST)) {
+            foreach($_POST as $key => $value){
+                $post[$key] = trim(strip_tags($value));
+            }
+
+            if(!v::notEmpty()->intVal()->validate($post['value'])){
+                $errors[] = 'Le format est incorrect. Veuillez entrer un nombre.';
+            }
+            if(!v::notEmpty()->length(3, 201)->validate($post['content'])){
+                $errors[] = 'Votre contenu doit contenir entre 3 et 200 caractères';
+            }            
+
+            if(count($errors) === 0){
+                $counterDataToSave = $manager->getRepository(Counter::class)->find($id);
+                $counterDataToSave->setValue($post['value']);
+                $counterDataToSave->setContent($post['content']);
+                
+                $manager->persist($counterDataToSave);
+                $manager->flush();
+                $formValid = true;
+
+                return $this->redirectToRoute('counter_admin');
+            }else {
+                $formValid = false;
+            }
+
+        }
+        
+      return $this->render('admin/counterUpdate.html.twig', [
+            'formValid' => $formValid ??null,
+            'errors' =>$errors ??null,
+            'counterContent' => $counterContent,
+            'counterValue' => $counterValue
+      ]);
+    }
+
+
+
+    public function footer(FooterDataRepository $footerDataRepository)
+    {
+
+
+        $footerData = $footerDataRepository->findAll();
+
+
+        foreach ($footerData as $value) {
+            $instagram = $value->getInstagram();
+            $messenger = $value->getMessenger();
+            $linkedIn = $value->getLinkedIn();
+            $findUs = $value->getFindUs();
+            $tel1 = $value->getTel1();
+            $tel2 = $value->getTel2();
+            $tel3 = $value->getTel3();
+            $refPref = $value->getRefPrefecture();
+        }
+
+    
+      return $this->render('partials/_footer.html.twig', [
+        'instagram' => $instagram,
+        'messenger' => $messenger,
+        'linkedIn' => $linkedIn,
+        'findUs' => $findUs,
+        'tel1' => $tel1,
+        'tel2' => $tel2,
+        'tel3' => $tel3,
+        'refPref' => $refPref,
+
       ]);
     }
 

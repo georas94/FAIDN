@@ -61,7 +61,7 @@
 
             <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span class="visuallyhidden"></span>
-                <span class="hamburger" style="background-color:#509496;height: 9px;"></span>
+                <span class="hamburger" style="background-color:#509496;height:9px;"></span>
             </button>
         </div>
     </header>
@@ -70,43 +70,7 @@
         {% block body %}{% endblock %}
     </main>
 
-    <!-- Début footer -->
-
-    <footer class="footer">
-        <div class="container pt-3">
-            <div class="row">
-                <div class="col-sm-6 col-md-3 item">
-                    <h3>Suivez-nous !</h3>
-                    <ul class="d-flex justify-content-around mt-4">
-                        <li><a href="#"><i class="fab fa-facebook-messenger fa-2x"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                    </ul>
-
-                <div class="text-center mt-2"><a href="{{path('contact_home')}}"><i class="far fa-envelope fa-2x"></i>&nbsp;Nous écrire</a></div>
-                </div>
-                <div class="col-sm-6 col-md-3 item">
-                    <h3 class="">Nous trouver</h3>
-                    <ul class="mt-4">
-                        <li class="text-justify item">1342, rue Moukoukoulou <br> plateau des 15ans Arrondissement 4 <br> Moungali, Brazzaville, Congo</li>
-                    </ul>
-                </div>
-                <div class="col-md-6 item text">
-                    <h3>Contact direct</h3>
-                        <div class="row">
-                        <p class="mt-4 text-center col-6">
-                        <a href="tel:00242066494849">(+242) 06 649 48 49 </a><br> 
-                        <a href="tel:00242064503131">(+242) 06 450 31 31</a><br> 
-                        <a href="tel:00242066652555">(+242) 06 665 25 55</a><br>
-                        </p>
-                        <p class="col-6 text-uppercase refPref">Réf. Préfecture :<br><br><small><strong>048/18/MID/DBZV/SG/DDSP/SR</strong> Du 19/01/2018</small></p>
-                    </div>
-                </div>
-            </div>
-            <p class="copyright text-center"><a href="https://rashidtamboura.fr">Rashid Tamboura © 2020</a></p>
-        </div>
-    </footer>
-    <!-- Fin footer -->
+        {{render(controller('App\\Controller\\AdminController::footer'))}}
 
         <script src="https://code.jquery.com/jquery-3.5.1.js"
             integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

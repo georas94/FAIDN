@@ -110,40 +110,32 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
         <h3 class=\"mt-3 titleSecondary text-center\">Quelques chiffres</h3>
         <div class=\"col-md-12 col-sm-12 col-lg-12 mt-4 figures\">
           <div class=\"row text-center\">
-            <div class=\"col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"65\">0</div>
-              <div class=\"countText lead\">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+          ";
+        // line 49
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["counter"]) || array_key_exists("counter", $context) ? $context["counter"] : (function () { throw new RuntimeError('Variable "counter" does not exist.', 49, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 50
+            echo "            <div class=\"col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
+              <div class=\"count\" data-count=\"";
+            // line 51
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "value", [], "any", false, false, false, 51), "html", null, true);
+            echo "\">0</div>
+              <div class=\"countText lead\">";
+            // line 52
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "content", [], "any", false, false, false, 52), "html", null, true);
+            echo "</div>
             </div>
-
-            <div class=\"col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"85\">0</div>
-              <div class=\"countText lead\">Lorem, ipsum dolor sit amet consectetur adipisicing</div>
-            </div>
+          ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 55
+        echo "
+      
           </div>
 
-
-          <div class=\"row text-center mt-3\">
-            <div class=\"col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"150\">0</div>
-              <div class=\"countText\">Sit amet consectetur adipisicing</div>
-            </div>
-            <div class=\"col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"470\">0</div>
-              <div class=\"countText lead\">Lorem, ipsum dolor adipisicing</div>
-            </div>
-          </div>
-
-          <div class=\"row text-center mt-3\">
-            <div class=\" col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"9\">0</div>
-              <div class=\"countText lead\">Ipsum adipisicing</div>
-            </div>
-
-            <div class=\" col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"900\">0</div>
-              <div class=\"countText lead\">Lorem, ipsum dolor sit amet consectetur adipisicing</div>
-            </div>
-          </div>
         </div>
 
       </div>
@@ -174,30 +166,30 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
   </div>
 
 
-  <div class=\"row mt-5 mb-5\">
+  <div class=\"row mt-5\">
     <div id=\"carouselHome\" class=\"carousel slide col-md-12\" data-ride=\"carousel\" data-interval=\"3000\">
       <div class=\"carousel-inner text-center\">
         <div class=\"carousel-item active\">
           <img src=\"";
-        // line 117
+        // line 93
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/slider1.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
         </div>
         <div class=\"carousel-item\">
           <img src=\"";
-        // line 120
+        // line 96
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/slider2.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
         </div>
         <div class=\"carousel-item\">
           <img src=\"";
-        // line 123
+        // line 99
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/slider3.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
         </div>
         <div class=\"carousel-item\">
           <img src=\"";
-        // line 126
+        // line 102
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/slider4.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" style=\"height:300px;width:1100px\">
         </div>
@@ -212,17 +204,17 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
             <p class=\"text-center w-100 lead\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad dolorem hic ipsam. Amet tempora<br> <small class=\"text-center w-100 font-italic\">Autheur atheur</small></p>
         </div>
       ";
-        // line 138
+        // line 114
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["allCitations"]) || array_key_exists("allCitations", $context) ? $context["allCitations"] : (function () { throw new RuntimeError('Variable "allCitations" does not exist.', 138, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["allCitations"]) || array_key_exists("allCitations", $context) ? $context["allCitations"] : (function () { throw new RuntimeError('Variable "allCitations" does not exist.', 114, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 139
+            // line 115
             echo "        <div class=\"carousel-item\">
             <p class=\"text-center w-100 lead\">";
-            // line 140
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "citation", [], "any", false, false, false, 140), "html", null, true);
+            // line 116
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "citation", [], "any", false, false, false, 116), "html", null, true);
             echo "<br> <small class=\"text-center w-100 font-italic\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "author", [], "any", false, false, false, 140), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "author", [], "any", false, false, false, 116), "html", null, true);
             echo "</small></p>
         </div>
       ";
@@ -230,16 +222,16 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 143
+        // line 119
         echo "      </div>
     </div>
   </div>
 
 
   ";
-        // line 148
+        // line 124
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 189
+        // line 165
         echo "</div>
 ";
         
@@ -250,7 +242,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
     }
 
-    // line 148
+    // line 124
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -260,7 +252,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 149
+        // line 125
         echo "  <script>
     \$(document).ready(function () {
 
@@ -321,7 +313,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
 
     public function getDebugInfo()
     {
-        return array (  264 => 149,  254 => 148,  243 => 189,  241 => 148,  234 => 143,  223 => 140,  220 => 139,  216 => 138,  201 => 126,  195 => 123,  189 => 120,  183 => 117,  69 => 5,  59 => 4,  36 => 1,);
+        return array (  256 => 125,  246 => 124,  235 => 165,  233 => 124,  226 => 119,  215 => 116,  212 => 115,  208 => 114,  193 => 102,  187 => 99,  181 => 96,  175 => 93,  135 => 55,  126 => 52,  122 => 51,  119 => 50,  115 => 49,  69 => 5,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -374,40 +366,16 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
         <h3 class=\"mt-3 titleSecondary text-center\">Quelques chiffres</h3>
         <div class=\"col-md-12 col-sm-12 col-lg-12 mt-4 figures\">
           <div class=\"row text-center\">
+          {% for item in counter %}
             <div class=\"col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"65\">0</div>
-              <div class=\"countText lead\">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+              <div class=\"count\" data-count=\"{{item.value}}\">0</div>
+              <div class=\"countText lead\">{{item.content}}</div>
             </div>
+          {% endfor %}
 
-            <div class=\"col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"85\">0</div>
-              <div class=\"countText lead\">Lorem, ipsum dolor sit amet consectetur adipisicing</div>
-            </div>
+      
           </div>
 
-
-          <div class=\"row text-center mt-3\">
-            <div class=\"col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"150\">0</div>
-              <div class=\"countText\">Sit amet consectetur adipisicing</div>
-            </div>
-            <div class=\"col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"470\">0</div>
-              <div class=\"countText lead\">Lorem, ipsum dolor adipisicing</div>
-            </div>
-          </div>
-
-          <div class=\"row text-center mt-3\">
-            <div class=\" col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"9\">0</div>
-              <div class=\"countText lead\">Ipsum adipisicing</div>
-            </div>
-
-            <div class=\" col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center\">
-              <div class=\"count\" data-count=\"900\">0</div>
-              <div class=\"countText lead\">Lorem, ipsum dolor sit amet consectetur adipisicing</div>
-            </div>
-          </div>
         </div>
 
       </div>
@@ -438,7 +406,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
   </div>
 
 
-  <div class=\"row mt-5 mb-5\">
+  <div class=\"row mt-5\">
     <div id=\"carouselHome\" class=\"carousel slide col-md-12\" data-ride=\"carousel\" data-interval=\"3000\">
       <div class=\"carousel-inner text-center\">
         <div class=\"carousel-item active\">

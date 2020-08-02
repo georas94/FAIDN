@@ -81,6 +81,8 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <a class="collapse-item" href="{{path('citation_admin')}}">Éditer les citations</a>
+            <a class="collapse-item" href="{{path('footer_admin')}}">Éditer le bas de page</a>
+            <a class="collapse-item" href="{{path('counter_admin')}}">Éditer le compteur de <br> la page d'accueil</a>
           </div>
         </div>
       </li>
@@ -177,7 +179,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; <a href="https://rashidtamboura.fr">Rashid Tamboura</a> 2020</span>
+            <span>F.A.I.D.N &nbsp; &copy;{{ "now"|date("Y") }}  &nbsp;réalisé par &nbsp;<a href="https://rashidtamboura.fr">Rashid Tamboura</a></span>
           </div>
         </div>
       </footer>

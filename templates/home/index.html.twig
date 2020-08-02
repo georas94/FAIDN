@@ -46,40 +46,16 @@
         <h3 class="mt-3 titleSecondary text-center">Quelques chiffres</h3>
         <div class="col-md-12 col-sm-12 col-lg-12 mt-4 figures">
           <div class="row text-center">
+          {% for item in counter %}
             <div class="col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-              <div class="count" data-count="65">0</div>
-              <div class="countText lead">Lorem, ipsum dolor sit amet consectetur adipisicing.</div>
+              <div class="count" data-count="{{item.value}}">0</div>
+              <div class="countText lead">{{item.content}}</div>
             </div>
+          {% endfor %}
 
-            <div class="col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-              <div class="count" data-count="85">0</div>
-              <div class="countText lead">Lorem, ipsum dolor sit amet consectetur adipisicing</div>
-            </div>
+      
           </div>
 
-
-          <div class="row text-center mt-3">
-            <div class="col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-              <div class="count" data-count="150">0</div>
-              <div class="countText">Sit amet consectetur adipisicing</div>
-            </div>
-            <div class="col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-              <div class="count" data-count="470">0</div>
-              <div class="countText lead">Lorem, ipsum dolor adipisicing</div>
-            </div>
-          </div>
-
-          <div class="row text-center mt-3">
-            <div class=" col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-              <div class="count" data-count="9">0</div>
-              <div class="countText lead">Ipsum adipisicing</div>
-            </div>
-
-            <div class=" col-md-6 col-sm-6 col-lg-6 d-flex flex-column justify-content-center align-items-center">
-              <div class="count" data-count="900">0</div>
-              <div class="countText lead">Lorem, ipsum dolor sit amet consectetur adipisicing</div>
-            </div>
-          </div>
         </div>
 
       </div>
@@ -110,7 +86,7 @@
   </div>
 
 
-  <div class="row mt-5 mb-5">
+  <div class="row mt-5">
     <div id="carouselHome" class="carousel slide col-md-12" data-ride="carousel" data-interval="3000">
       <div class="carousel-inner text-center">
         <div class="carousel-item active">

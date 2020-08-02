@@ -122,13 +122,17 @@ class __TwigTemplate_c5756d017e7d54c1c7924bb5da35a6e606a0d3978ce36d20ac26a795e6b
             // line 22
             echo twig_escape_filter($this->env, twig_number_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "price", [], "any", false, false, false, 22), 2, ", ", " "), "html", null, true);
             echo " €</h6>
-                            <input type=\"hidden\" name=\"productId\" id=\"productId\" class=\"productId\" value=\"";
+                            <h6 class=\"card-text\">";
             // line 23
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 23), "html", null, true);
-            echo "\">
-                            <a class=\"btn add\" id=\"add\" productId=\"";
+            echo twig_escape_filter($this->env, twig_number_format_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["item"], "price", [], "any", false, false, false, 23) * 657.32), 2, ", ", " "), "html", null, true);
+            echo " Xof</h6>
+                            <input type=\"hidden\" name=\"productId\" id=\"productId\" class=\"productId\" value=\"";
             // line 24
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 24), "html", null, true);
+            echo "\">
+                            <a class=\"btn add\" id=\"add\" productId=\"";
+            // line 25
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 25), "html", null, true);
             echo "\" name=\"add\">Ajouter au panier</a>
                         </div>
                     </div>
@@ -138,29 +142,29 @@ class __TwigTemplate_c5756d017e7d54c1c7924bb5da35a6e606a0d3978ce36d20ac26a795e6b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 29
+        // line 30
         echo "
             <div class=\"container mt-5\" id=\"donateTitle\">
                 <h3 class=\"h3 text-secondary col-12 text-center mt-5\">Effectuer un don pour le fond de la solidarité</h3>
                 ";
-        // line 32
-        if (( !(null === (isset($context["formValid"]) || array_key_exists("formValid", $context) ? $context["formValid"] : (function () { throw new RuntimeError('Variable "formValid" does not exist.', 32, $this->source); })())) && 0 === twig_compare((isset($context["formValid"]) || array_key_exists("formValid", $context) ? $context["formValid"] : (function () { throw new RuntimeError('Variable "formValid" does not exist.', 32, $this->source); })()), false))) {
-            // line 33
+        // line 33
+        if (( !(null === (isset($context["formValid"]) || array_key_exists("formValid", $context) ? $context["formValid"] : (function () { throw new RuntimeError('Variable "formValid" does not exist.', 33, $this->source); })())) && 0 === twig_compare((isset($context["formValid"]) || array_key_exists("formValid", $context) ? $context["formValid"] : (function () { throw new RuntimeError('Variable "formValid" does not exist.', 33, $this->source); })()), false))) {
+            // line 34
             echo "                    <div class=\"d-flex justify-content-center\">
                         <div class=\"alert alert-danger text-center mb-5 w-50\">
                         ";
-            // line 35
-            echo twig_join_filter((isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new RuntimeError('Variable "errors" does not exist.', 35, $this->source); })()), "<br>");
+            // line 36
+            echo twig_join_filter((isset($context["errors"]) || array_key_exists("errors", $context) ? $context["errors"] : (function () { throw new RuntimeError('Variable "errors" does not exist.', 36, $this->source); })()), "<br>");
             echo "
                         </div>
                     </div>
                 ";
         }
-        // line 39
+        // line 40
         echo "                <form action=\"\" method=\"post\" class=\"col-12 mt-5\" id=\"checkoutForm\">
                     ";
-        // line 40
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 40, $this->source); })()), 'form_start');
+        // line 41
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 41, $this->source); })()), 'form_start');
         echo "
                     <div class=\"checkoutForm p-3\" style=\"background-color: #ccd3d92b;border-radius: 7px;\">
                         <label for=\"name\" class=\"\"><i class=\"far fa-address-card\"></i></i> NOM et Prénom / Raison sociale</label>
@@ -182,8 +186,8 @@ class __TwigTemplate_c5756d017e7d54c1c7924bb5da35a6e606a0d3978ce36d20ac26a795e6b
                         <label for=\"city\" class=\"mt-3\"><i class=\"far fa-building\"></i> Ville</label>
                         <input required type=\"text\" style=\"border-radius: 10px;\" class=\"form-control\" id=\"city\" name=\"city\" placeholder=\"...\">
                         ";
-        // line 60
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 60, $this->source); })()), "country", [], "any", false, false, false, 60), 'row', ["label" => "Votre pays", "attr" => ["class" => "custom-select", "placeholder" => "Votre pays", "style" => "border-radius: 10px;"]]);
+        // line 61
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 61, $this->source); })()), "country", [], "any", false, false, false, 61), 'row', ["label" => "Votre pays", "attr" => ["class" => "custom-select", "placeholder" => "Votre pays", "style" => "border-radius: 10px;"]]);
         echo "
                         <label for=\"zip\" class=\"mt-3\"><i class=\"fas fa-map-pin\"></i> Code Postal</label>
                         <input required type=\"text\" style=\"border-radius: 10px;\" class=\"form-control\" id=\"zip\" name=\"zip\" placeholder=\"0000 pour l'étranger..\">
@@ -196,8 +200,8 @@ class __TwigTemplate_c5756d017e7d54c1c7924bb5da35a6e606a0d3978ce36d20ac26a795e6b
                         <button type=\"submit\" class=\"btn btn-primary mt-5 btn-block rounded-pill d-flex justify-content-center align-items-center\" id=\"checkout\" name=\"checkout\">Accéder au paiement <i style=\"\" class=\"fab fa-stripe ml-2\"></i><br></button>
                     </div>
                 ";
-        // line 71
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 71, $this->source); })()), 'form_end');
+        // line 72
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 72, $this->source); })()), 'form_end');
         echo "
                 </form>
             </div>
@@ -206,7 +210,7 @@ class __TwigTemplate_c5756d017e7d54c1c7924bb5da35a6e606a0d3978ce36d20ac26a795e6b
     </div>
 
     ";
-        // line 78
+        // line 79
         $this->displayBlock('javascripts', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -225,7 +229,7 @@ class __TwigTemplate_c5756d017e7d54c1c7924bb5da35a6e606a0d3978ce36d20ac26a795e6b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 79
+        // line 80
         echo "        <script> 
             \$(document).ready(function() {
 
@@ -311,7 +315,7 @@ class __TwigTemplate_c5756d017e7d54c1c7924bb5da35a6e606a0d3978ce36d20ac26a795e6b
 
     public function getDebugInfo()
     {
-        return array (  229 => 79,  210 => 78,  200 => 71,  186 => 60,  163 => 40,  160 => 39,  153 => 35,  149 => 33,  147 => 32,  142 => 29,  131 => 24,  127 => 23,  123 => 22,  119 => 21,  115 => 20,  107 => 17,  102 => 14,  98 => 13,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  233 => 80,  214 => 79,  204 => 72,  190 => 61,  167 => 41,  164 => 40,  157 => 36,  153 => 34,  151 => 33,  146 => 30,  135 => 25,  131 => 24,  127 => 23,  123 => 22,  119 => 21,  115 => 20,  107 => 17,  102 => 14,  98 => 13,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -338,6 +342,7 @@ class __TwigTemplate_c5756d017e7d54c1c7924bb5da35a6e606a0d3978ce36d20ac26a795e6b
                             <h5 class=\"card-title\">{{item.title}}</h5>
                             <p class=\"card-category text-center\">{{item.category}}</p>
                             <h6 class=\"card-text\">{{item.price|number_format(2, ', ', ' ')}} €</h6>
+                            <h6 class=\"card-text\">{{(item.price * 657.32)|number_format(2, ', ', ' ')}} Xof</h6>
                             <input type=\"hidden\" name=\"productId\" id=\"productId\" class=\"productId\" value=\"{{item.id}}\">
                             <a class=\"btn add\" id=\"add\" productId=\"{{item.id}}\" name=\"add\">Ajouter au panier</a>
                         </div>
@@ -460,6 +465,6 @@ class __TwigTemplate_c5756d017e7d54c1c7924bb5da35a6e606a0d3978ce36d20ac26a795e6b
         </script>
     {% endblock %}
 {% endblock %}
-", "member/index.html.twig", "/Applications/MAMP/htdocs/fdain/templates/member/index.html.twig");
+", "member/index.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/member/index.html.twig");
     }
 }

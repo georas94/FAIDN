@@ -3,44 +3,108 @@
 {% block title %}Nous contacter{% endblock %}
 {% block stylesheets %}
 <link rel="stylesheet" type="text/css" href="{{asset('assets/css/style2.css')}}">
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
 {% endblock %}
 
 {% block body %}
 
 	<div class="col-sm-12 col-md-12 col-lg-12 mb-5 contactBox mt-5">
-		<div class="row justify-content-center mb-5">
+		<div class="row justify-content-center mb-5 align-items-center">
 		
-		
-			<form action="" method="post" class="form contactBoxform p-4">
-				<h3 class="h3 text-center text-secondary titleSecondary">Nous contacter</h3>
-				<p class="text-center contactTitle text-secondary ">Pour tous types de demandes/réclamations.</p>
-			{% if formValid is not null and formValid == true %}
-				<div class="alert alert-success text-center mb-5">
-				Message envoyé ! <br> Nous revenons au plus tôt vers vous
+			<div class="col-sm-12 col-md-7 col-lg-7">
+				<form action="" method="post" class="form contactBoxform p-4">
+					<h3 class="h3 text-center text-secondary titleSecondary">Nous contacter</h3>
+					<p class="text-center contactTitle text-secondary ">Pour tous types de demandes/réclamations.</p>
+				{% if formValid is not null and formValid == true %}
+					<div class="alert alert-success text-center mb-5">
+					Message envoyé ! <br> Nous revenons au plus tôt vers vous
+					</div>
+				{% elseif formValid is not null and formValid == false %}
+					<div class="alert alert-danger text-center mb-5">
+					{{ errors|join('<br>')|raw }}
+					</div>
+				{% endif %}
+					<div class="form-group">
+						<label for="name" class="text-secondary">Votre Nom</label>
+						<input type="text" class="form-control"  name="name" required>
+					</div>
+					<div class="form-group">
+						<label for="email" class="text-secondary">Votre Email</label>
+						<input type="text" class="form-control" name="email" required>
+					</div>
+					<div class="form-group" >
+						<label for="content" class="text-secondary">Votre Message</label>
+						<textarea id="content" class="form-control" name="content" required rows="4"></textarea>
+						
+					</div>
+					<div class="text-center col-12">
+						<button class="btn btn-secondary" type="submit">Envoyer</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-12 col-md-5 col-lg-5">
+				
+				<div class="d-flex mt-3">
+					<div class="col-2 d-flex align-items-center"><i class="fas fa-phone-alt fa-4x"></i></div>
+					<div class="col-10 contactItem text-secondary text-center"><a href="tel:{{tel1}}">{{tel1}}</a> <br><a href="tel:{{tel2}}">{{tel2}}</a> <br><a href="tel:{{tel3}}">{{tel3}}</a></div>
+				</div>				
+				<div class="mt-5 contactSocial">
+				<h3 class="text-center mt-5 text-secondary">Suivez-nous !</h3>
+					<ul class="d-flex justify-content-around mt-5">
+						<li><a href="{{messenger}}"><i class="fab fa-facebook-messenger fa-4x" style="color:#0078ff;"></i></a></li>
+						<li><a href="{{instagram}}"><i class="fab fa-instagram fa-4x" style="color:#c13584;"></i></a></li>
+						<li><a href="{{linkedIn}}"><i class="fab fa-linkedin fa-4x" style="color:#2867b2;"></i></a></li>
+					</ul>
 				</div>
-			{% elseif formValid is not null and formValid == false %}
-				<div class="alert alert-danger text-center mb-5">
-				{{ errors|join('<br>')|raw }}
+				<div class="d-flex mt-5">
+					<div class="col-2 d-flex align-items-center"><i class="fas fa-map-marker-alt fa-4x"></i></div>
+					<div class="col-10 contactItem text-secondary text-center d-flex align-items-center">{{findUs}}</div>
 				</div>
-			{% endif %}
-				<div class="form-group">
-					<label for="name" class="text-secondary">Votre Nom</label>
-					<input type="text" class="form-control"  name="name" required>
-				</div>
-				<div class="form-group">
-					<label for="email" class="text-secondary">Votre Email</label>
-					<input type="text" class="form-control" name="email" required>
-				</div>
-				<div class="form-group" >
-					<label for="content" class="text-secondary">Votre Message</label>
-					<textarea id="content" class="form-control" name="content" required rows="4"></textarea>
-					
-				</div>
-				<div class="text-center col-12">
-					<button class="btn btn-secondary" type="submit">Envoyer</button>
-				</div>
-			</form>
+				 <div id="mapid" class="col-12 mt-5">
+				 
+				 </div>
+			</div>
+
+
 		</div>
 	</div>
+
+	{% block javascripts %} 
+		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+
+		<script>
+
+			// On initialise la latitude et la longitude de Paris (centre de la carte)
+			var lat = -4.25977;
+			var lon = 15.26197;
+			var macarte = [];
+			// Fonction d'initialisation de la carte
+			function initMap() {
+				var myIcon = L.icon({
+					iconUrl: "{{asset('assets/img/home.png')}}",
+					iconSize:     [130, 130], // size of the icon
+					iconAnchor:   [22, 110], // point of the icon which will correspond to marker's location
+					shadowAnchor: [4, 62],  // the same for the shadow
+					popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+				});
+				// Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+				macarte = L.map('mapid').setView([lat, lon], 16);
+				// Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+				var marker = L.marker([lat, lon], {icon: myIcon}).addTo(macarte); // pas de addTo(macarte), l'affichage sera géré par la bibliothèque des clusters
+				L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+					// Il est toujours bien de laisser le lien vers la source des données
+					attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+					minZoom: 1,
+					maxZoom: 20
+				}).addTo(macarte);
+			}
+			window.onload = function(){
+			// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+			initMap(); 
+			};
+		</script>
+	{% endblock %}
 
 {% endblock %}

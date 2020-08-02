@@ -203,7 +203,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
             <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
                 <span class=\"visuallyhidden\"></span>
-                <span class=\"hamburger\" style=\"background-color:#509496;height: 9px;\"></span>
+                <span class=\"hamburger\" style=\"background-color:#509496;height:9px;\"></span>
             </button>
         </div>
     </header>
@@ -215,46 +215,10 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         // line 71
         echo "    </main>
 
-    <!-- Début footer -->
-
-    <footer class=\"footer\">
-        <div class=\"container pt-3\">
-            <div class=\"row\">
-                <div class=\"col-sm-6 col-md-3 item\">
-                    <h3>Suivez-nous !</h3>
-                    <ul class=\"d-flex justify-content-around mt-4\">
-                        <li><a href=\"#\"><i class=\"fab fa-facebook-messenger fa-2x\"></i></a></li>
-                        <li><a href=\"#\"><i class=\"fab fa-instagram fa-2x\"></i></a></li>
-                        <li><a href=\"#\"><i class=\"fab fa-linkedin fa-2x\"></i></a></li>
-                    </ul>
-
-                <div class=\"text-center mt-2\"><a href=\"";
-        // line 86
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_home");
-        echo "\"><i class=\"far fa-envelope fa-2x\"></i>&nbsp;Nous écrire</a></div>
-                </div>
-                <div class=\"col-sm-6 col-md-3 item\">
-                    <h3 class=\"\">Nous trouver</h3>
-                    <ul class=\"mt-4\">
-                        <li class=\"text-justify item\">1342, rue Moukoukoulou <br> plateau des 15ans Arrondissement 4 <br> Moungali, Brazzaville, Congo</li>
-                    </ul>
-                </div>
-                <div class=\"col-md-6 item text\">
-                    <h3>Contact direct</h3>
-                        <div class=\"row\">
-                        <p class=\"mt-4 text-center col-6\">
-                        <a href=\"tel:00242066494849\">(+242) 06 649 48 49 </a><br> 
-                        <a href=\"tel:00242064503131\">(+242) 06 450 31 31</a><br> 
-                        <a href=\"tel:00242066652555\">(+242) 06 665 25 55</a><br>
-                        </p>
-                        <p class=\"col-6 text-uppercase refPref\">Réf. Préfecture :<br><br><small><strong>048/18/MID/DBZV/SG/DDSP/SR</strong> Du 19/01/2018</small></p>
-                    </div>
-                </div>
-            </div>
-            <p class=\"copyright text-center\"><a href=\"https://rashidtamboura.fr\">Rashid Tamboura © 2020</a></p>
-        </div>
-    </footer>
-    <!-- Fin footer -->
+        ";
+        // line 73
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\AdminController::footer"));
+        echo "
 
         <script src=\"https://code.jquery.com/jquery-3.5.1.js\"
             integrity=\"sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=\" crossorigin=\"anonymous\"></script>
@@ -263,13 +227,13 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         </script>
         <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@9\"></script>
         <script src=\"";
-        // line 117
+        // line 81
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/script.js"), "html", null, true);
         echo "\"></script>
         ";
-        // line 118
+        // line 82
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 119
+        // line 83
         echo "</body>
 
 </html>
@@ -337,7 +301,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
     }
 
-    // line 118
+    // line 82
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -367,7 +331,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
     public function getDebugInfo()
     {
-        return array (  341 => 118,  323 => 70,  305 => 13,  286 => 7,  273 => 119,  271 => 118,  267 => 117,  233 => 86,  216 => 71,  214 => 70,  194 => 59,  181 => 53,  177 => 51,  167 => 48,  164 => 47,  158 => 44,  155 => 43,  153 => 42,  143 => 39,  133 => 36,  123 => 33,  113 => 30,  103 => 27,  93 => 24,  81 => 21,  74 => 17,  69 => 14,  67 => 13,  61 => 10,  55 => 7,  47 => 1,);
+        return array (  305 => 82,  287 => 70,  269 => 13,  250 => 7,  237 => 83,  235 => 82,  231 => 81,  220 => 73,  216 => 71,  214 => 70,  194 => 59,  181 => 53,  177 => 51,  167 => 48,  164 => 47,  158 => 44,  155 => 43,  153 => 42,  143 => 39,  133 => 36,  123 => 33,  113 => 30,  103 => 27,  93 => 24,  81 => 21,  74 => 17,  69 => 14,  67 => 13,  61 => 10,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -435,7 +399,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
             <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
                 <span class=\"visuallyhidden\"></span>
-                <span class=\"hamburger\" style=\"background-color:#509496;height: 9px;\"></span>
+                <span class=\"hamburger\" style=\"background-color:#509496;height:9px;\"></span>
             </button>
         </div>
     </header>
@@ -444,43 +408,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         {% block body %}{% endblock %}
     </main>
 
-    <!-- Début footer -->
-
-    <footer class=\"footer\">
-        <div class=\"container pt-3\">
-            <div class=\"row\">
-                <div class=\"col-sm-6 col-md-3 item\">
-                    <h3>Suivez-nous !</h3>
-                    <ul class=\"d-flex justify-content-around mt-4\">
-                        <li><a href=\"#\"><i class=\"fab fa-facebook-messenger fa-2x\"></i></a></li>
-                        <li><a href=\"#\"><i class=\"fab fa-instagram fa-2x\"></i></a></li>
-                        <li><a href=\"#\"><i class=\"fab fa-linkedin fa-2x\"></i></a></li>
-                    </ul>
-
-                <div class=\"text-center mt-2\"><a href=\"{{path('contact_home')}}\"><i class=\"far fa-envelope fa-2x\"></i>&nbsp;Nous écrire</a></div>
-                </div>
-                <div class=\"col-sm-6 col-md-3 item\">
-                    <h3 class=\"\">Nous trouver</h3>
-                    <ul class=\"mt-4\">
-                        <li class=\"text-justify item\">1342, rue Moukoukoulou <br> plateau des 15ans Arrondissement 4 <br> Moungali, Brazzaville, Congo</li>
-                    </ul>
-                </div>
-                <div class=\"col-md-6 item text\">
-                    <h3>Contact direct</h3>
-                        <div class=\"row\">
-                        <p class=\"mt-4 text-center col-6\">
-                        <a href=\"tel:00242066494849\">(+242) 06 649 48 49 </a><br> 
-                        <a href=\"tel:00242064503131\">(+242) 06 450 31 31</a><br> 
-                        <a href=\"tel:00242066652555\">(+242) 06 665 25 55</a><br>
-                        </p>
-                        <p class=\"col-6 text-uppercase refPref\">Réf. Préfecture :<br><br><small><strong>048/18/MID/DBZV/SG/DDSP/SR</strong> Du 19/01/2018</small></p>
-                    </div>
-                </div>
-            </div>
-            <p class=\"copyright text-center\"><a href=\"https://rashidtamboura.fr\">Rashid Tamboura © 2020</a></p>
-        </div>
-    </footer>
-    <!-- Fin footer -->
+        {{render(controller('App\\\\Controller\\\\AdminController::footer'))}}
 
         <script src=\"https://code.jquery.com/jquery-3.5.1.js\"
             integrity=\"sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=\" crossorigin=\"anonymous\"></script>

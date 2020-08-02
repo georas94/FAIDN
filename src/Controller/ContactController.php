@@ -2,12 +2,13 @@
 
 namespace App\Controller;
 
+use App\Entity\Messages;
+use Respect\Validation\Validator as v;
+
+use App\Repository\FooterDataRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-
-use App\Entity\Messages;
-use Doctrine\ORM\EntityManagerInterface;
-use Respect\Validation\Validator as v;
 
 
 
@@ -16,11 +17,25 @@ class ContactController extends AbstractController
     /**
      * @Route("/contact", name="contact_home")
      */
-    public function index(EntityManagerInterface $manager, \Swift_Mailer $mailer)
+    public function index(FooterDataRepository $footerDataRepository, EntityManagerInterface $manager, \Swift_Mailer $mailer)
     {
 
         $post = [];
         $errors = [];
+
+        $footerData = $footerDataRepository->findAll();
+
+
+        foreach ($footerData as $value) {
+            $instagram = $value->getInstagram();
+            $messenger = $value->getMessenger();
+            $linkedIn = $value->getLinkedIn();
+            $findUs = $value->getFindUs();
+            $tel1 = $value->getTel1();
+            $tel2 = $value->getTel2();
+            $tel3 = $value->getTel3();
+        }
+
 
         if (!empty($_POST)) {
             foreach($_POST as $key => $value){
@@ -67,6 +82,13 @@ class ContactController extends AbstractController
         return $this->render('contact/index.html.twig', [
             'formValid'    => $formValid ?? null,
             'errors'    => $errors ??null,
+            'instagram'    => $instagram,
+            'messenger'    => $messenger,
+            'linkedIn'    => $linkedIn,
+            'findUs'    => $findUs,
+            'tel1'    => $tel1,
+            'tel2'    => $tel2,
+            'tel3'    => $tel3,
         ]);
     }
 }

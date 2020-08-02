@@ -27,6 +27,8 @@ return [
         '/admin/organic-searches' => [[['_route' => 'organic_searches_admin', '_controller' => 'App\\Controller\\AdminController::organic_searches_admin'], null, null, null, false, false, null]],
         '/admin/ho' => [[['_route' => 'ho', '_controller' => 'App\\Controller\\AdminController::ho'], null, null, null, false, false, null]],
         '/admin/toutes-les-citation' => [[['_route' => 'citation_admin', '_controller' => 'App\\Controller\\AdminController::citation_admin'], null, null, null, false, false, null]],
+        '/admin/edition-bas-de-page' => [[['_route' => 'footer_admin', '_controller' => 'App\\Controller\\AdminController::footer_admin'], null, null, null, false, false, null]],
+        '/admin/compteur' => [[['_route' => 'counter_admin', '_controller' => 'App\\Controller\\AdminController::counter_admin'], null, null, null, false, false, null]],
         '/panier' => [[['_route' => 'cart_home', '_controller' => 'App\\Controller\\CartController::index'], null, null, null, false, false, null]],
         '/contact' => [[['_route' => 'contact_home', '_controller' => 'App\\Controller\\ContactController::index'], null, null, null, false, false, null]],
         '/donate' => [[['_route' => 'donate_home', '_controller' => 'App\\Controller\\DonateController::index'], null, null, null, false, false, null]],
@@ -70,20 +72,23 @@ return [
                             .')'
                         .')'
                         .'|supprimer\\-article/([^/]++)(*:326)'
-                        .'|edition\\-citation/([^/]++)(*:360)'
+                        .'|edition\\-(?'
+                            .'|citation/([^/]++)(*:363)'
+                            .'|du\\-compteur/([^/]++)(*:392)'
+                        .')'
                     .')'
-                    .'|hesion/add/([^/]++)(*:388)'
-                    .'|dCart/([^/]++)(*:410)'
+                    .'|hesion/add/([^/]++)(*:421)'
+                    .'|dCart/([^/]++)(*:443)'
                 .')'
-                .'|/panier/remove/([^/]++)(*:442)'
+                .'|/panier/remove/([^/]++)(*:475)'
                 .'|/e(?'
-                    .'|venements/([^/]++)(*:473)'
-                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:517)'
-                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:560)'
+                    .'|venements/([^/]++)(*:506)'
+                    .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:550)'
+                    .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:593)'
                 .')'
-                .'|/missions/([^/]++)(*:587)'
-                .'|/nos\\-projets/([^/]++)(*:617)'
-                .'|/security/addDonate/([^/]++)(*:653)'
+                .'|/missions/([^/]++)(*:620)'
+                .'|/nos\\-projets/([^/]++)(*:650)'
+                .'|/security/addDonate/([^/]++)(*:686)'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -98,16 +103,17 @@ return [
         257 => [[['_route' => 'article_update_admin', '_controller' => 'App\\Controller\\AdminController::article_update_admin'], ['id'], null, null, false, true, null]],
         289 => [[['_route' => 'product_update_admin', '_controller' => 'App\\Controller\\AdminController::product_update'], ['id'], null, null, false, true, null]],
         326 => [[['_route' => 'delete_article_admin', '_controller' => 'App\\Controller\\AdminController::delete_article_admin'], ['id'], null, null, false, true, null]],
-        360 => [[['_route' => 'citation_update_admin', '_controller' => 'App\\Controller\\AdminController::citation_update_admin'], ['id'], null, null, false, true, null]],
-        388 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
-        410 => [[['_route' => 'security_addCart', '_controller' => 'App\\Controller\\SecurityController::addCart'], ['info'], null, null, false, true, null]],
-        442 => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::remove'], ['id'], null, null, false, true, null]],
-        473 => [[['_route' => 'events_articles', '_controller' => 'App\\Controller\\EventsController::articles'], ['article'], null, null, false, true, null]],
-        517 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        560 => [[['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        587 => [[['_route' => 'missions_articles', '_controller' => 'App\\Controller\\MissionsController::missionArticles'], ['category'], null, null, false, true, null]],
-        617 => [[['_route' => 'projects_articles', '_controller' => 'App\\Controller\\ProjectsController::articles'], ['article'], null, null, false, true, null]],
-        653 => [
+        363 => [[['_route' => 'citation_update_admin', '_controller' => 'App\\Controller\\AdminController::citation_update_admin'], ['id'], null, null, false, true, null]],
+        392 => [[['_route' => 'counter_update_admin', '_controller' => 'App\\Controller\\AdminController::counter_update_admin'], ['id'], null, null, false, true, null]],
+        421 => [[['_route' => 'cart_add', '_controller' => 'App\\Controller\\CartController::add'], ['id'], null, null, false, true, null]],
+        443 => [[['_route' => 'security_addCart', '_controller' => 'App\\Controller\\SecurityController::addCart'], ['info'], null, null, false, true, null]],
+        475 => [[['_route' => 'cart_remove', '_controller' => 'App\\Controller\\CartController::remove'], ['id'], null, null, false, true, null]],
+        506 => [[['_route' => 'events_articles', '_controller' => 'App\\Controller\\EventsController::articles'], ['article'], null, null, false, true, null]],
+        550 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        593 => [[['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
+        620 => [[['_route' => 'missions_articles', '_controller' => 'App\\Controller\\MissionsController::missionArticles'], ['category'], null, null, false, true, null]],
+        650 => [[['_route' => 'projects_articles', '_controller' => 'App\\Controller\\ProjectsController::articles'], ['article'], null, null, false, true, null]],
+        686 => [
             [['_route' => 'security_addDonate', '_controller' => 'App\\Controller\\SecurityController::addDonate'], ['info'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
