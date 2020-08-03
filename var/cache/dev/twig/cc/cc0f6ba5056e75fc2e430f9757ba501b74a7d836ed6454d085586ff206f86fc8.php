@@ -110,7 +110,7 @@ class __TwigTemplate_28ed881f00b488b4a90e8ddf1ace4c941198daa8f130a4b9cb01d33fb01
                             <img src=\"";
             // line 20
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/img/" . twig_get_attribute($this->env, $this->source, $context["item"], "img1", [], "any", false, false, false, 20))), "html", null, true);
-            echo "\" alt=\"\" class=\"img-fluid\">
+            echo "\" alt=\"image derniers évènements\" class=\"img-fluid\">
                         </div>
                         <p class=\"col-sm-8 col-md-8 col-lg-8 lastEventsContent text-truncate\">";
             // line 22
@@ -218,7 +218,7 @@ class __TwigTemplate_28ed881f00b488b4a90e8ddf1ace4c941198daa8f130a4b9cb01d33fb01
                     <h5 class=\"h5\">{{item.title}}</h5>
                     <div class=\"row align-items-center lead\">
                         <div class=\"col-sm-2 col-md-2 col-lg-2\">
-                            <img src=\"{{asset('assets/img/' ~ item.img1)}}\" alt=\"\" class=\"img-fluid\">
+                            <img src=\"{{asset('assets/img/' ~ item.img1)}}\" alt=\"image derniers évènements\" class=\"img-fluid\">
                         </div>
                         <p class=\"col-sm-8 col-md-8 col-lg-8 lastEventsContent text-truncate\">{{item.content1|slice(100,200)|raw}}</p>
                         <div class=\"col-12 text-center\">
@@ -252,6 +252,6 @@ class __TwigTemplate_28ed881f00b488b4a90e8ddf1ace4c941198daa8f130a4b9cb01d33fb01
     </div>
 
 {% endblock %}
-", "events/index.html.twig", "/Applications/MAMP/htdocs/FDAIN/templates/events/index.html.twig");
+", "events/index.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/events/index.html.twig");
     }
 }

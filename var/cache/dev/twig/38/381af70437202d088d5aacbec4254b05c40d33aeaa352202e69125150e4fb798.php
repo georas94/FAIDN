@@ -71,9 +71,9 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
   <div class=\"row align-items-center\">
     <div class=\"col-md-12 col-sm-12 col-lg-12\">
       <h3 class=\"titleSecondary text-center display-4 font-weight-bolder\">Bienvenue sur le site de la <br>  F.A.I.D.N <br><small style=\"color:#585858;font-style: italic;\">(Fédération des Associations Internationales de la Diaspora et des Nationaux)</small></h3>
-      <p class=\"mt-4 aboutUs lead\">Les inégalités socio-économiques font obstacle au développement africain, cependant le contexte actuel révéle que la diaspora est le 1er bailleur de fonds de l'afrique (65 milliards de dollars en 2017 soit 2,5 fois l'aide publique au développement et 2 fois les investissements étrangers) un atout du développement économique soutenu par la dynamique d'une migration entrepreneuriale et dont la capacité se voit même diminuer par les coûts de transfert de fonds (estimés à 1,6 milliards d'euros chaque année).
+      <p class=\"mt-4 aboutUs lead\">Les inégalités socio-économiques font obstacle au développement africain. Cependant le contexte actuel révèle que la diaspora est le 1er bailleur de fonds de l'Afrique (65 milliards de dollars en 2017 soit 2,5 fois l'aide publique au développement et 2 fois les investissements étrangers). Un atout du développement économique, soutenu par la dynamique d'une migration entrepreneuriale et dont la capacité se voit même diminuer par les coûts de transfert de fonds (estimés à 1,6 milliards d'euros chaque année).
       <br><br>
-      Grâce à un partenariat privilégié nord/sud et au rôle des membres expérimentés sur le terrain, le statut de membre du F.A.I.D.N Permet de participer activement à la dimension territoriale et de capitaliser un potentiel majeur d'amélioration des conditions de création de richesse.</p>
+      Grâce à un partenariat privilégié nord/sud et au rôle des membres expérimentés sur le terrain, le statut de membre du F.A.I.D.N permet de participer activement à la dimension territoriale et de capitaliser un potentiel majeur d'amélioration des conditions de création de richesse.</p>
     </div>
 
 
@@ -327,9 +327,9 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
   <div class=\"row align-items-center\">
     <div class=\"col-md-12 col-sm-12 col-lg-12\">
       <h3 class=\"titleSecondary text-center display-4 font-weight-bolder\">Bienvenue sur le site de la <br>  F.A.I.D.N <br><small style=\"color:#585858;font-style: italic;\">(Fédération des Associations Internationales de la Diaspora et des Nationaux)</small></h3>
-      <p class=\"mt-4 aboutUs lead\">Les inégalités socio-économiques font obstacle au développement africain, cependant le contexte actuel révéle que la diaspora est le 1er bailleur de fonds de l'afrique (65 milliards de dollars en 2017 soit 2,5 fois l'aide publique au développement et 2 fois les investissements étrangers) un atout du développement économique soutenu par la dynamique d'une migration entrepreneuriale et dont la capacité se voit même diminuer par les coûts de transfert de fonds (estimés à 1,6 milliards d'euros chaque année).
+      <p class=\"mt-4 aboutUs lead\">Les inégalités socio-économiques font obstacle au développement africain. Cependant le contexte actuel révèle que la diaspora est le 1er bailleur de fonds de l'Afrique (65 milliards de dollars en 2017 soit 2,5 fois l'aide publique au développement et 2 fois les investissements étrangers). Un atout du développement économique, soutenu par la dynamique d'une migration entrepreneuriale et dont la capacité se voit même diminuer par les coûts de transfert de fonds (estimés à 1,6 milliards d'euros chaque année).
       <br><br>
-      Grâce à un partenariat privilégié nord/sud et au rôle des membres expérimentés sur le terrain, le statut de membre du F.A.I.D.N Permet de participer activement à la dimension territoriale et de capitaliser un potentiel majeur d'amélioration des conditions de création de richesse.</p>
+      Grâce à un partenariat privilégié nord/sud et au rôle des membres expérimentés sur le terrain, le statut de membre du F.A.I.D.N permet de participer activement à la dimension territoriale et de capitaliser un potentiel majeur d'amélioration des conditions de création de richesse.</p>
     </div>
 
 
