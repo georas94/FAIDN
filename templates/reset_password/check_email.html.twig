@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Email envoyé !{% endblock %}
+
+{% block body %}
+<div class="col-sm-12 col-md-12 col-lg-12 row1">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-8">
+            <p class="lead">Un email vient de vous être envoyé. Il contient un lien qui en cliquant dessus, vous redirige vers la page de modification. Ce lien expirera dans {{ tokenLifetime|date('g') }} heure(s).</p>
+            <p class="lead">Si vous ne recevez aucun email, vérifiez votre courrir indésirable (SPAM) ou <a href="{{ path('app_forgot_password_request') }}"><strong>réessayer</strong></a>.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

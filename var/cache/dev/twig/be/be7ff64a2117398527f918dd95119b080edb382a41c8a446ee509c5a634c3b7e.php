@@ -86,25 +86,27 @@ class __TwigTemplate_8d5d12c125271c40eb76b7afa0fc59f110f60ae433b16f1cfbf992420f2
 
         // line 5
         echo "    <div class=\"col-sm-12 col-md-12 col-lg-12 categoriesBox\">
-            <h3 class=\"h3 container mt-5 text-center mb-5 titleSecondary\"> Toutes nos missions</h3>
+
+        <div class=\"row\">
+            <h3 class=\"h3 container mt-5 text-center mb-5 titleSecondary col-12\"> Toutes nos missions</h3>
             ";
-        // line 7
+        // line 9
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["allArticles"]) || array_key_exists("allArticles", $context) ? $context["allArticles"] : (function () { throw new RuntimeError('Variable "allArticles" does not exist.', 7, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["allArticles"]) || array_key_exists("allArticles", $context) ? $context["allArticles"] : (function () { throw new RuntimeError('Variable "allArticles" does not exist.', 9, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["article"]) {
-            // line 8
+            // line 10
             echo "                <div class=\"col-sm-12 col-md-12 col-lg-4 mt-2 projectLinkContainer d-flex justify-content-center\">
                     <a href=\"";
-            // line 9
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projects_articles", ["article" => twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 9)]), "html", null, true);
+            // line 11
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projects_articles", ["article" => twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 11)]), "html", null, true);
             echo "\" class=\"projectLink\">
                         <div class=\"h6 eventBackground d-flex align-items-center justify-content-center \" style=\"background-image:url(";
-            // line 10
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/img/" . twig_get_attribute($this->env, $this->source, $context["article"], "img1", [], "any", false, false, false, 10))), "html", null, true);
+            // line 12
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/img/" . twig_get_attribute($this->env, $this->source, $context["article"], "img1", [], "any", false, false, false, 12))), "html", null, true);
             echo ");\">
                             <div class=\"eventTitle\"> ";
-            // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 11), "html", null, true);
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 13), "html", null, true);
             echo "</div>
                         </div>
                     </a>
@@ -114,8 +116,10 @@ class __TwigTemplate_8d5d12c125271c40eb76b7afa0fc59f110f60ae433b16f1cfbf992420f2
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 16
-        echo "    </div>
+        // line 18
+        echo "        </div>
+        
+    </div>
 
 ";
         
@@ -138,7 +142,7 @@ class __TwigTemplate_8d5d12c125271c40eb76b7afa0fc59f110f60ae433b16f1cfbf992420f2
 
     public function getDebugInfo()
     {
-        return array (  118 => 16,  107 => 11,  103 => 10,  99 => 9,  96 => 8,  92 => 7,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
+        return array (  120 => 18,  109 => 13,  105 => 12,  101 => 11,  98 => 10,  94 => 9,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -148,7 +152,9 @@ class __TwigTemplate_8d5d12c125271c40eb76b7afa0fc59f110f60ae433b16f1cfbf992420f2
 
 {% block body %}
     <div class=\"col-sm-12 col-md-12 col-lg-12 categoriesBox\">
-            <h3 class=\"h3 container mt-5 text-center mb-5 titleSecondary\"> Toutes nos missions</h3>
+
+        <div class=\"row\">
+            <h3 class=\"h3 container mt-5 text-center mb-5 titleSecondary col-12\"> Toutes nos missions</h3>
             {% for article in allArticles %}
                 <div class=\"col-sm-12 col-md-12 col-lg-4 mt-2 projectLinkContainer d-flex justify-content-center\">
                     <a href=\"{{path('projects_articles', {'article':article.title})}}\" class=\"projectLink\">
@@ -158,10 +164,12 @@ class __TwigTemplate_8d5d12c125271c40eb76b7afa0fc59f110f60ae433b16f1cfbf992420f2
                     </a>
                 </div>
             {% endfor %}
+        </div>
+        
     </div>
 
 {% endblock %}
 
-", "missions/category.html.twig", "/Applications/MAMP/htdocs/FDAIN/templates/missions/category.html.twig");
+", "missions/category.html.twig", "/Applications/MAMP/htdocs/FDAIN/FDAIN/templates/missions/category.html.twig");
     }
 }

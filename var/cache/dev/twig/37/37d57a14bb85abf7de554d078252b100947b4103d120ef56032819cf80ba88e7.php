@@ -107,6 +107,13 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
                 <div class=\"form-group\">
                     <input type=\"password\" name=\"_password\" required  autofocus placeholder=\"Mot de passe...\" class=\"form-control\">
                 </div>
+                
+                <div class=\"col-12\">
+                    <a class=\"d-flex align-items-center justify-content-center font-weight-bold\" href=\"";
+            // line 23
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forgot_password_request");
+            echo "\">Mot de passe oublié ?</a>
+                </div>
 
                 <div class=\"form-group text-center\">
                     <button type=\"submit\" class=\"btn btn-primary \">Connexion !</button>
@@ -116,7 +123,7 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
             <div class=\"container\">
                 <h1 class=\"text-center mb-3 titleSecondary\">Pas de compte ? Vous pouvez vous inscrire</h1>
                 <div class=\"text-center\"><a href=\"";
-            // line 29
+            // line 33
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_registration");
             echo "\" class=\"btn btn-secondary w-75 subscribe\" style=\"font-size:1.5em;\"><br> S'inscrire <br><br></a></div>
             </div>
@@ -146,7 +153,7 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
 
     public function getDebugInfo()
     {
-        return array (  120 => 29,  101 => 13,  95 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  127 => 33,  114 => 23,  101 => 13,  95 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -170,6 +177,10 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
                 
                 <div class=\"form-group\">
                     <input type=\"password\" name=\"_password\" required  autofocus placeholder=\"Mot de passe...\" class=\"form-control\">
+                </div>
+                
+                <div class=\"col-12\">
+                    <a class=\"d-flex align-items-center justify-content-center font-weight-bold\" href=\"{{path('app_forgot_password_request')}}\">Mot de passe oublié ?</a>
                 </div>
 
                 <div class=\"form-group text-center\">

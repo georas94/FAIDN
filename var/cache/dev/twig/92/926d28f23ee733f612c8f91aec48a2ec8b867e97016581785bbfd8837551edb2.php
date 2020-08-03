@@ -95,9 +95,9 @@ class __TwigTemplate_39d8417a0490a0f633b41c16cbe6220f6f804c7f16077ad1912fcd5e513
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
             // line 10
             echo "        
-        <h3 class=\"h3 text-center text-secondary\">Mise à jour du partenaire numéro ";
+        <h3 class=\"h3 text-center text-secondary\">Mise à jour du partenaire ";
             // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "id", [], "any", false, false, false, 11), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "category", [], "any", false, false, false, 11), "html", null, true);
             echo "</h3>
         
         <div class=\"container mt-4\">
@@ -105,7 +105,7 @@ class __TwigTemplate_39d8417a0490a0f633b41c16cbe6220f6f804c7f16077ad1912fcd5e513
                 <img src=\"";
             // line 15
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/img/" . twig_get_attribute($this->env, $this->source, $context["item"], "img1", [], "any", false, false, false, 15))), "html", null, true);
-            echo "\" alt=\"\" class=\"img-fluid\">
+            echo "\" alt=\"image partenaire\" class=\"img-fluid\">
             </div>
             
             <div class=\"col-12 text-center\">
@@ -122,6 +122,33 @@ class __TwigTemplate_39d8417a0490a0f633b41c16cbe6220f6f804c7f16077ad1912fcd5e513
                             <option value=\"img1\">1</option>
                             <option value=\"img2\">2</option>
                             <option value=\"img3\">3</option>
+                            <option value=\"img4\">4</option>
+                            <option value=\"img5\">5</option>
+                            <option value=\"img6\">6</option>
+                            <option value=\"img7\">7</option>
+                            <option value=\"img8\">8</option>
+                            <option value=\"img9\">9</option>
+                            <option value=\"img10\">10</option>
+                            <option value=\"img11\">11</option>
+                            <option value=\"img12\">12</option>
+                            <option value=\"img13\">13</option>
+                            <option value=\"img14\">14</option>
+                            <option value=\"img15\">15</option>
+                            <option value=\"img16\">16</option>
+                            <option value=\"img17\">17</option>
+                            <option value=\"img18\">18</option>
+                            <option value=\"img19\">19</option>
+                            <option value=\"img20\">20</option>
+                            <option value=\"img21\">21</option>
+                            <option value=\"img22\">22</option>
+                            <option value=\"img23\">23</option>
+                            <option value=\"img24\">24</option>
+                            <option value=\"img25\">25</option>
+                            <option value=\"img26\">26</option>
+                            <option value=\"img27\">27</option>
+                            <option value=\"img28\">28</option>
+                            <option value=\"img29\">29</option>
+                            <option value=\"img30\">30</option>
                         </select>
                     </div>
                     <button type=\"submit\" class=\"btn-secondary btn-block mt-2 btn\">Valider la modification</button>
@@ -140,7 +167,7 @@ class __TwigTemplate_39d8417a0490a0f633b41c16cbe6220f6f804c7f16077ad1912fcd5e513
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 46
+        // line 73
         echo "    </div>
 
 
@@ -168,7 +195,7 @@ class __TwigTemplate_39d8417a0490a0f633b41c16cbe6220f6f804c7f16077ad1912fcd5e513
 
     public function getDebugInfo()
     {
-        return array (  144 => 46,  107 => 15,  100 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 2,  36 => 1,);
+        return array (  171 => 73,  107 => 15,  100 => 11,  97 => 10,  93 => 9,  88 => 6,  78 => 5,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -183,11 +210,11 @@ class __TwigTemplate_39d8417a0490a0f633b41c16cbe6220f6f804c7f16077ad1912fcd5e513
     <div class=\"col-sm-12 col-md-12 col-lg-12\">
     {% for item in partnerId %}
         
-        <h3 class=\"h3 text-center text-secondary\">Mise à jour du partenaire numéro {{item.id}}</h3>
+        <h3 class=\"h3 text-center text-secondary\">Mise à jour du partenaire {{item.category}}</h3>
         
         <div class=\"container mt-4\">
             <div class=\"col-12 text-center\">
-                <img src=\"{{asset('assets/img/' ~ item.img1 )}}\" alt=\"\" class=\"img-fluid\">
+                <img src=\"{{asset('assets/img/' ~ item.img1 )}}\" alt=\"image partenaire\" class=\"img-fluid\">
             </div>
             
             <div class=\"col-12 text-center\">
@@ -204,6 +231,33 @@ class __TwigTemplate_39d8417a0490a0f633b41c16cbe6220f6f804c7f16077ad1912fcd5e513
                             <option value=\"img1\">1</option>
                             <option value=\"img2\">2</option>
                             <option value=\"img3\">3</option>
+                            <option value=\"img4\">4</option>
+                            <option value=\"img5\">5</option>
+                            <option value=\"img6\">6</option>
+                            <option value=\"img7\">7</option>
+                            <option value=\"img8\">8</option>
+                            <option value=\"img9\">9</option>
+                            <option value=\"img10\">10</option>
+                            <option value=\"img11\">11</option>
+                            <option value=\"img12\">12</option>
+                            <option value=\"img13\">13</option>
+                            <option value=\"img14\">14</option>
+                            <option value=\"img15\">15</option>
+                            <option value=\"img16\">16</option>
+                            <option value=\"img17\">17</option>
+                            <option value=\"img18\">18</option>
+                            <option value=\"img19\">19</option>
+                            <option value=\"img20\">20</option>
+                            <option value=\"img21\">21</option>
+                            <option value=\"img22\">22</option>
+                            <option value=\"img23\">23</option>
+                            <option value=\"img24\">24</option>
+                            <option value=\"img25\">25</option>
+                            <option value=\"img26\">26</option>
+                            <option value=\"img27\">27</option>
+                            <option value=\"img28\">28</option>
+                            <option value=\"img29\">29</option>
+                            <option value=\"img30\">30</option>
                         </select>
                     </div>
                     <button type=\"submit\" class=\"btn-secondary btn-block mt-2 btn\">Valider la modification</button>
@@ -224,6 +278,6 @@ class __TwigTemplate_39d8417a0490a0f633b41c16cbe6220f6f804c7f16077ad1912fcd5e513
 </div>
 
 
-{% endblock %}", "admin/updatePartners.html.twig", "/Applications/MAMP/htdocs/FDAIN/templates/admin/updatePartners.html.twig");
+{% endblock %}", "admin/updatePartners.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/admin/updatePartners.html.twig");
     }
 }

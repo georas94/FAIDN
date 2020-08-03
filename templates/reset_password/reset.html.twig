@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Changement mot de passe{% endblock %}
+
+{% block body %}
+    <div class="col-sm-12 col-md-12 col-lg-12 row1">
+        <h3 class="col-12 text-center text-secondary text-center col-12">Réinitialiser votre mot de passe</h3>
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-8 col-lg-8">
+                    {{ form_start(resetForm) }}
+                        {{ form_row(resetForm.plainPassword, {'attr':{'class':'form-control'}}) }}
+                       <div class="col-12 text-center">
+                        <button class="btn btn-primary btn-block text-dark" style="font-size:1.3em;">Valider</button>
+                       </div>
+                    {{ form_end(resetForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

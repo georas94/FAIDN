@@ -384,6 +384,60 @@ class AdminController extends AbstractController
                     $partners->setImg2($finalFileName);
                 }elseif ($_POST['imgNumber'] == "img3") {
                     $partners->setImg3($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img4") {
+                    $partners->setImg4($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img5") {
+                    $partners->setImg5($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img6") {
+                    $partners->setImg6($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img7") {
+                    $partners->setImg7($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img8") {
+                    $partners->setImg8($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img9") {
+                    $partners->setImg9($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img10") {
+                    $partners->setImg10($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img11") {
+                    $partners->setImg11($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img12") {
+                    $partners->setImg12($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img13") {
+                    $partners->setImg13($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img14") {
+                    $partners->setImg14($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img15") {
+                    $partners->setImg15($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img16") {
+                    $partners->setImg16($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img17") {
+                    $partners->setImg17($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img18") {
+                    $partners->setImg18($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img19") {
+                    $partners->setImg19($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img20") {
+                    $partners->setImg20($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img21") {
+                    $partners->setImg21($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img22") {
+                    $partners->setImg22($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img23") {
+                    $partners->setImg23($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img24") {
+                    $partners->setImg24($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img25") {
+                    $partners->setImg25($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img26") {
+                    $partners->setImg26($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img27") {
+                    $partners->setImg27($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img28") {
+                    $partners->setImg28($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img29") {
+                    $partners->setImg29($finalFileName);
+                }elseif ($_POST['imgNumber'] == "img30") {
+                    $partners->setImg30($finalFileName);
                 }
                                                 
                 $manager->flush();

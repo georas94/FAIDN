@@ -63,6 +63,10 @@ table img{
     height: 120px;
     width: 120px;
 }
+.logoHome{
+  width: 50vw;
+  width: 47vh;
+}
 
 
 .display-3{
@@ -574,6 +578,10 @@ a:hover{
   z-index: 1;
 }
 
+.accountBox .btn-danger,.accountBox .btn-secondary,.accountBox .btn-warning {
+  font-size: 1.25em;
+}
+
 
 
 
@@ -645,8 +653,9 @@ a:hover{
     width: 80vw !important;
   }
 
-  #carouselExampleSlidesOnly{
+  #articleSlider{
     width: 80vw !important;
+    height: 160px !important;
   }
 
   .row1{

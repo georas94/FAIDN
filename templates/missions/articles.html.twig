@@ -22,18 +22,18 @@
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img src="{{asset('assets/img/' ~ item.img1)}}" class="d-block w-100 carouselImage img-fluid"
-                                    alt="...">
+                                    alt="photo retour sur évènement 1">
                             </div>
                             {% if item.img2 is defined %}
                                 <div class="carousel-item">
-                                    <img src="{{asset('assets/img/' ~ item.img2)}}" class="d-block img-fluid w-100 carouselImage" alt="...">
+                                    <img src="{{asset('assets/img/' ~ item.img2)}}" class="d-block img-fluid w-100 carouselImage" alt="photo retour sur évènement 2">
                                 </div>
                             {% else %}
                             {% endif %}
 
                             {% if item.img3 is defined and item.img3 | length > 0 %}
                                 <div class="carousel-item">
-                                    <img src="{{asset('assets/img/' ~ item.img3)}}" class="d-block w-100 carouselImage" alt="...">
+                                    <img src="{{asset('assets/img/' ~ item.img3)}}" class="d-block w-100 carouselImage" alt="photo retour sur évènement 3">
                                 </div>
                             {% else %}
 

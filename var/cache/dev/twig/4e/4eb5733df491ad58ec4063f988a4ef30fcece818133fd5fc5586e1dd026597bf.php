@@ -189,6 +189,6 @@ class __TwigTemplate_a7b670c1fa8fd1fe75fd04df0c2ee14e852861992c8345b69ac3c739525
 
 
 
-{% endblock %}", "admin/updateProduct.html.twig", "/Applications/MAMP/htdocs/FDAIN/templates/admin/updateProduct.html.twig");
+{% endblock %}", "admin/updateProduct.html.twig", "/Applications/MAMP/htdocs/FDAIN/FDAIN/templates/admin/updateProduct.html.twig");
     }
 }

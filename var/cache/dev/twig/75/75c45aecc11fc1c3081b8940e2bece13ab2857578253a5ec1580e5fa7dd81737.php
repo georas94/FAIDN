@@ -112,12 +112,12 @@ class __TwigTemplate_50ef3cfd1711441afac18c5c97db1f1b40fb15b93f30fe1d88282665c47
             <div class=\"form-group mt-5\">
             <h4 class=\"mb-3 col-12 text-center text-secondary\">Images slider</h4>
                 <label for=\"img1\">Votre première image</label>
-                <input type=\"file\" id=\"img1\" name=\"img1\" required placeholder=\"Votre première image...\" class=\"form-control\">
+                <input type=\"file\" id=\"img1\" name=\"img1\" placeholder=\"Votre première image...\" class=\"form-control\">
             </div>
 
             <div class=\"form-group\">
                 <label for=\"img2\">Votre deuxième image</label>
-                <input type=\"file\" id=\"img2\" name=\"img2\" required placeholder=\"Votre deuxième image...\" class=\"form-control\">
+                <input type=\"file\" id=\"img2\" name=\"img2\" placeholder=\"Votre deuxième image...\" class=\"form-control\">
             </div>
 
             <div class=\"form-group\">
@@ -250,12 +250,12 @@ class __TwigTemplate_50ef3cfd1711441afac18c5c97db1f1b40fb15b93f30fe1d88282665c47
             <div class=\"form-group mt-5\">
             <h4 class=\"mb-3 col-12 text-center text-secondary\">Images slider</h4>
                 <label for=\"img1\">Votre première image</label>
-                <input type=\"file\" id=\"img1\" name=\"img1\" required placeholder=\"Votre première image...\" class=\"form-control\">
+                <input type=\"file\" id=\"img1\" name=\"img1\" placeholder=\"Votre première image...\" class=\"form-control\">
             </div>
 
             <div class=\"form-group\">
                 <label for=\"img2\">Votre deuxième image</label>
-                <input type=\"file\" id=\"img2\" name=\"img2\" required placeholder=\"Votre deuxième image...\" class=\"form-control\">
+                <input type=\"file\" id=\"img2\" name=\"img2\" placeholder=\"Votre deuxième image...\" class=\"form-control\">
             </div>
 
             <div class=\"form-group\">
@@ -309,6 +309,6 @@ class __TwigTemplate_50ef3cfd1711441afac18c5c97db1f1b40fb15b93f30fe1d88282665c47
     {% endblock %}
 
 
-{% endblock %}", "admin/updateArticle.html.twig", "/Applications/MAMP/htdocs/FDAIN/templates/admin/updateArticle.html.twig");
+{% endblock %}", "admin/updateArticle.html.twig", "/Applications/MAMP/htdocs/FDAIN/FDAIN/templates/admin/updateArticle.html.twig");
     }
 }

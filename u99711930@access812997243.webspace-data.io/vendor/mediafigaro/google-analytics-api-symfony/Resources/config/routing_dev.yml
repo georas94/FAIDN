@@ -1,4 +1,0 @@
-google_analytics_api:
-    resource: "@GoogleAnalyticsApi/Controller/"
-    type:     annotation
-    prefix:   /analytics-api

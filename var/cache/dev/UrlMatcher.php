@@ -13,6 +13,7 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/mon-compte' => [[['_route' => 'account_home', '_controller' => 'App\\Controller\\AccountController::index'], null, null, null, false, false, null]],
         '/admin/get-google-analytics-data' => [[['_route' => 'analytics', '_controller' => 'App\\Controller\\AdminController::google'], null, null, null, false, false, null]],
         '/admin' => [[['_route' => 'admin', '_controller' => 'App\\Controller\\AdminController::index'], null, null, null, false, false, null]],
         '/gestion-des-articles' => [[['_route' => 'view_all_articles_admin', '_controller' => 'App\\Controller\\AdminController::view_all_articles_admin'], null, null, null, false, false, null]],
@@ -38,6 +39,8 @@ return [
         '/missions' => [[['_route' => 'missions_home', '_controller' => 'App\\Controller\\MissionsController::index'], null, null, null, false, false, null]],
         '/partenaires' => [[['_route' => 'partners_home', '_controller' => 'App\\Controller\\PartnersController::index'], null, null, null, false, false, null]],
         '/nos-projets' => [[['_route' => 'projects_home', '_controller' => 'App\\Controller\\ProjectsController::index'], null, null, null, false, false, null]],
+        '/mot-de-passe-oublie' => [[['_route' => 'app_forgot_password_request', '_controller' => 'App\\Controller\\ResetPasswordController::request'], null, null, null, false, false, null]],
+        '/mot-de-passe-oublie/verification-email' => [[['_route' => 'app_check_email', '_controller' => 'App\\Controller\\ResetPasswordController::checkEmail'], null, null, null, false, false, null]],
         '/inscription' => [[['_route' => 'security_registration', '_controller' => 'App\\Controller\\SecurityController::registration'], null, null, null, false, false, null]],
         '/connexion' => [[['_route' => 'security_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/deconnexion' => [[['_route' => 'security_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
@@ -86,9 +89,12 @@ return [
                     .'|fconnect(?:/([^/]++)(?:/([^/]++))?)?(*:550)'
                     .'|lfinder(?:/([^/]++)(?:/([^/]++))?)?(*:593)'
                 .')'
-                .'|/missions/([^/]++)(*:620)'
-                .'|/nos\\-projets/([^/]++)(*:650)'
-                .'|/security/addDonate/([^/]++)(*:686)'
+                .'|/m(?'
+                    .'|issions/([^/]++)(*:623)'
+                    .'|ot\\-de\\-passe\\-oublie/reset(?:/([^/]++))?(*:672)'
+                .')'
+                .'|/nos\\-projets/([^/]++)(*:703)'
+                .'|/security/addDonate/([^/]++)(*:739)'
             .')/?$}sD',
     ],
     [ // $dynamicRoutes
@@ -111,9 +117,10 @@ return [
         506 => [[['_route' => 'events_articles', '_controller' => 'App\\Controller\\EventsController::articles'], ['article'], null, null, false, true, null]],
         550 => [[['_route' => 'ef_connect', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::load', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
         593 => [[['_route' => 'elfinder', '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::show', 'instance' => 'default', 'homeFolder' => ''], ['instance', 'homeFolder'], null, null, false, true, null]],
-        620 => [[['_route' => 'missions_articles', '_controller' => 'App\\Controller\\MissionsController::missionArticles'], ['category'], null, null, false, true, null]],
-        650 => [[['_route' => 'projects_articles', '_controller' => 'App\\Controller\\ProjectsController::articles'], ['article'], null, null, false, true, null]],
-        686 => [
+        623 => [[['_route' => 'missions_articles', '_controller' => 'App\\Controller\\MissionsController::missionArticles'], ['category'], null, null, false, true, null]],
+        672 => [[['_route' => 'app_reset_password', 'token' => null, '_controller' => 'App\\Controller\\ResetPasswordController::reset'], ['token'], null, null, false, true, null]],
+        703 => [[['_route' => 'projects_articles', '_controller' => 'App\\Controller\\ProjectsController::articles'], ['article'], null, null, false, true, null]],
+        739 => [
             [['_route' => 'security_addDonate', '_controller' => 'App\\Controller\\SecurityController::addDonate'], ['info'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

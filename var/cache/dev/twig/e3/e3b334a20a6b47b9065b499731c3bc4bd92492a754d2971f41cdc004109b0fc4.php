@@ -68,7 +68,7 @@ class __TwigTemplate_3c89f35213c1bd50d3b39afe669ad24de6f534d2caae182c6140870a1c7
         echo "
 <div class=\"container mt-5\">
 
-    <div class=\"row mt-5 \">
+    <div class=\"row mt-5 row1\">
         <h1 class=\"text-center col-12 mt-3\">Oups, page non trouvée</h1>
         <div class=\"col-md-12 col-sm-12 col-lg-12 mt-5 text-center\">
             <a href=\"";
@@ -110,7 +110,7 @@ class __TwigTemplate_3c89f35213c1bd50d3b39afe669ad24de6f534d2caae182c6140870a1c7
 
 <div class=\"container mt-5\">
 
-    <div class=\"row mt-5 \">
+    <div class=\"row mt-5 row1\">
         <h1 class=\"text-center col-12 mt-3\">Oups, page non trouvée</h1>
         <div class=\"col-md-12 col-sm-12 col-lg-12 mt-5 text-center\">
             <a href=\"{{ path('home') }}\" class=\"btn btn-secondary mt-3\">Retourner à la page d'accueil</a>
@@ -118,6 +118,6 @@ class __TwigTemplate_3c89f35213c1bd50d3b39afe669ad24de6f534d2caae182c6140870a1c7
     </div>
 </div>
 {% endblock %}
-", "@Twig/Exception/error403.html.twig", "/Applications/MAMP/htdocs/FDAIN/templates/bundles/TwigBundle/Exception/error403.html.twig");
+", "@Twig/Exception/error403.html.twig", "/Applications/MAMP/htdocs/FDAIN/FDAIN/templates/bundles/TwigBundle/Exception/error403.html.twig");
     }
 }

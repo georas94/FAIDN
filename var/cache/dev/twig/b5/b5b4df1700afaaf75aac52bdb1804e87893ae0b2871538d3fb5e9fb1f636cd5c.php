@@ -158,7 +158,7 @@ class __TwigTemplate_ab09ba43eaff03efe4650922d6a0af5ba5690e39caa00b4e7c338708c07
                             <div class=\"g-recaptcha\" data-sitekey=\"6LeUnq8ZAAAAABVOS7J5NvgAmaz6DHR8Y5XhLiI4\"></div>
                     </div>
 
-                    <button type=\"submit\" class=\"btn btn-secondary btn-block mt-4 registerValidation\">Valider</button>
+                    <button type=\"submit\" class=\"btn btn-secondary btn-block mt-4 mb-5 registerValidation\">Valider</button>
                     ";
             // line 41
             echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 41, $this->source); })()), 'form_end');
@@ -172,15 +172,11 @@ class __TwigTemplate_ab09ba43eaff03efe4650922d6a0af5ba5690e39caa00b4e7c338708c07
         }
         // line 48
         echo "
-
-    ";
-        // line 50
+        ";
+        // line 49
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 54
+        // line 52
         echo "
-
-
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -190,7 +186,7 @@ class __TwigTemplate_ab09ba43eaff03efe4650922d6a0af5ba5690e39caa00b4e7c338708c07
 
     }
 
-    // line 50
+    // line 49
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -200,10 +196,9 @@ class __TwigTemplate_ab09ba43eaff03efe4650922d6a0af5ba5690e39caa00b4e7c338708c07
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 51
-        echo "
-
-    ";
+        // line 50
+        echo "            <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
+        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -224,7 +219,7 @@ class __TwigTemplate_ab09ba43eaff03efe4650922d6a0af5ba5690e39caa00b4e7c338708c07
 
     public function getDebugInfo()
     {
-        return array (  204 => 51,  194 => 50,  180 => 54,  178 => 50,  174 => 48,  164 => 41,  154 => 34,  149 => 32,  145 => 31,  141 => 30,  137 => 29,  133 => 28,  129 => 27,  125 => 26,  118 => 21,  112 => 18,  109 => 17,  107 => 16,  102 => 13,  100 => 12,  96 => 10,  91 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  200 => 50,  190 => 49,  179 => 52,  177 => 49,  174 => 48,  164 => 41,  154 => 34,  149 => 32,  145 => 31,  141 => 30,  137 => 29,  133 => 28,  129 => 27,  125 => 26,  118 => 21,  112 => 18,  109 => 17,  107 => 16,  102 => 13,  100 => 12,  96 => 10,  91 => 7,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -268,7 +263,7 @@ class __TwigTemplate_ab09ba43eaff03efe4650922d6a0af5ba5690e39caa00b4e7c338708c07
                             <div class=\"g-recaptcha\" data-sitekey=\"6LeUnq8ZAAAAABVOS7J5NvgAmaz6DHR8Y5XhLiI4\"></div>
                     </div>
 
-                    <button type=\"submit\" class=\"btn btn-secondary btn-block mt-4 registerValidation\">Valider</button>
+                    <button type=\"submit\" class=\"btn btn-secondary btn-block mt-4 mb-5 registerValidation\">Valider</button>
                     {{form_end(form)}}
                 </div>
             </div>
@@ -277,16 +272,11 @@ class __TwigTemplate_ab09ba43eaff03efe4650922d6a0af5ba5690e39caa00b4e7c338708c07
 
     {% endif %}
 
-
-    {% block javascripts %}
-
-
-    {% endblock %}
-
-
-
+        {% block javascripts %}
+            <script src=\"https://www.google.com/recaptcha/api.js\" async defer></script>
+        {% endblock %}
 
 {% endblock %}
-", "security/registration.html.twig", "/Applications/MAMP/htdocs/fdain/templates/security/registration.html.twig");
+", "security/registration.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/security/registration.html.twig");
     }
 }

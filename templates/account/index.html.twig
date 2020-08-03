@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon compte{% endblock %}
+
+{% block body %}
+
+    <div class="col-sm-12 col-lg-12 col-md-12 mt-5 pr-0 pl-0 row1 accountBox">
+        <h3 class="h3 text-center text-secondary">Bienvenue dans votre espace personnel <strong>{{username|capitalize}}</strong></h3>
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-lg-8 col-md-8 mb-5 mt-3">
+            <a class="btn btn-danger col-12" href="{{path('security_logout')}}">Se déconnecter</a>
+                <h4 class="text-secondary text-center mt-5">Éditer votre profil</h4>
+                <div class="d-flex justify-content-between mt-5 text-center">
+                    <a class="btn btn-warning col-5 d-flex align-items-center justify-content-center" href="{{path('app_forgot_password_request')}}">Modifier votre mot de passe</a>
+                    <a class="btn btn-secondary col-5 text-dark" href="https://personnal.us19.list-manage.com/unsubscribe?u=1d9bf4cc0c9081b3e44e516b3&id=00f801161b">Se désinscrire de la newsletter</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+        
+{% endblock %}

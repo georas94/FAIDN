@@ -67,6 +67,8 @@ class ComposerStaticInit5210d5a04f24191a410743ff37d98825
             'Symfony\\Component\\PropertyAccess\\' => 33,
             'Symfony\\Component\\OptionsResolver\\' => 34,
             'Symfony\\Component\\Mime\\' => 23,
+            'Symfony\\Component\\Mailer\\Bridge\\Google\\' => 39,
+            'Symfony\\Component\\Mailer\\' => 25,
             'Symfony\\Component\\Intl\\' => 23,
             'Symfony\\Component\\Inflector\\' => 28,
             'Symfony\\Component\\HttpKernel\\' => 29,
@@ -93,6 +95,7 @@ class ComposerStaticInit5210d5a04f24191a410743ff37d98825
             'Symfony\\Bridge\\Twig\\' => 20,
             'Symfony\\Bridge\\PhpUnit\\' => 23,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'SymfonyCasts\\Bundle\\ResetPassword\\' => 34,
             'Stripe\\' => 7,
         ),
         'R' => 
@@ -298,6 +301,14 @@ class ComposerStaticInit5210d5a04f24191a410743ff37d98825
         array (
             0 => __DIR__ . '/..' . '/symfony/mime',
         ),
+        'Symfony\\Component\\Mailer\\Bridge\\Google\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/google-mailer',
+        ),
+        'Symfony\\Component\\Mailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/mailer',
+        ),
         'Symfony\\Component\\Intl\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/intl',
@@ -401,6 +412,10 @@ class ComposerStaticInit5210d5a04f24191a410743ff37d98825
         'Symfony\\Bridge\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
+        ),
+        'SymfonyCasts\\Bundle\\ResetPassword\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfonycasts/reset-password-bundle/src',
         ),
         'Stripe\\' => 
         array (

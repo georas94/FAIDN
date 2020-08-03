@@ -72,6 +72,106 @@ class Partners
      */
     private $img10;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img11;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img12;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img13;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img14;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img15;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img16;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img17;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img18;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img19;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img20;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img21;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img22;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img23;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img24;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img25;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img26;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img27;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img28;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img29;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img30;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -205,6 +305,246 @@ class Partners
     public function setImg10(?string $img10): self
     {
         $this->img10 = $img10;
+
+        return $this;
+    }
+
+    public function getImg11(): ?string
+    {
+        return $this->img11;
+    }
+
+    public function setImg11(?string $img11): self
+    {
+        $this->img11 = $img11;
+
+        return $this;
+    }
+
+    public function getImg12(): ?string
+    {
+        return $this->img12;
+    }
+
+    public function setImg12(?string $img12): self
+    {
+        $this->img12 = $img12;
+
+        return $this;
+    }
+
+    public function getImg13(): ?string
+    {
+        return $this->img13;
+    }
+
+    public function setImg13(?string $img13): self
+    {
+        $this->img13 = $img13;
+
+        return $this;
+    }
+
+    public function getImg14(): ?string
+    {
+        return $this->img14;
+    }
+
+    public function setImg14(?string $img14): self
+    {
+        $this->img14 = $img14;
+
+        return $this;
+    }
+
+    public function getImg15(): ?string
+    {
+        return $this->img15;
+    }
+
+    public function setImg15(?string $img15): self
+    {
+        $this->img15 = $img15;
+
+        return $this;
+    }
+
+    public function getImg16(): ?string
+    {
+        return $this->img16;
+    }
+
+    public function setImg16(?string $img16): self
+    {
+        $this->img16 = $img16;
+
+        return $this;
+    }
+
+    public function getImg17(): ?string
+    {
+        return $this->img17;
+    }
+
+    public function setImg17(?string $img17): self
+    {
+        $this->img17 = $img17;
+
+        return $this;
+    }
+
+    public function getImg18(): ?string
+    {
+        return $this->img18;
+    }
+
+    public function setImg18(?string $img18): self
+    {
+        $this->img18 = $img18;
+
+        return $this;
+    }
+
+    public function getImg19(): ?string
+    {
+        return $this->img19;
+    }
+
+    public function setImg19(?string $img19): self
+    {
+        $this->img19 = $img19;
+
+        return $this;
+    }
+
+    public function getImg20(): ?string
+    {
+        return $this->img20;
+    }
+
+    public function setImg20(?string $img20): self
+    {
+        $this->img20 = $img20;
+
+        return $this;
+    }
+
+    public function getImg21(): ?string
+    {
+        return $this->img21;
+    }
+
+    public function setImg21(?string $img21): self
+    {
+        $this->img21 = $img21;
+
+        return $this;
+    }
+
+    public function getImg22(): ?string
+    {
+        return $this->img22;
+    }
+
+    public function setImg22(?string $img22): self
+    {
+        $this->img22 = $img22;
+
+        return $this;
+    }
+
+    public function getImg23(): ?string
+    {
+        return $this->img23;
+    }
+
+    public function setImg23(?string $img23): self
+    {
+        $this->img23 = $img23;
+
+        return $this;
+    }
+
+    public function getImg24(): ?string
+    {
+        return $this->img24;
+    }
+
+    public function setImg24(?string $img24): self
+    {
+        $this->img24 = $img24;
+
+        return $this;
+    }
+
+    public function getImg25(): ?string
+    {
+        return $this->img25;
+    }
+
+    public function setImg25(?string $img25): self
+    {
+        $this->img25 = $img25;
+
+        return $this;
+    }
+
+    public function getImg26(): ?string
+    {
+        return $this->img26;
+    }
+
+    public function setImg26(?string $img26): self
+    {
+        $this->img26 = $img26;
+
+        return $this;
+    }
+
+    public function getImg27(): ?string
+    {
+        return $this->img27;
+    }
+
+    public function setImg27(?string $img27): self
+    {
+        $this->img27 = $img27;
+
+        return $this;
+    }
+
+    public function getImg28(): ?string
+    {
+        return $this->img28;
+    }
+
+    public function setImg28(?string $img28): self
+    {
+        $this->img28 = $img28;
+
+        return $this;
+    }
+
+    public function getImg29(): ?string
+    {
+        return $this->img29;
+    }
+
+    public function setImg29(?string $img29): self
+    {
+        $this->img29 = $img29;
+
+        return $this;
+    }
+
+    public function getImg30(): ?string
+    {
+        return $this->img30;
+    }
+
+    public function setImg30(?string $img30): self
+    {
+        $this->img30 = $img30;
 
         return $this;
     }

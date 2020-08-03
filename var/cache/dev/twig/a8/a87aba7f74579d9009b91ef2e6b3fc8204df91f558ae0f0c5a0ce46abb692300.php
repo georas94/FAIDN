@@ -85,7 +85,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
-        echo "\" alt=\"\" class=\"img-fluid\"></a>
+        echo "\" alt=\"logo faidn\" class=\"img-fluid\"></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link ";
@@ -155,8 +155,8 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
             echo "                <li class=\"nav-item\">
                     <a class=\"nav-link nav-link\" href=\"";
             // line 44
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
-            echo "\">Déconnexion</a>
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_home");
+            echo "\">Mon compte</a>
                 </li>
                 ";
         } else {
@@ -198,7 +198,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
         echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
-        echo "\" alt=\"\" class=\"img-fluid navLogo\"></a>
+        echo "\" alt=\"logo faidn\" class=\"img-fluid navLogo\"></a>
             </div>
 
             <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
@@ -356,7 +356,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         <nav id=\"nav-bar\" class=\"nav\" class=\"p-3\" style=\"\">
             <ul class=\"nav-list\">
                 <li class=\"nav-item\">
-                    <a class=\"nav-link homeNav {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><img src=\"{{asset('assets/img/logo.png')}}\" alt=\"\" class=\"img-fluid\"></a>
+                    <a class=\"nav-link homeNav {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><img src=\"{{asset('assets/img/logo.png')}}\" alt=\"logo faidn\" class=\"img-fluid\"></a>
                 </li>
                 <li class=\"nav-item\">
                     <a class=\"nav-link {% if (app.request.pathInfo == path('events_home')) %} text-info{% endif %}\" href=\"{{path('events_home')}}\">Évènements</a>
@@ -379,7 +379,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
                 {% if app.user %}
                 <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link\" href=\"{{path('security_logout')}}\">Déconnexion</a>
+                    <a class=\"nav-link nav-link\" href=\"{{path('account_home')}}\">Mon compte</a>
                 </li>
                 {% else %}
                 <li class=\"nav-item\">
@@ -394,7 +394,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         </nav>
         <div class=\"d-flex align-items-center\" style=\"width:100%;\">
             <div class=\"home-toggle\">
-                <a class=\"nav-link homeNavToggle {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><img src=\"{{asset('assets/img/logo.png')}}\" alt=\"\" class=\"img-fluid navLogo\"></a>
+                <a class=\"nav-link homeNavToggle {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><img src=\"{{asset('assets/img/logo.png')}}\" alt=\"logo faidn\" class=\"img-fluid navLogo\"></a>
             </div>
 
             <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">

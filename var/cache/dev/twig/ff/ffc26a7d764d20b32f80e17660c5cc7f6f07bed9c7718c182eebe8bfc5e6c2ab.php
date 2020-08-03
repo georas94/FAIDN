@@ -119,7 +119,7 @@ class __TwigTemplate_ac1c721bc79c1f89136e721d20c6f9a915ae2359b8488ed066aa4fe9c2e
                     </div>
 
                     <div class=\"col-md-12 col-sm-12 col-lg-12 mt-3 d-flex justify-content-center\">
-                        <div id=\"carouselExampleSlidesOnly\" class=\"carousel slide d-flex justify-content-center\" data-ride=\"carousel\" data-interval=\"3000\">
+                        <div id=\"articleSlider\" class=\"carousel slide d-flex justify-content-center\" data-ride=\"carousel\" data-interval=\"3000\">
                             <div class=\"carousel-inner\">
                                 <div class=\"carousel-item active\">
                                     <img src=\"";
@@ -256,7 +256,7 @@ class __TwigTemplate_ac1c721bc79c1f89136e721d20c6f9a915ae2359b8488ed066aa4fe9c2e
                     </div>
 
                     <div class=\"col-md-12 col-sm-12 col-lg-12 mt-3 d-flex justify-content-center\">
-                        <div id=\"carouselExampleSlidesOnly\" class=\"carousel slide d-flex justify-content-center\" data-ride=\"carousel\" data-interval=\"3000\">
+                        <div id=\"articleSlider\" class=\"carousel slide d-flex justify-content-center\" data-ride=\"carousel\" data-interval=\"3000\">
                             <div class=\"carousel-inner\">
                                 <div class=\"carousel-item active\">
                                     <img src=\"{{asset('assets/img/' ~ item.img1)}}\" class=\"d-block w-100 carouselImage img-fluid\"
