@@ -68,9 +68,9 @@ class ContactController extends AbstractController
                 $manager->flush($messages);   
                 
                 $message = (new \Swift_Message('Merci pour votre message ' . $post['name'] . ' !'))
-                ->setFrom('rashid@rashidtamboura.fr')
+                ->setFrom('contact@faidn.com')
                 ->setTo($post['email'])
-                ->setBcc('rashid@rashidtamboura.fr')
+                ->setBcc('contact@faidn.com')
                 ->setBody('Merci pour votre message ' . $post['name'] 
                 .'. Nous revenous vers vous au plus tôt, à bientôt sur notre site !');
                 $mailer->send($message);

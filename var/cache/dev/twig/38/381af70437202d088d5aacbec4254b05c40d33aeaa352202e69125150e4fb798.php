@@ -100,7 +100,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
         </div>
 
         <div class=\"col-sm-4 col-md-4 col-lg-4 mt-2\">
-          <li class=\"actionLi\">Encourager la mobilisation de l'élite congolaise à participer à l'action de lutte contre la pauvreté et le chômage </li>
+          <li class=\"actionLi\">Encourager la mobilisation de tous à participer à l'action de lutte contre la pauvreté et le chômage</li>
         </div>
       </ul>
     </div>
@@ -356,7 +356,7 @@ class __TwigTemplate_64d6778568ecf1764a1f025db889767f734bc27d62782823d0e36f671a0
         </div>
 
         <div class=\"col-sm-4 col-md-4 col-lg-4 mt-2\">
-          <li class=\"actionLi\">Encourager la mobilisation de l'élite congolaise à participer à l'action de lutte contre la pauvreté et le chômage </li>
+          <li class=\"actionLi\">Encourager la mobilisation de tous à participer à l'action de lutte contre la pauvreté et le chômage</li>
         </div>
       </ul>
     </div>

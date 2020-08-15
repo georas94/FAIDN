@@ -39,23 +39,22 @@
                 $(document).ready(function(){
 
 
-                    //Variables dont on va se servir
+                    //clé secrete
                     let stripe = Stripe('pk_test_51GzVsLFZQOL2CP5OarG5moRDFcBrfCM5Um40yXOvvMgD1KEFmSe7IVJeYhitl3fQFYV9aOSBgQ3LPhVMTZz3iXcC00TcVio8YX');
                     //Tout ce qui est numéros de cartes, dates d'expirations, digicodes, etc... C'EST UNE METHODE
                     let elements = stripe.elements();
-                    //Redirection
+                    //redirection
                     let redirect = '{{path('home')}}';
 
-                    //Objets de la page
+                    //objets de la page
                     let cardHolderName = $('#cardholder-name');
                     let cardButton = $('#card-button');
                     let clientSecret = $('#card-button').data('secret');
 
-                    //Crée les éléments du formulaire de la carte 
+                    //éléments du formulaire de la carte 
                     let card = elements.create('card');
                     card.mount('#card-elements');
 
-                    //Revenir après pour trouver la solution en jQuery (addEventListener)
                     card.addEventListener("change", (event) => {
                         let displayError = $('#card-errors');
                         if (event.error){
@@ -67,7 +66,7 @@
                     });//fermeture on change
 
 
-                    //Gérer le paiement
+                    //gestion du paiement
                     $('#card-button').on("click", (event) => {
                         stripe.confirmCardPayment(clientSecret, {
                             payment_method: {

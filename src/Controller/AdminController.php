@@ -483,89 +483,98 @@ class AdminController extends AbstractController
         if(!empty($_POST)){
             $articles = new Articles();
             
-            if($_FILES['img1']['size'] && $_FILES['img2']['size'] && $_FILES['img3']['size'] > 0 ){
+            if (!empty($_FILES['img1']) || !empty($_FILES['img2'])|| !empty($_FILES['img3']) ) {
 
-                dd($_FILES);
-                
-                $rootFolder = $_SERVER['DOCUMENT_ROOT'];
-                $uploadDir = 'assets/img/';
-
-                
-                $fileinfo = pathinfo($_FILES['img1']['name']);
-                $fileinfo2 = pathinfo($_FILES['img2']['name']);
-                $fileinfo3 = pathinfo($_FILES['img3']['name']);
-                
-                $mimeTypeDeMonFichierActuel = $fileinfo['extension'];
-                $mimeTypeDeMonFichierActuel2 = $fileinfo2['extension'];
-                $mimeTypeDeMonFichierActuel3 = $fileinfo3['extension'];
-                
-                if(in_array($mimeTypeDeMonFichierActuel, $mimeTypesAllowed)){
+                if($_FILES['img1']['size'] || $_FILES['img2']['size'] || $_FILES['img3']['size'] > 0 ){
                     
-                    if($_FILES['img1']['size'] && $_FILES['img2']['size'] && $_FILES['img3']['size'] < $maxSize){
+                    
+                    $rootFolder = $_SERVER['DOCUMENT_ROOT'];
+                    $uploadDir = 'assets/img/';
+                                           
+                    $fileinfo = pathinfo($_FILES['img1']['name']);
+                    $fileinfo2 = pathinfo($_FILES['img2']['name']);
+                    $fileinfo3 = pathinfo($_FILES['img3']['name']);
+                    
+                    
+                    $mimeTypeDeMonFichierActuel = $fileinfo['extension'];
+                    $mimeTypeDeMonFichierActuel2 = isset($fileinfo2['extension']);
+                    $mimeTypeDeMonFichierActuel3 = isset($fileinfo3['extension']);
+                    
 
-                        $chars_search = [' ', 'é', 'è', 'à', 'ù'];
-                        $chars_replace= ['-', 'e', 'e', 'a', 'u'];
+                    if(in_array($mimeTypeDeMonFichierActuel, $mimeTypesAllowed)){
                         
-                        $finalFileName = tr::transliterate(time().'-'.$_FILES['img1']['name']) .'.png';
-                        $finalFileName2 = tr::transliterate(time().'-'.$_FILES['img2']['name']) .'.png';
-                        $finalFileName3 = tr::transliterate(time().'-'.$_FILES['img3']['name']) .'.png';
-                        if(!is_dir($uploadDir)){
-                            if(!mkdir($uploadDir, 0777)){
-                                $errors[] = 'Un problème est survenu lors de la création du répértoire d\'upload';
+                        if($_FILES['img1']['size'] || $_FILES['img2']['size'] || $_FILES['img3']['size'] < $maxSize){
+
+                            $chars_search = [' ', 'é', 'è', 'à', 'ù'];
+                            $chars_replace= ['-', 'e', 'e', 'a', 'u'];
+                            
+                            $finalFileName = tr::transliterate(time().'-'.$_FILES['img1']['name']) .'.png';
+                            $finalFileName2 = tr::transliterate(time().'-'.$_FILES['img2']['name']) .'.png';
+                            $finalFileName3 = tr::transliterate(time().'-'.$_FILES['img3']['name']) .'.png';
+                            if(!is_dir($uploadDir)){
+                                if(!mkdir($uploadDir, 0777)){
+                                    $errors[] = 'Un problème est survenu lors de la création du répértoire d\'upload';
+                                }
                             }
+                            $destination = $rootFolder.'/'.$uploadDir.$finalFileName;
+                            $destination2 = $rootFolder.'/'.$uploadDir.$finalFileName2;
+                            $destination3= $rootFolder.'/'.$uploadDir.$finalFileName3;
+                            
+                            move_uploaded_file($_FILES['img1']['tmp_name'], $destination);
+                            move_uploaded_file($_FILES['img2']['tmp_name'], $destination2);
+                            move_uploaded_file($_FILES['img3']['tmp_name'], $destination3);
+                            $image = new ImageManager();
+                            
+                            if (!empty($_FILES['img1'])) {
+                              
+                                $image->make($destination)->fit(700, 460)->save();
+                                $articles->setImg1($finalFileName);
+                            }
+
+                            if (!empty($_FILES['img2']['extension'])) {
+                                $image->make($destination2)->fit(700, 460)->save();
+                                $articles->setImg2($finalFileName2);
+                            }
+
+                            if (!empty($_FILES['img3']['extension'])) {
+                            $image->make($destination3)->fit(700, 460)->save();
+                            $articles->setImg3($finalFileName3);
+                            }
+                            
+                            
+                            //$img1 = Image::make($_FILES['img1']);
                         }
-                        $destination = $rootFolder.'/'.$uploadDir.$finalFileName;
-                        $destination2 = $rootFolder.'/'.$uploadDir.$finalFileName2;
-                        $destination3= $rootFolder.'/'.$uploadDir.$finalFileName3;
-                        
-                        move_uploaded_file($_FILES['img1']['tmp_name'], $destination);
-                        move_uploaded_file($_FILES['img2']['tmp_name'], $destination2);
-                        move_uploaded_file($_FILES['img3']['tmp_name'], $destination3);
-                        $image = new ImageManager();
-                        $image->make($destination)->fit(700, 460)->save();
-                        $image->make($destination2)->fit(700, 460)->save();
-                        $image->make($destination3)->fit(700, 460)->save();
-                        $articles->setImg1($finalFileName);
-                        $articles->setImg2($finalFileName2);
-                        $articles->setImg3($finalFileName3);
-                        
-                        
-                        //$img1 = Image::make($_FILES['img1']);
+                        else {
+                            $errors[] = 'Votre fichier est trop lourd (10Mo maxi)';
+                        }
                     }
+                
                     else {
-                        $errors[] = 'Votre fichier est trop lourd (10Mo maxi)';
+                        $errors[] = 'Ce type de fichier n\'est pas autorisé';
                     }
-                }
-                else {
-                    $errors[] = 'Ce type de fichier n\'est pas autorisé';
-                }
-               
-                }//Fermeture not empty FILES
-
-                $articles->setTitle($_POST['admin_article']['title']);
-                $articles->setContent1($_POST['admin_article']['content1']);
-                $articles->setCategory($_POST['category']);
-
-                $date = new \DateTime('now', new \DateTimeZone('Europe/Paris'));
-                $date = $date->format(DATE_RFC2822);
-                $articles->setCreatedAt($date);
                 
-                $manager->persist($articles);
-                
-                $manager->flush();
-                $formValid = true;
-                
-                return $this->render('admin/viewAllArticles.html.twig', [
-                    'formValid' => $formValid ??null,
-                    'articles' => $articlesRepository->findAllOrder(),
-                    ]);
+                }//Fermeture  FILES size
+            }//files
 
+            $articles->setTitle($_POST['admin_article']['title']);
+            $articles->setContent1($_POST['admin_article']['content1']);
+            $articles->setCategory($_POST['category']);
 
+            $date = new \DateTime('now', new \DateTimeZone('Europe/Paris'));
+            $date = $date->format(DATE_RFC2822);
+            $articles->setCreatedAt($date);
+            
+            $manager->persist($articles);
+            
+            $manager->flush();
+            $formValid = true;
+            
+            return $this->render('admin/viewAllArticles.html.twig', [
+                'formValid' => $formValid ??null,
+                'articles' => $articlesRepository->findAllOrder(),
+            ]);
 
-
-
-                
-            }//Fermeture not empty POST
+        }//Fermeture not empty POST
                 
                 
             /*FIN Image uploads articles*/
@@ -930,9 +939,9 @@ class AdminController extends AbstractController
                 }
                 
                 $message = (new \Swift_Message('Votre carte d\'adhésion est prête!'))
-                ->setFrom('rashid@rashidtamboura.fr')
+                ->setFrom('contact@faidn.com')
                 ->setTo($post['email'])
-                ->setBcc('rashid@rashidtamboura.fr')
+                ->setBcc('contact@faidn.com')
                 ->setBody('Ci-joint votre carte d\'adhérant !')
                 ->setBody('Ci-bas votre nouvelle carte adhérant. En espérant vous revoir très vite !')
                 ->addPart(' <img style="text-align-center;" src="http://chart.apis.google.com/chart?cht=qr&chs=150x150&chl= '. $post['qrContent'].' "/>', 'text/html');

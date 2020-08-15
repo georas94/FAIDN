@@ -2,24 +2,23 @@
 
 namespace App\Controller;
 
+use ReflectionClass;
+use RecursiveArrayIterator;
+use RecursiveIteratorIterator;
+use Doctrine\Common\Persistence\ObjectManager;
+use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Cart;
 use App\Entity\User;
-use ReflectionClass;
 use App\Entity\Payment;
-
-use RecursiveArrayIterator;
 use App\Entity\DonatePayment;
 use App\Form\RegistrationType;
-use RecursiveIteratorIterator;
 use \DrewM\MailChimp\MailChimp;
 use App\Service\Cart\CartService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Common\Persistence\ObjectManager;
-use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class SecurityController extends AbstractController
 {
@@ -72,7 +71,7 @@ class SecurityController extends AbstractController
                     $manager->flush();
                     
                     $message = (new \Swift_Message('Merci pour votre inscription ' . $user->getUsername() . ' !'))
-                    ->setFrom('rashid@rashidtamboura.fr')
+                    ->setFrom('contact@faidn.com')
                     ->setTo($user->getEmail())
                     ->setBody('Merci pour votre inscription ' . $user->getUsername() 
                     .' Afin de vous connecter vous aurez besoin de votre email : ' . $user->getEmail() . ','
@@ -225,9 +224,9 @@ class SecurityController extends AbstractController
             $entityManager->flush();
             
             $message = (new \Swift_Message('Merci pour achat !'))
-            ->setFrom('rashid@rashidtamboura.fr')
+            ->setFrom('contact@faidn.com')
             ->setTo($email)
-            ->setBcc('rashid@rashidtamboura.fr')
+            ->setBcc('contact@faidn.com')
             ->setBody('Ceci est le mail de confirmation d\'achat. Vous recevrez bientôt un mail contenant votre carte d\'adhérant !');
             $mailer->send($message); // a remonter
             }
@@ -259,9 +258,9 @@ class SecurityController extends AbstractController
             $entityManager->flush();
             
             $message = (new \Swift_Message('Merci pour votre don !'))
-            ->setFrom('rashid@rashidtamboura.fr')
+            ->setFrom('contact@faidn.com')
             ->setTo($email)
-            ->setBcc('rashid@rashidtamboura.fr')
+            ->setBcc('contact@faidn.com')
             ->setBody('Ceci est le mail de confirmation de don. Vous recevrez bientôt un mail de notre part !');
             $mailer->send($message); // a remonter
             }

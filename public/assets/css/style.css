@@ -629,13 +629,14 @@ a:hover{
 }
 
 .footerAddress{
-  word-break: break-all;
+  word-break: break-word;
 }
 
 /*FIN FOOTER*/
 
 
 @media (max-width: 765px) {
+
   
   .item{
     text-align: center !important;
@@ -790,6 +791,25 @@ a:hover{
   }
 
 }
+
+@media (min-width:765px),(max-width:300px){
+
+  .nav-toggle{
+    left: 70%;
+  }
+}
+@media (max-width:321px){
+
+  .nav-toggle{
+    left: 28%;
+  }
+
+  .footerAddress {
+    word-break: break-word;
+    text-align: center !important;
+  }
+}
+
 
 @media (min-width:1158), (max-width:1422px){
   #nav-bar .nav-link{
