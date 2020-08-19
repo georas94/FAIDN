@@ -69,154 +69,21 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         echo "</head>
 
 <body>
-    <header id=\"header\" class=\"header\" style=\"background-image:url(";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/bisso.png"), "html", null, true);
-        echo "); height:300px;\">
-        <nav id=\"nav-bar\" class=\"nav\" class=\"p-3\" style=\"\">
-            <ul class=\"nav-list\">
-                <li class=\"nav-item\">
-                    <a class=\"nav-link homeNav ";
-        // line 21
-        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 21, $this->source); })()), "request", [], "any", false, false, false, 21), "pathInfo", [], "any", false, false, false, 21), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home"))) {
-            echo " text-info";
-        }
-        echo "\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\"><img src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
-        echo "\" alt=\"logo faidn\" class=\"img-fluid\"></a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link ";
-        // line 24
-        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "request", [], "any", false, false, false, 24), "pathInfo", [], "any", false, false, false, 24), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("events_home"))) {
-            echo " text-info";
-        }
-        echo "\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("events_home");
-        echo "\">Évènements</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link ";
-        // line 27
-        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 27, $this->source); })()), "request", [], "any", false, false, false, 27), "pathInfo", [], "any", false, false, false, 27), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("missions_home"))) {
-            echo " text-info";
-        }
-        echo "\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("missions_home");
-        echo "\">Nos missions</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link ";
-        // line 30
-        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 30, $this->source); })()), "request", [], "any", false, false, false, 30), "pathInfo", [], "any", false, false, false, 30), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projects_home"))) {
-            echo " text-info";
-        }
-        echo "\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("projects_home");
-        echo "\">Nos projets</a>
-                </li>      
-                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link ";
-        // line 33
-        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "request", [], "any", false, false, false, 33), "pathInfo", [], "any", false, false, false, 33), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("member_home"))) {
-            echo " text-info";
-        }
-        echo "\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("member_home");
-        echo "\">Adhérer</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link ";
-        // line 36
-        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "request", [], "any", false, false, false, 36), "pathInfo", [], "any", false, false, false, 36), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("partners_home"))) {
-            echo " text-info";
-        }
-        echo "\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("partners_home");
-        echo "\">Partenaires</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link ";
-        // line 39
-        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 39, $this->source); })()), "request", [], "any", false, false, false, 39), "pathInfo", [], "any", false, false, false, 39), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_home"))) {
-            echo " text-info";
-        }
-        echo "\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact_home");
-        echo "\">Nous contacter</a>
-                </li>
 
-                ";
-        // line 42
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 42, $this->source); })()), "user", [], "any", false, false, false, 42)) {
-            // line 43
-            echo "                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link\" href=\"";
-            // line 44
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("account_home");
-            echo "\">Mon compte</a>
-                </li>
-                ";
-        } else {
-            // line 47
-            echo "                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link ";
-            // line 48
-            if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 48, $this->source); })()), "request", [], "any", false, false, false, 48), "pathInfo", [], "any", false, false, false, 48), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login"))) {
-                echo " text-info";
-            }
-            echo "\" href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
-            echo "\">Se connecter</a>
-                </li>
-                ";
-        }
-        // line 51
+        ";
+        // line 18
+        echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\AdminController::header"));
         echo "
-                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link ";
-        // line 53
-        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 53, $this->source); })()), "request", [], "any", false, false, false, 53), "pathInfo", [], "any", false, false, false, 53), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_home"))) {
-            echo " text-info";
-        }
-        echo "\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("cart_home");
-        echo "\">Mon panier</a>
-                </li>
-            </ul>
-        </nav>
-        <div class=\"d-flex align-items-center\" style=\"width:100%;\">
-            <div class=\"home-toggle\">
-                <a class=\"nav-link homeNavToggle ";
-        // line 59
-        if (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 59, $this->source); })()), "request", [], "any", false, false, false, 59), "pathInfo", [], "any", false, false, false, 59), $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home"))) {
-            echo " text-info";
-        }
-        echo "\" href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-        echo "\"><img src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/logo.png"), "html", null, true);
-        echo "\" alt=\"logo faidn\" class=\"img-fluid navLogo\"></a>
-            </div>
-
-            <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
-                <span class=\"visuallyhidden\"></span>
-                <span class=\"hamburger\" style=\"background-color:#509496;height:9px;\"></span>
-            </button>
-        </div>
-    </header>
 
     <main class=\"row mt-5\">
         ";
-        // line 70
+        // line 21
         $this->displayBlock('body', $context, $blocks);
-        // line 71
+        // line 22
         echo "    </main>
 
         ";
-        // line 73
+        // line 24
         echo $this->env->getRuntime('Symfony\Bridge\Twig\Extension\HttpKernelRuntime')->renderFragment(Symfony\Bridge\Twig\Extension\HttpKernelExtension::controller("App\\Controller\\AdminController::footer"));
         echo "
 
@@ -227,13 +94,13 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
         </script>
         <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@9\"></script>
         <script src=\"";
-        // line 81
+        // line 32
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/script.js"), "html", null, true);
         echo "\"></script>
         ";
-        // line 82
+        // line 33
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 83
+        // line 34
         echo "</body>
 
 </html>
@@ -283,7 +150,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
     }
 
-    // line 70
+    // line 21
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -301,7 +168,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
     }
 
-    // line 82
+    // line 33
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -331,7 +198,7 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 
     public function getDebugInfo()
     {
-        return array (  305 => 82,  287 => 70,  269 => 13,  250 => 7,  237 => 83,  235 => 82,  231 => 81,  220 => 73,  216 => 71,  214 => 70,  194 => 59,  181 => 53,  177 => 51,  167 => 48,  164 => 47,  158 => 44,  155 => 43,  153 => 42,  143 => 39,  133 => 36,  123 => 33,  113 => 30,  103 => 27,  93 => 24,  81 => 21,  74 => 17,  69 => 14,  67 => 13,  61 => 10,  55 => 7,  47 => 1,);
+        return array (  172 => 33,  154 => 21,  136 => 13,  117 => 7,  104 => 34,  102 => 33,  98 => 32,  87 => 24,  83 => 22,  81 => 21,  75 => 18,  69 => 14,  67 => 13,  61 => 10,  55 => 7,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -352,57 +219,8 @@ class __TwigTemplate_87400b1f9324f9cabf25bdc326062af4adfa11b20b00b61abcf9ceda6ec
 </head>
 
 <body>
-    <header id=\"header\" class=\"header\" style=\"background-image:url({{asset('assets/img/bisso.png')}}); height:300px;\">
-        <nav id=\"nav-bar\" class=\"nav\" class=\"p-3\" style=\"\">
-            <ul class=\"nav-list\">
-                <li class=\"nav-item\">
-                    <a class=\"nav-link homeNav {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><img src=\"{{asset('assets/img/logo.png')}}\" alt=\"logo faidn\" class=\"img-fluid\"></a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link {% if (app.request.pathInfo == path('events_home')) %} text-info{% endif %}\" href=\"{{path('events_home')}}\">Évènements</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link {% if (app.request.pathInfo == path('missions_home')) %} text-info{% endif %}\" href=\"{{path('missions_home')}}\">Nos missions</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link {% if (app.request.pathInfo == path('projects_home')) %} text-info{% endif %}\" href=\"{{path('projects_home')}}\">Nos projets</a>
-                </li>      
-                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link {% if (app.request.pathInfo == path('member_home')) %} text-info{% endif %}\" href=\"{{path('member_home')}}\">Adhérer</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link {% if (app.request.pathInfo == path('partners_home')) %} text-info{% endif %}\" href=\"{{path('partners_home')}}\">Partenaires</a>
-                </li>
-                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link {% if (app.request.pathInfo == path('contact_home')) %} text-info{% endif %}\" href=\"{{path('contact_home')}}\">Nous contacter</a>
-                </li>
 
-                {% if app.user %}
-                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link\" href=\"{{path('account_home')}}\">Mon compte</a>
-                </li>
-                {% else %}
-                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link {% if (app.request.pathInfo == path('security_login')) %} text-info{% endif %}\" href=\"{{path('security_login')}}\">Se connecter</a>
-                </li>
-                {% endif %}
-
-                <li class=\"nav-item\">
-                    <a class=\"nav-link nav-link {% if (app.request.pathInfo == path('cart_home')) %} text-info{% endif %}\" href=\"{{path('cart_home')}}\">Mon panier</a>
-                </li>
-            </ul>
-        </nav>
-        <div class=\"d-flex align-items-center\" style=\"width:100%;\">
-            <div class=\"home-toggle\">
-                <a class=\"nav-link homeNavToggle {% if (app.request.pathInfo == path('home')) %} text-info{% endif %}\" href=\"{{path('home')}}\"><img src=\"{{asset('assets/img/logo.png')}}\" alt=\"logo faidn\" class=\"img-fluid navLogo\"></a>
-            </div>
-
-            <button class=\"nav-toggle\" aria-label=\"Toggle navigation\" aria-expanded=\"false\">
-                <span class=\"visuallyhidden\"></span>
-                <span class=\"hamburger\" style=\"background-color:#509496;height:9px;\"></span>
-            </button>
-        </div>
-    </header>
+        {{render(controller('App\\\\Controller\\\\AdminController::header'))}}
 
     <main class=\"row mt-5\">
         {% block body %}{% endblock %}

@@ -6,7 +6,13 @@
 
     <div class="col-md-12 col-lg-12 col-sm-12 ">
         <h3 class="h3 text-secondary text-center">Bienvenue dans votre back-office</h3>
-
+        <div class="container">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success text-center mb-2">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
         <div class="row mt-5">
             <div class="col-lg-3 col-xs-6">
                 <div class="rad-info-box rad-txt-success">

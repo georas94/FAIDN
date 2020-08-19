@@ -103,7 +103,7 @@ class __TwigTemplate_03cc999736c70a1899b993e6415358b617f4779920f47cc31368a8d466c
 
             <form action=\"\" method=\"post\" class=\"mt-2\">
                 <div class=\"form-group\">
-                <label for=\"instagram\">Instagram</label>
+                <label for=\"instagram\" class=\"display-4 text-secondary\">Instagram</label>
                     <input style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" type=\"text\" id=\"instagram\" name=\"instagram\" required  autofocus class=\"form-control\" value=\"";
         // line 20
         echo twig_escape_filter($this->env, (isset($context["instagram"]) || array_key_exists("instagram", $context) ? $context["instagram"] : (function () { throw new RuntimeError('Variable "instagram" does not exist.', 20, $this->source); })()), "html", null, true);
@@ -111,7 +111,7 @@ class __TwigTemplate_03cc999736c70a1899b993e6415358b617f4779920f47cc31368a8d466c
                 </div>
 
                 <div class=\"form-group\">
-                    <label for=\"messenger\">Messenger</label>
+                    <label for=\"messenger\" class=\"display-4 text-secondary\">Messenger</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"messenger\" name=\"messenger\" required class=\"form-control\" value=\"";
         // line 25
         echo twig_escape_filter($this->env, (isset($context["messenger"]) || array_key_exists("messenger", $context) ? $context["messenger"] : (function () { throw new RuntimeError('Variable "messenger" does not exist.', 25, $this->source); })()), "html", null, true);
@@ -120,7 +120,7 @@ class __TwigTemplate_03cc999736c70a1899b993e6415358b617f4779920f47cc31368a8d466c
                 
                 
                 <div class=\"form-group\">
-                    <label for=\"linkedin\">LinkedIn</label>
+                    <label for=\"linkedin\" class=\"display-4 text-secondary\">LinkedIn</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"linkedin\" name=\"linkedin\" required class=\"form-control\" value=\"";
         // line 31
         echo twig_escape_filter($this->env, (isset($context["linkedIn"]) || array_key_exists("linkedIn", $context) ? $context["linkedIn"] : (function () { throw new RuntimeError('Variable "linkedIn" does not exist.', 31, $this->source); })()), "html", null, true);
@@ -128,7 +128,7 @@ class __TwigTemplate_03cc999736c70a1899b993e6415358b617f4779920f47cc31368a8d466c
                 </div>
 
                 <div class=\"form-group\">
-                    <label for=\"findus\">Nous trouver</label>
+                    <label for=\"findus\" class=\"display-4 text-secondary\">Nous trouver</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"findus\" name=\"findus\" required class=\"form-control\" value=\"";
         // line 36
         echo twig_escape_filter($this->env, (isset($context["findUs"]) || array_key_exists("findUs", $context) ? $context["findUs"] : (function () { throw new RuntimeError('Variable "findUs" does not exist.', 36, $this->source); })()), "html", null, true);
@@ -136,7 +136,7 @@ class __TwigTemplate_03cc999736c70a1899b993e6415358b617f4779920f47cc31368a8d466c
                 </div>
                                 
                 <div class=\"form-group\">
-                    <label for=\"tel1\">Téléphone 1</label>
+                    <label for=\"tel1\" class=\"display-4 text-secondary\">Téléphone 1</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"tel1\" name=\"tel1\" required class=\"form-control\" value=\"";
         // line 41
         echo twig_escape_filter($this->env, (isset($context["tel1"]) || array_key_exists("tel1", $context) ? $context["tel1"] : (function () { throw new RuntimeError('Variable "tel1" does not exist.', 41, $this->source); })()), "html", null, true);
@@ -144,7 +144,7 @@ class __TwigTemplate_03cc999736c70a1899b993e6415358b617f4779920f47cc31368a8d466c
                 </div>
                 
                 <div class=\"form-group\">
-                    <label for=\"tel2\">Téléphone 2</label>
+                    <label for=\"tel2\" class=\"display-4 text-secondary\">Téléphone 2</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"tel2\" name=\"tel2\" required class=\"form-control\" value=\"";
         // line 46
         echo twig_escape_filter($this->env, (isset($context["tel2"]) || array_key_exists("tel2", $context) ? $context["tel2"] : (function () { throw new RuntimeError('Variable "tel2" does not exist.', 46, $this->source); })()), "html", null, true);
@@ -152,7 +152,7 @@ class __TwigTemplate_03cc999736c70a1899b993e6415358b617f4779920f47cc31368a8d466c
                 </div>
 
                 <div class=\"form-group\">
-                    <label for=\"tel3\">Téléphone 3</label>
+                    <label for=\"tel3\" class=\"display-4 text-secondary\">Téléphone 3</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"tel3\" name=\"tel3\" required class=\"form-control\" value=\"";
         // line 51
         echo twig_escape_filter($this->env, (isset($context["tel3"]) || array_key_exists("tel3", $context) ? $context["tel3"] : (function () { throw new RuntimeError('Variable "tel3" does not exist.', 51, $this->source); })()), "html", null, true);
@@ -160,7 +160,7 @@ class __TwigTemplate_03cc999736c70a1899b993e6415358b617f4779920f47cc31368a8d466c
                 </div>
 
                 <div class=\"form-group\">
-                    <label for=\"refPref\">Référence préfecture</label>
+                    <label for=\"refPref\" class=\"display-4 text-secondary\">Référence préfecture</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"refPref\" name=\"refPref\" required class=\"form-control\" value=\"";
         // line 56
         echo twig_escape_filter($this->env, (isset($context["refPref"]) || array_key_exists("refPref", $context) ? $context["refPref"] : (function () { throw new RuntimeError('Variable "refPref" does not exist.', 56, $this->source); })()), "html", null, true);
@@ -219,43 +219,43 @@ class __TwigTemplate_03cc999736c70a1899b993e6415358b617f4779920f47cc31368a8d466c
 
             <form action=\"\" method=\"post\" class=\"mt-2\">
                 <div class=\"form-group\">
-                <label for=\"instagram\">Instagram</label>
+                <label for=\"instagram\" class=\"display-4 text-secondary\">Instagram</label>
                     <input style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" type=\"text\" id=\"instagram\" name=\"instagram\" required  autofocus class=\"form-control\" value=\"{{instagram}}\">
                 </div>
 
                 <div class=\"form-group\">
-                    <label for=\"messenger\">Messenger</label>
+                    <label for=\"messenger\" class=\"display-4 text-secondary\">Messenger</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"messenger\" name=\"messenger\" required class=\"form-control\" value=\"{{messenger}}\"></input>
                 </div>
                 
                 
                 <div class=\"form-group\">
-                    <label for=\"linkedin\">LinkedIn</label>
+                    <label for=\"linkedin\" class=\"display-4 text-secondary\">LinkedIn</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"linkedin\" name=\"linkedin\" required class=\"form-control\" value=\"{{linkedIn}}\"></input>
                 </div>
 
                 <div class=\"form-group\">
-                    <label for=\"findus\">Nous trouver</label>
+                    <label for=\"findus\" class=\"display-4 text-secondary\">Nous trouver</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"findus\" name=\"findus\" required class=\"form-control\" value=\"{{findUs}}\"></input>
                 </div>
                                 
                 <div class=\"form-group\">
-                    <label for=\"tel1\">Téléphone 1</label>
+                    <label for=\"tel1\" class=\"display-4 text-secondary\">Téléphone 1</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"tel1\" name=\"tel1\" required class=\"form-control\" value=\"{{tel1}}\"></input>
                 </div>
                 
                 <div class=\"form-group\">
-                    <label for=\"tel2\">Téléphone 2</label>
+                    <label for=\"tel2\" class=\"display-4 text-secondary\">Téléphone 2</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"tel2\" name=\"tel2\" required class=\"form-control\" value=\"{{tel2}}\"></input>
                 </div>
 
                 <div class=\"form-group\">
-                    <label for=\"tel3\">Téléphone 3</label>
+                    <label for=\"tel3\" class=\"display-4 text-secondary\">Téléphone 3</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"tel3\" name=\"tel3\" required class=\"form-control\" value=\"{{tel3}}\"></input>
                 </div>
 
                 <div class=\"form-group\">
-                    <label for=\"refPref\">Référence préfecture</label>
+                    <label for=\"refPref\" class=\"display-4 text-secondary\">Référence préfecture</label>
                     <input type=\"text\" style=\"border-top: none !important;border-right: none !important;border-left: none !important; background: #ececec !important;\" id=\"refPref\" name=\"refPref\" required class=\"form-control\" value=\"{{refPref}}\"></input>
                 </div>
                 

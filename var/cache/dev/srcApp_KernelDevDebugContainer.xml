@@ -5619,10 +5619,23 @@
         <argument key="postRepository" type="service" id="App\Repository\PostRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.A9lKPB2" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="optionRepository" type="service" id="App\Repository\OptionsRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.eAh4kfA" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="footerDataRepository" type="service" id="App\Repository\FooterDataRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.Nw8VQRR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
+        <argument key="optionRepository" type="service" id="App\Repository\OptionsRepository"/>
       </argument>
     </service>
     <service id=".service_locator.so3lSHN" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5652,11 +5665,12 @@
         <argument key="articles" type="service" id="App\Repository\ArticlesRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.LQP_.uz" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.5MNV_5I" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="citationSliderRepository" type="service" id="App\Repository\CitationSliderRepository"/>
         <argument key="counterRepository" type="service" id="App\Repository\CounterRepository"/>
+        <argument key="optionsRepository" type="service" id="App\Repository\OptionsRepository"/>
       </argument>
     </service>
     <service id=".service_locator.c6Nzfx4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -5706,7 +5720,7 @@
         <argument key="session" type="service" id="session"/>
       </argument>
     </service>
-    <service id=".service_locator.zU07aRc" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.GggZek5" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AccountController::index" type="service" id=".service_locator.P71q8WE"/>
@@ -5721,7 +5735,11 @@
         <argument key="App\Controller\AdminController::delete_article_admin" type="service" id=".service_locator.7rC0Raz"/>
         <argument key="App\Controller\AdminController::footer" type="service" id=".service_locator.eAh4kfA"/>
         <argument key="App\Controller\AdminController::footer_admin" type="service" id=".service_locator.GQMrju_"/>
+        <argument key="App\Controller\AdminController::header" type="service" id=".service_locator.A9lKPB2"/>
         <argument key="App\Controller\AdminController::ho" type="service" id=".service_locator.znJ5KIM"/>
+        <argument key="App\Controller\AdminController::homeBackground_update_admin" type="service" id=".service_locator.Nw8VQRR"/>
+        <argument key="App\Controller\AdminController::home_slider_admin" type="service" id=".service_locator.A9lKPB2"/>
+        <argument key="App\Controller\AdminController::home_slider_update_admin" type="service" id=".service_locator.Nw8VQRR"/>
         <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.Sfi6IrS"/>
         <argument key="App\Controller\AdminController::messages_view" type="service" id=".service_locator.hf6cgh7"/>
         <argument key="App\Controller\AdminController::organic_searches_admin" type="service" id=".service_locator.znJ5KIM"/>
@@ -5738,7 +5756,7 @@
         <argument key="App\Controller\ContactController::index" type="service" id=".service_locator.o.hJ4EY"/>
         <argument key="App\Controller\EventsController::articles" type="service" id=".service_locator.25mwYPX"/>
         <argument key="App\Controller\EventsController::index" type="service" id=".service_locator.25mwYPX"/>
-        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.LQP_.uz"/>
+        <argument key="App\Controller\HomeController::index" type="service" id=".service_locator.5MNV_5I"/>
         <argument key="App\Controller\MemberController::index" type="service" id=".service_locator.c6Nzfx4"/>
         <argument key="App\Controller\MissionsController::index" type="service" id=".service_locator.25mwYPX"/>
         <argument key="App\Controller\MissionsController::missionArticles" type="service" id=".service_locator.25mwYPX"/>
@@ -5763,7 +5781,11 @@
         <argument key="App\Controller\AdminController:delete_article_admin" type="service" id=".service_locator.7rC0Raz"/>
         <argument key="App\Controller\AdminController:footer" type="service" id=".service_locator.eAh4kfA"/>
         <argument key="App\Controller\AdminController:footer_admin" type="service" id=".service_locator.GQMrju_"/>
+        <argument key="App\Controller\AdminController:header" type="service" id=".service_locator.A9lKPB2"/>
         <argument key="App\Controller\AdminController:ho" type="service" id=".service_locator.znJ5KIM"/>
+        <argument key="App\Controller\AdminController:homeBackground_update_admin" type="service" id=".service_locator.Nw8VQRR"/>
+        <argument key="App\Controller\AdminController:home_slider_admin" type="service" id=".service_locator.A9lKPB2"/>
+        <argument key="App\Controller\AdminController:home_slider_update_admin" type="service" id=".service_locator.Nw8VQRR"/>
         <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.Sfi6IrS"/>
         <argument key="App\Controller\AdminController:messages_view" type="service" id=".service_locator.hf6cgh7"/>
         <argument key="App\Controller\AdminController:organic_searches_admin" type="service" id=".service_locator.znJ5KIM"/>
@@ -5780,7 +5802,7 @@
         <argument key="App\Controller\ContactController:index" type="service" id=".service_locator.o.hJ4EY"/>
         <argument key="App\Controller\EventsController:articles" type="service" id=".service_locator.25mwYPX"/>
         <argument key="App\Controller\EventsController:index" type="service" id=".service_locator.25mwYPX"/>
-        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.LQP_.uz"/>
+        <argument key="App\Controller\HomeController:index" type="service" id=".service_locator.5MNV_5I"/>
         <argument key="App\Controller\MemberController:index" type="service" id=".service_locator.c6Nzfx4"/>
         <argument key="App\Controller\MissionsController:index" type="service" id=".service_locator.25mwYPX"/>
         <argument key="App\Controller\MissionsController:missionArticles" type="service" id=".service_locator.25mwYPX"/>
@@ -6146,12 +6168,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.zU07aRc"/>
+      <argument type="service" id=".service_locator.GggZek5"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.zU07aRc"/>
+      <argument type="service" id=".service_locator.GggZek5"/>
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator..UMcQ70"/>
@@ -6541,7 +6563,7 @@
     <service id="SymfonyCasts\Bundle\ResetPassword\ResetPasswordHelperInterface" alias="symfonycasts.reset_password.helper"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.zU07aRc"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.GggZek5"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger" public="false"/>
     <service id=".service_locator.tHpW6v3" alias=".service_locator.Y7gDuDN" public="false"/>

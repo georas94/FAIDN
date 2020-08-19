@@ -39,7 +39,7 @@ class SecurityController extends AbstractController
         $errors = [];
         if (!empty($_POST)) {
                         
-            $secretKey = "6LeUnq8ZAAAAANBlqWmuqGd8vFMIZOh0iLbORxB9";
+            $secretKey = "6LdAoMAZAAAAADOcGjmNffKcpSrv9O1frbNWUPQm";
 
             // post request to server
             if(isset($_POST['g-recaptcha-response'])){
@@ -63,7 +63,7 @@ class SecurityController extends AbstractController
                     
                     $hash = $encoder->encodePassword($user, $user->getPassword());
                     $user->setPassword($hash);
-                    $user->setRoles(["USER"]);
+                    $user->setRoles(["ROLE_USER"]);
                     $date = new \DateTime('now', new \DateTimeZone('Europe/Paris'));
                     $date = $date->format(DATE_RFC2822);
                     $user->setCreatedAt($date);
@@ -83,9 +83,8 @@ class SecurityController extends AbstractController
                     
                     if ($statutNewsletter == true) {
                         
-                        $list_id = '00f801161b';
-                        $authToken = 'd6a3417e09e2cc9ec31feac956170ad4-us19';
-                        // The data to send to the API
+                        $list_id = '3977e25105';
+                        $authToken = 'e4e6b621d8cf7c27dac5e0bc8700488e-us17';
                 
                         $postData = array(
                             "email_address" => $user->getEmail(), 
@@ -97,7 +96,6 @@ class SecurityController extends AbstractController
                         );
                 
                 
-                        // Setup cURL
                         $ch = curl_init('https://us19.api.mailchimp.com/3.0/lists/'.$list_id.'/members/');
                         curl_setopt_array($ch, array(
                             CURLOPT_POST => TRUE,
@@ -108,11 +106,14 @@ class SecurityController extends AbstractController
                             ),
                             CURLOPT_POSTFIELDS => json_encode($postData)
                         ));
-                        // Send the request
+
                         $response = curl_exec($ch);
 
                     }
-
+                    $this->addFlash(
+                        'success',
+                        'Merci pour votre inscription, vous pouvez vous connecter dès maintenant !'
+                    );  
                     return $this->redirectToRoute('security_login');
                 }else {
 

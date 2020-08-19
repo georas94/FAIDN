@@ -1,0 +1,45 @@
+{% extends "baseAdmin.html.twig" %}
+{% block title %}Contenu du diaporama{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3 class="h3 text-center text-secondary">Contenu du diaporama de la page d'accueil</h3>
+
+        <div class="row mt-5">
+
+            <div class="col-sm-12 col-md-12 col-lg-12 mb-5 p-4">
+
+            <div class="container">
+                {% for message in app.flashes('success') %}
+                    <div class="alert alert-success text-center mb-2">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+
+            <table class="table table-striped table-light mt-5">
+                <tbody>
+                    {% for item in sliderImages %}
+                        <tr>
+                            <td scope="col" class="text-center">
+                                <img src="{{asset('assets/img/' ~ item.value)}}" alt="image diaporama accueil" class=" img-fluid">
+                                
+                                <div class="mt-1">
+                                    <a href="{{path('home_slider_update_admin', {'id': item.id} )}}" class="btn btn-warning">Modifier</a>
+                                </div>
+                            </td>                        
+                                                                      
+                        </tr>
+       
+                   
+                    
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

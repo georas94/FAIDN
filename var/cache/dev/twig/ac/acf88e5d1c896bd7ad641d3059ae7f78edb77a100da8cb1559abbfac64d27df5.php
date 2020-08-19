@@ -187,7 +187,7 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
         </table> 
         <div class=\"col-md-6 col-sm-12 col-lg-6\">
             <form action=\"\" method=\"post\" class=\"col-12 \" id=\"checkoutForm\" >
-                ";
+            ";
             // line 59
             echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 59, $this->source); })()), 'form_start');
             echo "
@@ -222,17 +222,19 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
                     <input required type=\"text\" style=\"border-radius: 10px;\" class=\"form-control\" id=\"phone\" name=\"phone\" placeholder=\"...\">
 
                     <input type=\"hidden\" name=\"content\" id=\"content\" class=\"content\" value=\"\">
-                    <input type=\"hidden\" name=\"total\" value=\"";
+                    <input type=\"hidden\" name=\"total\" id=\"total\" value=\"";
             // line 88
             echo twig_escape_filter($this->env, (isset($context["total"]) || array_key_exists("total", $context) ? $context["total"] : (function () { throw new RuntimeError('Variable "total" does not exist.', 88, $this->source); })()), "html", null, true);
             echo "\">
-                    <button type=\"submit\" class=\"btn btn-primary mt-3 btn-block rounded-pill d-flex justify-content-center align-items-center\" id=\"checkout\" name=\"checkout\">Accéder au paiement <i style=\"\" class=\"fab fa-stripe ml-2\"></i><br></button>
+                    <div id=\"paypal-button-container\"></div>
+                   
                 </div>
             ";
-            // line 91
-            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 91, $this->source); })()), 'form_end');
+            // line 92
+            echo             $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 92, $this->source); })()), 'form_end');
             echo "
             </form>
+
         </div>
     </div>
 
@@ -240,7 +242,7 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
 
     ";
         } else {
-            // line 99
+            // line 101
             echo "    <div class=\"row justify-content-center flex-column align-items-center\">
         <div class=\"text-center h3 titleSecondary mb-5\">
         Bienvenue dans votre panier
@@ -249,7 +251,7 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
         <div class=\"lead col-sm-12 col-lg-12 col-md-12\">
             <p class=\"\">Celui-ci est actuellement vide</p>
             <a href=\"";
-            // line 106
+            // line 108
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("member_home");
             echo "\" class=\"btn btn-secondary w-50 btn-block backToProducts\">Retour à la page produits</a>
         </div>
@@ -257,7 +259,7 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
 
     ";
         }
-        // line 111
+        // line 113
         echo "
 </div>
     
@@ -265,7 +267,7 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
 
 
     ";
-        // line 117
+        // line 119
         $this->displayBlock('javascripts', $context, $blocks);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -284,12 +286,58 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 118
-        echo "    
+        // line 120
+        echo "        <script src=\"https://www.paypal.com/sdk/js?client-id=AaAMtRJB7ALugZPnuC6m9mI32lNTPcGEdHsYRBS2QMJ61ldLKTAi7QYiaMkC73k6--Ttj309CHfoL2yB&currency=EUR\" data-sdk-integration-source=\"button-factory\"></script>
         <script>
             \$(document).ready(function(){
+
+                let redirect = '";
+        // line 124
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "';
                 let titles = \$('.title').text();
+                let total = \$('#total').val();
+            
                 \$('#content').val(titles);
+
+                paypal.Buttons({
+                style: {
+                    shape: 'rect',
+                    color: 'silver',
+                    layout: 'vertical',
+                    label: 'paypal',
+                    
+                },
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: total
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                      
+                       Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Paiement accepté !',
+                                text: 'Vous allez recevrez bientôt un mail de confirmation de paiement',
+                                showConfirmButton: false,
+                                timer: 4000
+                        }   )
+                      
+                        let delay = 6000;
+                        setTimeout(function(){
+                        document.location.href = redirect;
+                        },delay);
+
+                        
+                    });
+                }
+                }).render('#paypal-button-container');
             });
         </script>
 
@@ -314,7 +362,7 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
 
     public function getDebugInfo()
     {
-        return array (  288 => 118,  269 => 117,  261 => 111,  253 => 106,  244 => 99,  233 => 91,  227 => 88,  215 => 79,  192 => 59,  182 => 52,  176 => 51,  171 => 48,  162 => 45,  156 => 44,  152 => 43,  148 => 42,  143 => 41,  139 => 40,  122 => 25,  116 => 22,  113 => 21,  111 => 20,  104 => 15,  102 => 14,  96 => 10,  94 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  296 => 124,  290 => 120,  271 => 119,  263 => 113,  255 => 108,  246 => 101,  234 => 92,  227 => 88,  215 => 79,  192 => 59,  182 => 52,  176 => 51,  171 => 48,  162 => 45,  156 => 44,  152 => 43,  148 => 42,  143 => 41,  139 => 40,  122 => 25,  116 => 22,  113 => 21,  111 => 20,  104 => 15,  102 => 14,  96 => 10,  94 => 9,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -377,7 +425,7 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
         </table> 
         <div class=\"col-md-6 col-sm-12 col-lg-6\">
             <form action=\"\" method=\"post\" class=\"col-12 \" id=\"checkoutForm\" >
-                {{form_start(form)}}
+            {{form_start(form)}}
                 <div class=\"checkoutForm p-3\" style=\"background-color: #ccd3d92b;border-radius: 7px;\">
                     <label for=\"fname\" class=\"\"><i class=\"far fa-address-card\"></i></i> NOM et Prénom / Raison sociale</label>
                     <input required type=\"text\" style=\"border-radius: 10px;\" class=\"form-control\" id=\"fname\" name=\"firstname\" placeholder=\"...\">
@@ -406,11 +454,13 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
                     <input required type=\"text\" style=\"border-radius: 10px;\" class=\"form-control\" id=\"phone\" name=\"phone\" placeholder=\"...\">
 
                     <input type=\"hidden\" name=\"content\" id=\"content\" class=\"content\" value=\"\">
-                    <input type=\"hidden\" name=\"total\" value=\"{{total}}\">
-                    <button type=\"submit\" class=\"btn btn-primary mt-3 btn-block rounded-pill d-flex justify-content-center align-items-center\" id=\"checkout\" name=\"checkout\">Accéder au paiement <i style=\"\" class=\"fab fa-stripe ml-2\"></i><br></button>
+                    <input type=\"hidden\" name=\"total\" id=\"total\" value=\"{{total}}\">
+                    <div id=\"paypal-button-container\"></div>
+                   
                 </div>
             {{form_end(form)}}
             </form>
+
         </div>
     </div>
 
@@ -436,11 +486,54 @@ class __TwigTemplate_dfcb10b056832cc373d88dbadc6a25ba6678d32e5d6e4086492681f11e1
 
 
     {% block javascripts %}
-    
+        <script src=\"https://www.paypal.com/sdk/js?client-id=AaAMtRJB7ALugZPnuC6m9mI32lNTPcGEdHsYRBS2QMJ61ldLKTAi7QYiaMkC73k6--Ttj309CHfoL2yB&currency=EUR\" data-sdk-integration-source=\"button-factory\"></script>
         <script>
             \$(document).ready(function(){
+
+                let redirect = '{{path('home')}}';
                 let titles = \$('.title').text();
+                let total = \$('#total').val();
+            
                 \$('#content').val(titles);
+
+                paypal.Buttons({
+                style: {
+                    shape: 'rect',
+                    color: 'silver',
+                    layout: 'vertical',
+                    label: 'paypal',
+                    
+                },
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: total
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                      
+                       Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Paiement accepté !',
+                                text: 'Vous allez recevrez bientôt un mail de confirmation de paiement',
+                                showConfirmButton: false,
+                                timer: 4000
+                        }   )
+                      
+                        let delay = 6000;
+                        setTimeout(function(){
+                        document.location.href = redirect;
+                        },delay);
+
+                        
+                    });
+                }
+                }).render('#paypal-button-container');
             });
         </script>
 

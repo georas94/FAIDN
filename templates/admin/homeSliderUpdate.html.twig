@@ -1,0 +1,28 @@
+{% extends "baseAdmin.html.twig" %}
+{% block title %}Modification diaporama{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <h3 class="h3 text-center text-secondary">Modification {{sliderImage.name}} </h3>
+
+        <div class="row mt-5">
+
+            <div class="col-sm-12 col-md-12 col-lg-12 mb-5 p-4">
+                <form action="" method="post" enctype="multipart/form-data">
+                <h6 class="h6 text-secondary text-center">Image de remplacement</h6>
+                    <div class="form-group text-center mt-4">
+                        <input type="file" name="sliderImage" id="sliderImage" class="sliderImage"><br>
+                        <small><strong>Veuillez uploader une image d'au moins 2500px X 300px</strong></small>
+                    </div>
+                    <div class="col-12 text-center">
+                        <button type="submit" class="btn-secondary btn w-50">Modifier</button>
+                    </div>
+                </form>
+            
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

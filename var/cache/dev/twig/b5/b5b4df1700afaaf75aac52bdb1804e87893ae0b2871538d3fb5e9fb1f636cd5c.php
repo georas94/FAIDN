@@ -155,7 +155,7 @@ class __TwigTemplate_ab09ba43eaff03efe4650922d6a0af5ba5690e39caa00b4e7c338708c07
             echo "
                     </div>
                     <div class=\"d-flex justify-content-center\">
-                            <div class=\"g-recaptcha\" data-sitekey=\"6LeUnq8ZAAAAABVOS7J5NvgAmaz6DHR8Y5XhLiI4\"></div>
+                            <div class=\"g-recaptcha\" data-sitekey=\"6LdAoMAZAAAAAIZYyFOnb2shvp9poSyqdDY4ERFl\"></div>
                     </div>
 
                     <button type=\"submit\" class=\"btn btn-secondary btn-block mt-4 mb-5 registerValidation\">Valider</button>
@@ -260,7 +260,7 @@ class __TwigTemplate_ab09ba43eaff03efe4650922d6a0af5ba5690e39caa00b4e7c338708c07
                     {{form_row(form.newsletter, {'label': 'S\\'inscrire à notre newsletter', 'checked':'checked','attr': {'class':' ml-3 mt-2', 'name': 'newsletterAdd'}})}}
                     </div>
                     <div class=\"d-flex justify-content-center\">
-                            <div class=\"g-recaptcha\" data-sitekey=\"6LeUnq8ZAAAAABVOS7J5NvgAmaz6DHR8Y5XhLiI4\"></div>
+                            <div class=\"g-recaptcha\" data-sitekey=\"6LdAoMAZAAAAAIZYyFOnb2shvp9poSyqdDY4ERFl\"></div>
                     </div>
 
                     <button type=\"submit\" class=\"btn btn-secondary btn-block mt-4 mb-5 registerValidation\">Valider</button>

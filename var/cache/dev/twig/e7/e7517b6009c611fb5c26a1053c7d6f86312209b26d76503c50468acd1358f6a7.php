@@ -158,7 +158,7 @@ class __TwigTemplate_0a66459879f07dc3fc69176d0b838849bac9d65f1f895e32144a2ec8828
             echo "</td>
                 <td class=\"text-break\">";
             // line 51
-            echo twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "content1", [], "any", false, false, false, 51), 0, 100);
+            echo twig_escape_filter($this->env, strip_tags(twig_slice($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "content1", [], "any", false, false, false, 51), 0, 200)), "html", null, true);
             echo "</td>
                 <td class=\"text-capitalize text-center\">";
             // line 52
@@ -265,7 +265,7 @@ class __TwigTemplate_0a66459879f07dc3fc69176d0b838849bac9d65f1f895e32144a2ec8828
             <tr>
 
                 <td class=\"text-center\">{{item.title}}</td>
-                <td class=\"text-break\">{{item.content1|slice(0,100)|raw}}</td>
+                <td class=\"text-break\">{{item.content1|slice(0,200)|striptags}}</td>
                 <td class=\"text-capitalize text-center\">{{item.category}}</td>
                 <td class=\"text-center\">{{item.createdAt|date('r')|slice(4, 13)}}</td>
                 <td class=\"text-center\"><a class=\"text-center\" href=\"{{path('article_update_admin', {'id':item.id})}}\"><i class=\"fas fa-pen fa-2x\"></i></a></td>
@@ -278,6 +278,6 @@ class __TwigTemplate_0a66459879f07dc3fc69176d0b838849bac9d65f1f895e32144a2ec8828
     </div>
 </div>
 
-{% endblock %}", "admin/viewAllArticles.html.twig", "/Applications/MAMP/htdocs/FDAIN/templates/admin/viewAllArticles.html.twig");
+{% endblock %}", "admin/viewAllArticles.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/admin/viewAllArticles.html.twig");
     }
 }

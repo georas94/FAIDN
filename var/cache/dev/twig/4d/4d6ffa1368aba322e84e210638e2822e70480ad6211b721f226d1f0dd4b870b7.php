@@ -98,13 +98,6 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
         // line 36
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
         echo "\">
-
-        <div class=\"sidebar-brand-icon rotate-n-15\">
-          <div class=\"\" style=\"background-image:url(";
-        // line 39
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/img/fdain.png"), "html", null, true);
-        echo ");height:50px;width:50px;background-position:center;border-radius:28px;\"></div>
-        </div>
         <div class=\"sidebar-brand-text mx-3\">Page admin</div>
       </a>
 
@@ -129,41 +122,64 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
         <div id=\"collapseTwo\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
           <div class=\"bg-white py-2 collapse-inner rounded\">
             <a class=\"collapse-item\" href=\"";
-        // line 64
+        // line 60
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("article_add_admin");
         echo "\">Publier un article</a>
             <a class=\"collapse-item\" href=\"";
-        // line 65
+        // line 61
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("view_all_articles_admin");
         echo "\">Gestion des articles</a>
             <a class=\"collapse-item\" href=\"";
-        // line 66
+        // line 62
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("partners_add_admin");
         echo "\">Ajouter / voir partenaires</a>
             <a class=\"collapse-item\" href=\"";
-        // line 67
+        // line 63
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("all_users_admin");
         echo "\">Tableau des utilisateurs</a>
             <a class=\"collapse-item\" href=\"";
-        // line 68
+        // line 64
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_management_view");
         echo "\">Gestion des produits</a>
             <a class=\"collapse-item\" href=\"";
-        // line 69
+        // line 65
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("sales_home_admin");
         echo "\">Gestion des ventes</a>
             <a class=\"collapse-item\" href=\"";
-        // line 70
+        // line 66
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("product_send_admin");
         echo "\">Envoyer adhésion</a>
             <a class=\"collapse-item\" href=\"";
-        // line 71
+        // line 67
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("citation_admin");
+        echo "\">Éditer les citations</a>
+            <a class=\"collapse-item\" href=\"";
+        // line 68
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homeBackground_update_admin");
+        echo "\">Éditer photo / image <br>
+            de la page d'accueil</a>
+            <a class=\"collapse-item\" href=\"";
+        // line 70
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home_slider_admin");
+        echo "\">Éditer le diaporama de <br> 
+            la page d'accueil</a>
+            <a class=\"collapse-item\" href=\"";
+        // line 72
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("footer_admin");
+        echo "\">Éditer le bas de page</a>
+            <a class=\"collapse-item\" href=\"";
+        // line 73
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("counter_admin");
+        echo "\">Éditer le compteur de <br> la page d'accueil</a>
+            <a class=\"collapse-item\" href=\"";
+        // line 74
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("archives_admin");
         echo "\">Mes archives</a>
           </div>
         </div>
       </li>
       
+      <!--
       <li class=\"nav-item\">
         <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseThree\" aria-expanded=\"true\" aria-controls=\"collapseThree\">
           <i class=\"fas fa-fw fa-folder\"></i>
@@ -171,26 +187,15 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
         </a>
         <div id=\"collapseThree\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
           <div class=\"bg-white py-2 collapse-inner rounded\">
-            <a class=\"collapse-item\" href=\"";
-        // line 83
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("citation_admin");
-        echo "\">Éditer les citations</a>
-            <a class=\"collapse-item\" href=\"";
-        // line 84
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("footer_admin");
-        echo "\">Éditer le bas de page</a>
-            <a class=\"collapse-item\" href=\"";
-        // line 85
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("counter_admin");
-        echo "\">Éditer le compteur de <br> la page d'accueil</a>
           </div>
         </div>
       </li>
+      -->
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"";
-        // line 92
+        // line 94
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("messages_view");
         echo "\">
           <i class=\"fas fa-fw fa-envelope\"></i>
@@ -248,7 +253,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
             <!-- Nav Item - Alerts -->
             <li class=\"nav-item no-arrow mx-1\">
               <a class=\"nav-link\" href=\"";
-        // line 147
+        // line 149
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_logout");
         echo "\" id=\"\" role=\"button\"  aria-haspopup=\"true\" aria-expanded=\"false\">
                 <i class=\"fas fa-bell fa-sign-out-alt\"></i>
@@ -264,8 +269,8 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
             <li class=\"nav-item dropdown no-arrow\">
               <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"userDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
                 <span class=\"mr-2 d-none d-lg-inline text-gray-600 small text-capitalize\">Hello&nbsp;";
-        // line 160
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 160, $this->source); })()), "user", [], "any", false, false, false, 160), "username", [], "any", false, false, false, 160), "html", null, true);
+        // line 162
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 162, $this->source); })()), "user", [], "any", false, false, false, 162), "username", [], "any", false, false, false, 162), "html", null, true);
         echo "&nbsp;!</span>
               </a>
             </li>
@@ -279,9 +284,9 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
         <div class=\"container-fluid mb-5 mt-5\">
 
         ";
-        // line 172
+        // line 174
         $this->displayBlock('body', $context, $blocks);
-        // line 173
+        // line 175
         echo "
 
       </div>
@@ -292,7 +297,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
         <div class=\"container my-auto\">
           <div class=\"copyright text-center my-auto\">
             <span>F.A.I.D.N &nbsp; &copy;";
-        // line 182
+        // line 184
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, "now", "Y"), "html", null, true);
         echo "  &nbsp;réalisé par &nbsp;<a href=\"https://rashidtamboura.fr\">Rashid Tamboura</a></span>
           </div>
@@ -313,23 +318,23 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
 
   <!-- Bootstrap core JavaScript-->
   <script src=\" ";
-        // line 200
+        // line 202
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendoro/jquery/jquery.min.js"), "html", null, true);
         echo "\"></script>
   <script src=\" ";
-        // line 201
+        // line 203
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendoro/bootstrap/js/bootstrap.bundle.min.js"), "html", null, true);
         echo "\"></script>
 
   <!-- Core plugin JavaScript-->
   <script src=\"";
-        // line 204
+        // line 206
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/vendoro/jquery-easing/jquery.easing.min.js"), "html", null, true);
         echo " \"></script>
 
   <!-- Custom scripts for all pages-->
   <script src=\"";
-        // line 207
+        // line 209
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/sb-admin-2.min.js"), "html", null, true);
         echo "\"></script>
 
@@ -344,13 +349,13 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
     </script>
     <script src=\"https://cdn.jsdelivr.net/npm/sweetalert2@9\"></script>
     <script src=\"";
-        // line 219
+        // line 221
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/scriptAdmin.js"), "html", null, true);
         echo "\"></script>
     ";
-        // line 220
+        // line 222
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 221
+        // line 223
         echo "
 </body>
 
@@ -402,7 +407,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
 
     }
 
-    // line 172
+    // line 174
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -420,7 +425,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
 
     }
 
-    // line 220
+    // line 222
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -450,7 +455,7 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
 
     public function getDebugInfo()
     {
-        return array (  424 => 220,  406 => 172,  388 => 23,  369 => 18,  354 => 221,  352 => 220,  348 => 219,  333 => 207,  327 => 204,  321 => 201,  317 => 200,  296 => 182,  285 => 173,  283 => 172,  268 => 160,  252 => 147,  194 => 92,  184 => 85,  180 => 84,  176 => 83,  161 => 71,  157 => 70,  153 => 69,  149 => 68,  145 => 67,  141 => 66,  137 => 65,  133 => 64,  105 => 39,  99 => 36,  85 => 24,  83 => 23,  78 => 21,  72 => 18,  68 => 17,  61 => 13,  47 => 1,);
+        return array (  429 => 222,  411 => 174,  393 => 23,  374 => 18,  359 => 223,  357 => 222,  353 => 221,  338 => 209,  332 => 206,  326 => 203,  322 => 202,  301 => 184,  290 => 175,  288 => 174,  273 => 162,  257 => 149,  199 => 94,  176 => 74,  172 => 73,  168 => 72,  163 => 70,  158 => 68,  154 => 67,  150 => 66,  146 => 65,  142 => 64,  138 => 63,  134 => 62,  130 => 61,  126 => 60,  99 => 36,  85 => 24,  83 => 23,  78 => 21,  72 => 18,  68 => 17,  61 => 13,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -491,10 +496,6 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
 
       <!-- Sidebar - Brand -->
       <a class=\"sidebar-brand d-flex align-items-center justify-content-center\" href=\"{{path('admin')}}\">
-
-        <div class=\"sidebar-brand-icon rotate-n-15\">
-          <div class=\"\" style=\"background-image:url({{asset('assets/img/fdain.png')}});height:50px;width:50px;background-position:center;border-radius:28px;\"></div>
-        </div>
         <div class=\"sidebar-brand-text mx-3\">Page admin</div>
       </a>
 
@@ -525,11 +526,19 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
             <a class=\"collapse-item\" href=\"{{path('product_management_view')}}\">Gestion des produits</a>
             <a class=\"collapse-item\" href=\"{{path('sales_home_admin')}}\">Gestion des ventes</a>
             <a class=\"collapse-item\" href=\"{{path('product_send_admin')}}\">Envoyer adhésion</a>
+            <a class=\"collapse-item\" href=\"{{path('citation_admin')}}\">Éditer les citations</a>
+            <a class=\"collapse-item\" href=\"{{path('homeBackground_update_admin')}}\">Éditer photo / image <br>
+            de la page d'accueil</a>
+            <a class=\"collapse-item\" href=\"{{path('home_slider_admin')}}\">Éditer le diaporama de <br> 
+            la page d'accueil</a>
+            <a class=\"collapse-item\" href=\"{{path('footer_admin')}}\">Éditer le bas de page</a>
+            <a class=\"collapse-item\" href=\"{{path('counter_admin')}}\">Éditer le compteur de <br> la page d'accueil</a>
             <a class=\"collapse-item\" href=\"{{path('archives_admin')}}\">Mes archives</a>
           </div>
         </div>
       </li>
       
+      <!--
       <li class=\"nav-item\">
         <a class=\"nav-link collapsed\" href=\"#\" data-toggle=\"collapse\" data-target=\"#collapseThree\" aria-expanded=\"true\" aria-controls=\"collapseThree\">
           <i class=\"fas fa-fw fa-folder\"></i>
@@ -537,12 +546,10 @@ class __TwigTemplate_2ff46d294bd994360bdb1ab09682b0e21caf875ee29de61a36a3bc6ac3f
         </a>
         <div id=\"collapseThree\" class=\"collapse\" aria-labelledby=\"headingTwo\" data-parent=\"#accordionSidebar\">
           <div class=\"bg-white py-2 collapse-inner rounded\">
-            <a class=\"collapse-item\" href=\"{{path('citation_admin')}}\">Éditer les citations</a>
-            <a class=\"collapse-item\" href=\"{{path('footer_admin')}}\">Éditer le bas de page</a>
-            <a class=\"collapse-item\" href=\"{{path('counter_admin')}}\">Éditer le compteur de <br> la page d'accueil</a>
           </div>
         </div>
       </li>
+      -->
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class=\"nav-item\">

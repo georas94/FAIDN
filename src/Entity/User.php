@@ -127,7 +127,7 @@ class User implements UserInterface
     
     public function getRoles(){
         $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
+        //pour que tout le monde ai un rôle user
         $roles[] = 'ROLE_USER';
 
         return array_unique($roles);

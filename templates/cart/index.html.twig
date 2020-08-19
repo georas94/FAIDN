@@ -85,11 +85,13 @@
                     <input required type="text" style="border-radius: 10px;" class="form-control" id="phone" name="phone" placeholder="...">
 
                     <input type="hidden" name="content" id="content" class="content" value="">
-                    <input type="hidden" name="total" value="{{total}}">
-                    <button type="submit" class="btn btn-primary mt-3 btn-block rounded-pill d-flex justify-content-center align-items-center" id="checkout" name="checkout">Accéder au paiement <i style="" class="fab fa-stripe ml-2"></i><br></button>
+                    <input type="hidden" name="total" id="total" value="{{total}}">
+                    <div id="paypal-button-container"></div>
+                   
                 </div>
             {{form_end(form)}}
             </form>
+
         </div>
     </div>
 
@@ -115,11 +117,54 @@
 
 
     {% block javascripts %}
-    
+        <script src="https://www.paypal.com/sdk/js?client-id=AaAMtRJB7ALugZPnuC6m9mI32lNTPcGEdHsYRBS2QMJ61ldLKTAi7QYiaMkC73k6--Ttj309CHfoL2yB&currency=EUR" data-sdk-integration-source="button-factory"></script>
         <script>
             $(document).ready(function(){
+
+                let redirect = '{{path('home')}}';
                 let titles = $('.title').text();
+                let total = $('#total').val();
+            
                 $('#content').val(titles);
+
+                paypal.Buttons({
+                style: {
+                    shape: 'rect',
+                    color: 'silver',
+                    layout: 'vertical',
+                    label: 'paypal',
+                    
+                },
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: total
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                      
+                       Swal.fire({
+                                position: 'center',
+                                icon: 'success',
+                                title: 'Paiement accepté !',
+                                text: 'Vous allez recevrez bientôt un mail de confirmation de paiement',
+                                showConfirmButton: false,
+                                timer: 4000
+                        }   )
+                      
+                        let delay = 6000;
+                        setTimeout(function(){
+                        document.location.href = redirect;
+                        },delay);
+
+                        
+                    });
+                }
+                }).render('#paypal-button-container');
             });
         </script>
 

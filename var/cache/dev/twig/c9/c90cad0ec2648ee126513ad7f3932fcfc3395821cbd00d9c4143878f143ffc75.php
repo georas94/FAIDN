@@ -89,14 +89,33 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
         echo "
     <div class=\"col-md-12 col-lg-12 col-sm-12 \">
         <h3 class=\"h3 text-secondary text-center\">Bienvenue dans votre back-office</h3>
-
+        <div class=\"container\">
+            ";
+        // line 10
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 10));
+        foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+            // line 11
+            echo "                <div class=\"alert alert-success text-center mb-2\">
+                    ";
+            // line 12
+            echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+            echo "
+                </div>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 15
+        echo "        </div>
         <div class=\"row mt-5\">
             <div class=\"col-lg-3 col-xs-6\">
                 <div class=\"rad-info-box rad-txt-success\">
                     <span class=\"heading text-center\">Nombre d'emails</span>
                     <span class=\"value text-center\"><span>";
-        // line 14
-        echo twig_escape_filter($this->env, (isset($context["emailCount"]) || array_key_exists("emailCount", $context) ? $context["emailCount"] : (function () { throw new RuntimeError('Variable "emailCount" does not exist.', 14, $this->source); })()), "html", null, true);
+        // line 20
+        echo twig_escape_filter($this->env, (isset($context["emailCount"]) || array_key_exists("emailCount", $context) ? $context["emailCount"] : (function () { throw new RuntimeError('Variable "emailCount" does not exist.', 20, $this->source); })()), "html", null, true);
         echo "</span></span>
                 </div>
             </div>
@@ -104,8 +123,8 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
                 <div class=\"rad-info-box rad-txt-primary\">
                     <span class=\"heading text-center\">Utilisateurs inscrits</span>
                     <span class=\"value text-center\"><span>";
-        // line 20
-        echo twig_escape_filter($this->env, (isset($context["usersCount"]) || array_key_exists("usersCount", $context) ? $context["usersCount"] : (function () { throw new RuntimeError('Variable "usersCount" does not exist.', 20, $this->source); })()), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, (isset($context["usersCount"]) || array_key_exists("usersCount", $context) ? $context["usersCount"] : (function () { throw new RuntimeError('Variable "usersCount" does not exist.', 26, $this->source); })()), "html", null, true);
         echo "</span></span>
                 </div>
             </div>
@@ -113,8 +132,8 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
                 <div class=\"rad-info-box rad-txt-danger\">
                     <span class=\"heading text-center\">Articles publiés</span>
                     <span class=\"value text-center\"><span>";
-        // line 26
-        echo twig_escape_filter($this->env, (isset($context["articlesCount"]) || array_key_exists("articlesCount", $context) ? $context["articlesCount"] : (function () { throw new RuntimeError('Variable "articlesCount" does not exist.', 26, $this->source); })()), "html", null, true);
+        // line 32
+        echo twig_escape_filter($this->env, (isset($context["articlesCount"]) || array_key_exists("articlesCount", $context) ? $context["articlesCount"] : (function () { throw new RuntimeError('Variable "articlesCount" does not exist.', 32, $this->source); })()), "html", null, true);
         echo "</span></span>
                 </div>
             </div>
@@ -122,8 +141,8 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
                 <div class=\"rad-info-box\">
                     <span class=\"heading text-center\">Adhérants</span>
                     <span class=\"value text-center\"><span>";
-        // line 32
-        echo twig_escape_filter($this->env, (isset($context["memberCount"]) || array_key_exists("memberCount", $context) ? $context["memberCount"] : (function () { throw new RuntimeError('Variable "memberCount" does not exist.', 32, $this->source); })()), "html", null, true);
+        // line 38
+        echo twig_escape_filter($this->env, (isset($context["memberCount"]) || array_key_exists("memberCount", $context) ? $context["memberCount"] : (function () { throw new RuntimeError('Variable "memberCount" does not exist.', 38, $this->source); })()), "html", null, true);
         echo "</span></span>
                 </div>
             </div>
@@ -150,9 +169,9 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
 </div>
 
     ";
-        // line 57
+        // line 63
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 138
+        // line 144
         echo "
 ";
         
@@ -163,7 +182,7 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
 
     }
 
-    // line 57
+    // line 63
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -173,7 +192,7 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 58
+        // line 64
         echo "        <script src=\"https://www.amcharts.com/lib/4/core.js\"></script>
         <script src=\"https://www.amcharts.com/lib/4/charts.js\"></script>
         <script src=\"//www.amcharts.com/lib/4/themes/animated.js\"></script>
@@ -191,7 +210,7 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
 
                     // Load data
                     chart.dataSource.url = '";
-        // line 74
+        // line 80
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("analytics");
         echo "';
                     chart.dataSource.parser = new am4core.JSONParser();
@@ -220,7 +239,7 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
 
                     var chart2 = am4core.create(\"chartdiv2\", am4charts.PieChart);
                     chart2.dataSource.url = '";
-        // line 100
+        // line 106
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("organic_searches_admin");
         echo "';
                     
@@ -237,7 +256,7 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
 
                     var chart3 = am4core.create(\"chartdiv3\", am4charts.SlicedChart);
                     chart3.dataSource.url = '";
-        // line 114
+        // line 120
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("ho");
         echo "';
                     // Add and configure Series
@@ -283,7 +302,7 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
 
     public function getDebugInfo()
     {
-        return array (  241 => 114,  224 => 100,  195 => 74,  177 => 58,  167 => 57,  156 => 138,  154 => 57,  126 => 32,  117 => 26,  108 => 20,  99 => 14,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  260 => 120,  243 => 106,  214 => 80,  196 => 64,  186 => 63,  175 => 144,  173 => 63,  145 => 38,  136 => 32,  127 => 26,  118 => 20,  111 => 15,  102 => 12,  99 => 11,  95 => 10,  89 => 6,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -296,7 +315,13 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
 
     <div class=\"col-md-12 col-lg-12 col-sm-12 \">
         <h3 class=\"h3 text-secondary text-center\">Bienvenue dans votre back-office</h3>
-
+        <div class=\"container\">
+            {% for message in app.flashes('success') %}
+                <div class=\"alert alert-success text-center mb-2\">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
         <div class=\"row mt-5\">
             <div class=\"col-lg-3 col-xs-6\">
                 <div class=\"rad-info-box rad-txt-success\">
@@ -426,6 +451,6 @@ class __TwigTemplate_67d10fad8309539ffa29f577592292a54b20876c5bd2f488e62d8fcdce2
 
     {% endblock %}
 
-{% endblock %}", "admin/index.html.twig", "/Applications/MAMP/htdocs/FDAIN/templates/admin/index.html.twig");
+{% endblock %}", "admin/index.html.twig", "/Applications/MAMP/htdocs/fdain/fdain/templates/admin/index.html.twig");
     }
 }

@@ -48,7 +48,7 @@
             <tr>
 
                 <td class="text-center">{{item.title}}</td>
-                <td class="text-break">{{item.content1|slice(0,100)|raw}}</td>
+                <td class="text-break">{{item.content1|slice(0,200)|striptags}}</td>
                 <td class="text-capitalize text-center">{{item.category}}</td>
                 <td class="text-center">{{item.createdAt|date('r')|slice(4, 13)}}</td>
                 <td class="text-center"><a class="text-center" href="{{path('article_update_admin', {'id':item.id})}}"><i class="fas fa-pen fa-2x"></i></a></td>

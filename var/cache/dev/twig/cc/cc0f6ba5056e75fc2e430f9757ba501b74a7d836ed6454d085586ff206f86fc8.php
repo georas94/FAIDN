@@ -136,7 +136,7 @@ class __TwigTemplate_28ed881f00b488b4a90e8ddf1ace4c941198daa8f130a4b9cb01d33fb01
         
         <div class=\"col-sm-12 col-md-12 col-lg-12 mt-3\">
             <div class=\"h3 titleSecondary text-center\">Tous nos évènements</div>
-            <div class=\"row mt-3 mb-5 justify-content-center\">
+            <div class=\"row mt-3 mb-5 justify-content-center allEvents\">
 
                 ";
         // line 37
@@ -153,7 +153,7 @@ class __TwigTemplate_28ed881f00b488b4a90e8ddf1ace4c941198daa8f130a4b9cb01d33fb01
             // line 40
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("assets/img/" . twig_get_attribute($this->env, $this->source, $context["article"], "img1", [], "any", false, false, false, 40))), "html", null, true);
             echo "\">
-                            <div class=\"eventTitle\"> ";
+                            <div class=\"eventTitle text-center\"> ";
             // line 41
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "title", [], "any", false, false, false, 41), "html", null, true);
             echo "</div>
@@ -233,13 +233,13 @@ class __TwigTemplate_28ed881f00b488b4a90e8ddf1ace4c941198daa8f130a4b9cb01d33fb01
         
         <div class=\"col-sm-12 col-md-12 col-lg-12 mt-3\">
             <div class=\"h3 titleSecondary text-center\">Tous nos évènements</div>
-            <div class=\"row mt-3 mb-5 justify-content-center\">
+            <div class=\"row mt-3 mb-5 justify-content-center allEvents\">
 
                 {% for article in allArticles %}
                     <div class=\"col-sm-12 col-md-12 col-lg-4 mt-2 eventLinkContainer d-flex justify-content-center\">
                     <a href=\"{{path('events_articles', {'article':article.title})}}\" class=\"eventLink\">
                         <div class=\"h6 eventBackground d-flex align-items-center justify-content-center \" style=\"background-image:url({{asset('assets/img/' ~ article.img1)}}\">
-                            <div class=\"eventTitle\"> {{article.title}}</div>
+                            <div class=\"eventTitle text-center\"> {{article.title}}</div>
                         </div>
                     </a>
                     </div>

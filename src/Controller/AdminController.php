@@ -5,19 +5,21 @@ namespace App\Controller;
 use App\Entity\Cart;
 use App\Entity\Post;
 use App\Entity\Counter;
+use App\Entity\Options;
 use App\Entity\Product;
 use App\Entity\Archives;
 use App\Entity\Articles;
 use App\Entity\Messages;
 use App\Entity\Partners;
-use App\Entity\FooterData;
 
+use App\Entity\FooterData;
 use App\Entity\CitationSlider;
 use App\Form\AdminArticleType;
 use App\Repository\CartRepository;
 use App\Repository\PostRepository;
 use App\Repository\UserRepository;
 use App\Repository\CounterRepository;
+use App\Repository\OptionsRepository;
 use App\Repository\PaymentRepository;
 use App\Repository\ProductRepository;
 use Intervention\Image\ImageManager; 
@@ -34,6 +36,7 @@ use FOS\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpKernel\KernelInterface as BaseKernel;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
 class AdminController extends AbstractController
 {
@@ -52,7 +55,7 @@ class AdminController extends AbstractController
             // Use the developers console and download your service account
             // credentials in JSON format. Place them in this directory or
             // change the key file location if necessary.
-            $KEY_FILE_LOCATION = __DIR__ . '/faidn-283118-7191dd778863.json';
+            $KEY_FILE_LOCATION = __DIR__ . '/circular-source-286807-89bd7eb1f4ca.json';
 
             // Create and configure a new client object.
             $client = new \Google_Client();
@@ -145,11 +148,14 @@ class AdminController extends AbstractController
         $rows = $results->getRows();
 
         $data = array();
-        foreach( $rows as $row ) {
-        $data[] = array(
-            'country'   => $row[0],
-            'sessions'  => $row[1]
-        );
+        if (!empty($rows)) {
+            
+            foreach( $rows as $row ) {
+                $data[] = array(
+                    'country'   => $row[0],
+                    'sessions'  => $row[1]
+                );
+            }
         }
 
         json_encode( $data );
@@ -997,7 +1003,7 @@ class AdminController extends AbstractController
             // Use the developers console and download your service account
             // credentials in JSON format. Place them in this directory or
             // change the key file location if necessary.
-            $KEY_FILE_LOCATION = __DIR__ . '/faidn-283118-7191dd778863.json';
+            $KEY_FILE_LOCATION = __DIR__ . '/circular-source-286807-89bd7eb1f4ca.json';
 
             // Create and configure a new client object.
             $client = new \Google_Client();
@@ -1090,13 +1096,15 @@ class AdminController extends AbstractController
         $rows = $results->getRows();
 
         $data = array();
-        foreach( $rows as $row ) {
-        $data[] = array(
-            'country'   => $row[0],
-            'organicSearches'  => $row[1]
-        );
-        }
+        if (!empty($rows)) {
 
+            foreach( $rows as $row ) {
+            $data[] = array(
+                'country'   => $row[0],
+                'organicSearches'  => $row[1]
+            );
+            }
+        }
         json_encode( $data );
 
 
@@ -1117,7 +1125,7 @@ class AdminController extends AbstractController
             // Use the developers console and download your service account
             // credentials in JSON format. Place them in this directory or
             // change the key file location if necessary.
-            $KEY_FILE_LOCATION = __DIR__ . '/faidn-283118-7191dd778863.json';
+            $KEY_FILE_LOCATION = __DIR__ . '/circular-source-286807-89bd7eb1f4ca.json';
 
             // Create and configure a new client object.
             $client = new \Google_Client();
@@ -1210,11 +1218,14 @@ class AdminController extends AbstractController
         $rows = $results->getRows();
 
         $data = array();
-        foreach( $rows as $row ) {
-        $data[] = array(
-            'country'   => $row[0],
-            'hits'  => $row[1]
-        );
+        if (!empty($rows)) {
+           
+            foreach( $rows as $row ) {
+                $data[] = array(
+                    'country'   => $row[0],
+                    'hits'  => $row[1]
+                );
+            }
         }
 
         json_encode( $data );
@@ -1431,13 +1442,25 @@ class AdminController extends AbstractController
 
 
 
+    public function header(OptionsRepository $optionRepository)
+    {
+        $homeBackground = $optionRepository->findHomeBackground();
+
+        foreach ($homeBackground as $value) {
+            $background = $value->getValue();
+  
+        }
+
+      return $this->render('partials/_header.html.twig', [
+        'background' => $background,
+
+      ]);
+    }
+
+    
     public function footer(FooterDataRepository $footerDataRepository)
     {
-
-
         $footerData = $footerDataRepository->findAll();
-
-
         foreach ($footerData as $value) {
             $instagram = $value->getInstagram();
             $messenger = $value->getMessenger();
@@ -1449,7 +1472,6 @@ class AdminController extends AbstractController
             $refPref = $value->getRefPrefecture();
         }
 
-    
       return $this->render('partials/_footer.html.twig', [
         'instagram' => $instagram,
         'messenger' => $messenger,
@@ -1463,6 +1485,199 @@ class AdminController extends AbstractController
       ]);
     }
 
+    /**
+     * @Route("admin/modifier-photo-barre-de-navigation", name="homeBackground_update_admin")
+     */
+    public function homeBackground_update_admin(OptionsRepository $optionRepository, EntityManagerInterface $manager){
+
+        $homeBackground = $optionRepository->findHomeBackground();
+
+        foreach ($homeBackground as $value) {
+            $background = $value->getValue();
+    
+        }
+
+
+
+        $sliderImage = $optionRepository->find(1);
+
+
+        $errors = [];
+         /*Image update slider accueil*/
+
+         $mimeTypesAllowed = [
+            'png', 'jpeg', 'jpg', 'pjpeg',
+            'webp', 'PNG','JPEG', 'JPG' , 'PJPEG', 'WEBP'
+        ];
+        
+        $maxSize = 10 * 1000 * 1000;
+        
+  
+            
+        
+        if(!empty($_FILES) && !empty($_FILES['homeBackgroundUpdate']) ){
+            
+            
+            
+            $rootFolder = $_SERVER['DOCUMENT_ROOT'];
+            $uploadDir = 'assets/img/';
+            
+            $fileinfo = pathinfo($_FILES['homeBackgroundUpdate']['name']);
+            
+            $mimeTypeDeMonFichierActuel = $fileinfo['extension'];
+            
+            if(in_array($mimeTypeDeMonFichierActuel, $mimeTypesAllowed)){
+
+
+                if($_FILES['homeBackgroundUpdate']['size'] < $maxSize){
+                    
+                    $chars_search = [' ', 'é', 'è', 'à', 'ù'];
+                    $chars_replace= ['-', 'e', 'e', 'a', 'u'];
+                    
+                    $finalFileName = tr::transliterate(time().'-'.$_FILES['homeBackgroundUpdate']['name']).'.png';
+                    
+                    if(!is_dir($uploadDir)){
+                        if(!mkdir($uploadDir, 0777)){
+                            $errors[] = 'Un problème est survenu lors de la création du répértoire d\'upload';
+                        }
+                    }
+                    $destination = strtolower($rootFolder.'/'.$uploadDir.$finalFileName);
+                    
+                    move_uploaded_file($_FILES['homeBackgroundUpdate']['tmp_name'], $destination);
+                    
+                    $image = new ImageManager();
+                    $image->make($destination)->fit(2000, 400)->save();
+                    $entityManager = $this->getDoctrine()->getManager();
+                    $option = $entityManager->getRepository(Options::class)->find(1);
+                    $option->setValue($finalFileName);
+                                                    
+                    $manager->flush();
+                    $formValid = true;  
+                    $this->addFlash(
+                        'success',
+                        'Photo / image de barre de navigation remplacée !'
+                    );  
+                    return $this->redirectToRoute('admin');
+                    
+                }
+                else {
+                    $errors[] = 'Votre fichier est trop lourd (10Mo maxi)';
+                }
+            }
+            else {
+                $errors[] = 'Ce type de fichier n\'est pas autorisé';
+            }
+            
+              
+        }            
+        
+        return $this->render('admin/homeBackgroundUpdate.html.twig',[
+            'background' => $background
+        ]);
+        
+
+    }
+    
+    /**
+     * @Route("admin/diaporama-accueil", name="home_slider_admin")
+     */
+    public function home_slider_admin(OptionsRepository $optionRepository){
+
+        $sliderImages = $optionRepository->findSliderImages();
+
+
+        return $this->render('admin/homeSlider.html.twig',[
+            'sliderImages' => $sliderImages
+        ]);
+        
+    }
+    
+    /**
+     * @Route("admin/modifier-diaporama-accueil/{id}", name="home_slider_update_admin")
+     */
+    public function home_slider_update_admin($id,OptionsRepository $optionRepository, Request $request, EntityManagerInterface $manager){
+
+        $sliderImage = $optionRepository->find($id);
+
+
+        $errors = [];
+         /*Image update slider accueil*/
+
+         $mimeTypesAllowed = [
+            'png', 'jpeg', 'jpg', 'pjpeg',
+            'webp'
+        ];
+        
+        $maxSize = 10 * 1000 * 1000;
+        
+  
+            
+        
+        if(!empty($_FILES) && !empty($_FILES['sliderImage']) ){
+            
+            
+            
+            $rootFolder = $_SERVER['DOCUMENT_ROOT'];
+            //dd($_SERVER['DOCUMENT_ROOT']);
+            $uploadDir = 'assets/img/';
+            
+            $fileinfo = pathinfo($_FILES['sliderImage']['name']);
+            
+            $mimeTypeDeMonFichierActuel = $fileinfo['extension'];
+            
+            if(in_array($mimeTypeDeMonFichierActuel, $mimeTypesAllowed)){
+
+
+
+                if($_FILES['sliderImage']['size'] < $maxSize){
+                    
+                    $chars_search = [' ', 'é', 'è', 'à', 'ù'];
+                    $chars_replace= ['-', 'e', 'e', 'a', 'u'];
+                    
+                    $finalFileName = tr::transliterate(time().'-'.$_FILES['sliderImage']['name']).'.png';
+                    
+                    if(!is_dir($uploadDir)){
+                        if(!mkdir($uploadDir, 0777)){
+                            $errors[] = 'Un problème est survenu lors de la création du répértoire d\'upload';
+                        }
+                    }
+                    $destination = $rootFolder.'/'.$uploadDir.$finalFileName;
+                    
+                    move_uploaded_file($_FILES['sliderImage']['tmp_name'], $destination);
+                    
+                    $image = new ImageManager();
+                    $image->make($destination)->fit(700, 460)->save();
+                    
+                }
+                else {
+                    $errors[] = 'Votre fichier est trop lourd (10Mo maxi)';
+                }
+            }
+            else {
+                $errors[] = 'Ce type de fichier n\'est pas autorisé';
+            }
+            
+                $entityManager = $this->getDoctrine()->getManager();
+                $option = $entityManager->getRepository(Options::class)->find($id);
+                $option->setValue($finalFileName);
+
+                                                
+                $manager->flush();
+                $formValid = true;  
+                $this->addFlash(
+                    'success',
+                    'Photo / image remplacée !'
+                );  
+                return $this->redirectToRoute('home_slider_admin');
+            }            
+                
+
+        return $this->render('admin/homeSliderUpdate.html.twig',[
+            'sliderImage' => $sliderImage,
+
+        ]);
+
+    }
     
     
 

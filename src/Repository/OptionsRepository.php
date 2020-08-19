@@ -19,22 +19,31 @@ class OptionsRepository extends ServiceEntityRepository
         parent::__construct($registry, Options::class);
     }
 
-    // /**
-    //  * @return Options[] Returns an array of Options objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+    * @return Options[] Returns an array of Options objects
+    */
+    
+    public function findHomeBackground()
     {
         return $this->createQueryBuilder('o')
-            ->andWhere('o.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('o.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('o.id = :val')
+            ->setParameter('val', 1)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+    
+    public function findSliderImages()
+    {
+        return $this->createQueryBuilder('o')
+            ->andWhere('o.name LIKE :val')
+            ->setParameter('val', '%'.'HomeSlider'.'%')
+            ->orderBy('o.name', 'DESC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    
 
     /*
     public function findOneBySomeField($value): ?Options

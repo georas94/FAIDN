@@ -34,10 +34,6 @@
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{path('admin')}}">
-
-        <div class="sidebar-brand-icon rotate-n-15">
-          <div class="" style="background-image:url({{asset('assets/img/fdain.png')}});height:50px;width:50px;background-position:center;border-radius:28px;"></div>
-        </div>
         <div class="sidebar-brand-text mx-3">Page admin</div>
       </a>
 
@@ -68,11 +64,19 @@
             <a class="collapse-item" href="{{path('product_management_view')}}">Gestion des produits</a>
             <a class="collapse-item" href="{{path('sales_home_admin')}}">Gestion des ventes</a>
             <a class="collapse-item" href="{{path('product_send_admin')}}">Envoyer adhésion</a>
+            <a class="collapse-item" href="{{path('citation_admin')}}">Éditer les citations</a>
+            <a class="collapse-item" href="{{path('homeBackground_update_admin')}}">Éditer photo / image <br>
+            de la page d'accueil</a>
+            <a class="collapse-item" href="{{path('home_slider_admin')}}">Éditer le diaporama de <br> 
+            la page d'accueil</a>
+            <a class="collapse-item" href="{{path('footer_admin')}}">Éditer le bas de page</a>
+            <a class="collapse-item" href="{{path('counter_admin')}}">Éditer le compteur de <br> la page d'accueil</a>
             <a class="collapse-item" href="{{path('archives_admin')}}">Mes archives</a>
           </div>
         </div>
       </li>
       
+      <!--
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
           <i class="fas fa-fw fa-folder"></i>
@@ -80,12 +84,10 @@
         </a>
         <div id="collapseThree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <a class="collapse-item" href="{{path('citation_admin')}}">Éditer les citations</a>
-            <a class="collapse-item" href="{{path('footer_admin')}}">Éditer le bas de page</a>
-            <a class="collapse-item" href="{{path('counter_admin')}}">Éditer le compteur de <br> la page d'accueil</a>
           </div>
         </div>
       </li>
+      -->
 
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">

@@ -179,6 +179,7 @@ p{
     background: #FC9D3C9C; /**#dfdadab8;*/
     padding: 23px;
     color: white;
+    word-break: break-word;
 }
 
 #checkout{
@@ -291,7 +292,7 @@ p{
 }
 
 .refPref{
-  word-break: break-all;
+  word-break: break-word;
 }
 
 
@@ -566,7 +567,7 @@ a:hover{
 }
 
 .contactItem{
-  word-break: break-all;
+  word-break: break-word;
   font-size: 1.3em;
 }
 .fa-map-marker-alt, .fa-phone-alt{
@@ -721,7 +722,7 @@ a:hover{
     padding-bottom: 25px;
   }
   #citationCarousel{
-    margin-bottom: 339px;
+    margin-bottom: 400px;
   }
   #citationCarousel .lead {
     font-size: 1em !important;
@@ -800,6 +801,10 @@ a:hover{
 }
 @media (max-width:321px){
 
+  .eventBackground{
+    background-image: none !important;
+  }
+
   .nav-toggle{
     left: 28%;
   }
@@ -808,6 +813,11 @@ a:hover{
     word-break: break-word;
     text-align: center !important;
   }
+
+  .allEvents{
+    padding-bottom: 270px;
+  }
+
 }
 
 

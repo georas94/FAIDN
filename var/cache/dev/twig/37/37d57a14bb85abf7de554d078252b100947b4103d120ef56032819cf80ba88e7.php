@@ -92,12 +92,32 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
     ";
         } else {
             // line 9
-            echo "    <div class=\"col-sm-12 col-md-12 col-lg-12 connexionBox mb-5 d-flex justify-content-center\">
+            echo "    <div class=\"container\">
+        ";
+            // line 10
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 10, $this->source); })()), "flashes", [0 => "success"], "method", false, false, false, 10));
+            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                // line 11
+                echo "            <div class=\"alert alert-success text-center mb-2\">
+                ";
+                // line 12
+                echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+                echo "
+            </div>
+        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 15
+            echo "    </div>
+    <div class=\"col-sm-12 col-md-12 col-lg-12 connexionBox mb-5 d-flex justify-content-center\">
         <div class=\"row justify-content-center\">
             <h1 class=\"text-center mt-5 mb-5 titleSecondary col-12\">Connexion</h1>
 
             <form action=\"";
-            // line 13
+            // line 20
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_login");
             echo "\" method=\"post\" class=\"col-sm-6 col-md-6 col-lg-6\">
                 <div class=\"form-group\">
@@ -110,7 +130,7 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
                 
                 <div class=\"col-12\">
                     <a class=\"d-flex align-items-center justify-content-center font-weight-bold\" href=\"";
-            // line 23
+            // line 30
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_forgot_password_request");
             echo "\">Mot de passe oublié ?</a>
                 </div>
@@ -123,7 +143,7 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
             <div class=\"container\">
                 <h1 class=\"text-center mb-3 titleSecondary\">Pas de compte ? Vous pouvez vous inscrire</h1>
                 <div class=\"text-center\"><a href=\"";
-            // line 33
+            // line 40
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_registration");
             echo "\" class=\"btn btn-secondary w-75 subscribe\" style=\"font-size:1.5em;\"><br> S'inscrire <br><br></a></div>
             </div>
@@ -153,7 +173,7 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
 
     public function getDebugInfo()
     {
-        return array (  127 => 33,  114 => 23,  101 => 13,  95 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  147 => 40,  134 => 30,  121 => 20,  114 => 15,  105 => 12,  102 => 11,  98 => 10,  95 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -166,6 +186,13 @@ class __TwigTemplate_71a4bd09526e3a7cbb9fb7ddbdf83c139eda9e7b640c1e7c8f6ff49ee4c
     {% if app.user %}
         <div class=\"text-center h3 connected titleSecondary mt-5\">Vous êtes déjà connecté !</div>
     {% else %}
+    <div class=\"container\">
+        {% for message in app.flashes('success') %}
+            <div class=\"alert alert-success text-center mb-2\">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
     <div class=\"col-sm-12 col-md-12 col-lg-12 connexionBox mb-5 d-flex justify-content-center\">
         <div class=\"row justify-content-center\">
             <h1 class=\"text-center mt-5 mb-5 titleSecondary col-12\">Connexion</h1>
