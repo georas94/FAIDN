@@ -26,7 +26,7 @@ class MemberController extends AbstractController
             $total = (float)trim(strip_tags($_POST['total']));
 
             //On définit notre API secret
-            \Stripe\Stripe::setApiKey('sk_test_51GzVsLFZQOL2CP5OzjUkMlrNfEHH3FBmD7HkHJ3lfmj8wvFjuGuwu1B0zxRxSsdLwbVvbAMGgWqn4hynE8le7JVd00EaD2I658');
+            \Stripe\Stripe::setApiKey('VOTRE API KEY');
 
             //On définit notre intention, ça se fait avant le paiement
             $intent = \Stripe\PaymentIntent::create([

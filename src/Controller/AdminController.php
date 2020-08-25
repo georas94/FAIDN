@@ -55,7 +55,7 @@ class AdminController extends AbstractController
             // Use the developers console and download your service account
             // credentials in JSON format. Place them in this directory or
             // change the key file location if necessary.
-            $KEY_FILE_LOCATION = __DIR__ . '/circular-source-286807-89bd7eb1f4ca.json';
+            $KEY_FILE_LOCATION = __DIR__ . 'FICHIER ID GOOGLE ANALYTICS';
 
             // Create and configure a new client object.
             $client = new \Google_Client();

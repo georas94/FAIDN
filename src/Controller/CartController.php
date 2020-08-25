@@ -39,6 +39,8 @@ class CartController extends AbstractController
 
 
         $errors = [];
+
+        //Paiement Stripe abandonné pour Paypal
         if (!empty($_POST)) {
 
             
@@ -52,7 +54,7 @@ class CartController extends AbstractController
             $total = trim(strip_tags((float)$_POST['total']));
 
             //On définit notre API secret
-            \Stripe\Stripe::setApiKey('sk_test_51GzVsLFZQOL2CP5OzjUkMlrNfEHH3FBmD7HkHJ3lfmj8wvFjuGuwu1B0zxRxSsdLwbVvbAMGgWqn4hynE8le7JVd00EaD2I658');
+            \Stripe\Stripe::setApiKey('VOTRE API KEY');
 
             //On définit notre intention, ça se fait avant le paiement
             $intent = \Stripe\PaymentIntent::create([
@@ -123,6 +125,24 @@ class CartController extends AbstractController
         ]);
     }
     
+    
+    /**
+     * @Route("/ajout-panier/{content}/{date}", name="content_cart_add")
+     */
+    public function addContent($content,$date, CartService $cartService, EntityManagerInterface $manager)
+    {
+
+        $cart = new Cart();
+        $cart->setContent($content);
+        $date = new \DateTime('now', new \DateTimeZone('Europe/Paris'));
+        $date = $date->format(DATE_RFC2822);
+        $cart->setCreatedAt($date);
+
+        $manager->persist($cart);
+        $manager->flush();
+
+        return $this->redirectToRoute('cart_home');
+    }
     
     /**
      * @Route("/adhesion/add/{id}", name="cart_add")

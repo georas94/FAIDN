@@ -39,7 +39,7 @@ class SecurityController extends AbstractController
         $errors = [];
         if (!empty($_POST)) {
                         
-            $secretKey = "6LdAoMAZAAAAADOcGjmNffKcpSrv9O1frbNWUPQm";
+            $secretKey = "VOTRE SECRET KEY";
 
             // post request to server
             if(isset($_POST['g-recaptcha-response'])){
@@ -83,8 +83,8 @@ class SecurityController extends AbstractController
                     
                     if ($statutNewsletter == true) {
                         
-                        $list_id = '3977e25105';
-                        $authToken = 'e4e6b621d8cf7c27dac5e0bc8700488e-us17';
+                        $list_id = 'VOTRE LIST ID';
+                        $authToken = 'VOTRE TOKEN D\'AUTHENTIFICATION ';
                 
                         $postData = array(
                             "email_address" => $user->getEmail(), 
@@ -181,7 +181,7 @@ class SecurityController extends AbstractController
             $price = (float)$_POST['price'];
             
             //On définit notre API secret
-            \Stripe\Stripe::setApiKey('sk_test_51GzVsLFZQOL2CP5OzjUkMlrNfEHH3FBmD7HkHJ3lfmj8wvFjuGuwu1B0zxRxSsdLwbVvbAMGgWqn4hynE8le7JVd00EaD2I658');
+            \Stripe\Stripe::setApiKey('VOTRE API KEY');
             
             //On définit notre intention, ça se fait avant le paiement
             $intent = \Stripe\PaymentIntent::create([

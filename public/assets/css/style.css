@@ -584,7 +584,9 @@ a:hover{
 }
 
 
-
+.swal2-title{
+  font-size: 1em;;
+}
 
 /**********************
       Responsive
